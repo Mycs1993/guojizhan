@@ -21,9 +21,7 @@ export async function POST(request: NextRequest) {
     }
 
     const smtpHost = process.env.SMTP_HOST;
-    const smtpPort = process.env.SMTP_PORT
-      ? Number(process.env.SMTP_PORT)
-      : 587;
+    const smtpPort = process.env.SMTP_PORT ? Number(process.env.SMTP_PORT) : 587;
     const smtpUser = process.env.SMTP_USER;
     const smtpPass = process.env.SMTP_PASS;
     const smtpTo = process.env.SMTP_TO || smtpUser;
@@ -80,63 +78,3 @@ ${body.message}
     );
   }
 }
-
-import { NextRequest, NextResponse } from "next/server";
-import nodemailer from "nodemailer";
-
-export async function POST(req: NextRequest) {
-  try {
-    const { name, email, phone, subject, message } = await req.json();
-
-    if (!email || !message) {
-      return NextResponse.json(
-        { success: false, error: "Email and message are required" },
-        { status: 400 }
-      );
-    }
-
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT) || 587,
-      secure: false,
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
-    });
-
-    const toAddress = process.env.SMTP_TO || process.env.SMTP_USER;
-
-    const lines = [
-      "New quote / contact request from website:",
-      "",
-      `Name: ${name || "-"}`,
-      `Email: ${email}`,
-      `Phone: ${phone || "-"}`,
-      `Product / Subject: ${subject || "-"}`,
-      "",
-      "Message:",
-      message || "-",
-    ];
-
-    await transporter.sendMail({
-      from: `"Website Contact" <${process.env.SMTP_USER}>`,
-      to: toAddress,
-      replyTo: email,
-      subject: subject
-        ? `New inquiry: ${subject}`
-        : "New inquiry from website",
-      text: lines.join("\n"),
-    });
-
-    return NextResponse.json({ success: true });
-  } catch (error) {
-    console.error("Contact form error:", error);
-    return NextResponse.json(
-      { success: false, error: "Internal server error" },
-      { status: 500 }
-    );
-  }
-}
-
-

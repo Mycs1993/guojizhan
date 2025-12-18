@@ -1,12 +1,13 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { PRODUCT_CATEGORIES } from "@/data/products";
-import { CheckCircle, ArrowRight, MessageSquare, ShieldCheck, Clock, Download } from "lucide-react";
+import { CheckCircle, MessageSquare, ShieldCheck, Clock, Download } from "lucide-react";
 import { notFound } from "next/navigation";
 import { ProductSchema } from "@/components/seo/ProductSchema";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { generateProductMetadata, generateBreadcrumbs } from "@/lib/seo";
 import { getLocale } from "next-intl/server";
+import { QuickInquiryForm } from "@/components/contact/QuickInquiryForm";
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const { id } = await params;
@@ -122,33 +123,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
               <div className="sticky top-[140px] space-y-6">
 
                 {/* Main Conversion Card */}
-                <div className="bg-white p-6 rounded-xl shadow-lg border border-slate-100 ring-4 ring-blue-50/50">
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">Get a Quote</h3>
-                  <p className="text-slate-500 mb-6 text-sm">
-                    Factory direct price. Customized solution.
-                  </p>
-
-                  <form className="space-y-4">
-                    <div>
-                      <input type="text" placeholder="Your Name" className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-blue-500 outline-none text-sm" />
-                    </div>
-                    <div>
-                      <input type="email" placeholder="Email Address" className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-blue-500 outline-none text-sm" />
-                    </div>
-                    <div>
-                      <textarea rows={3} placeholder="Requirements (Capacity, Fuel...)" className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:border-blue-500 outline-none text-sm resize-none" ></textarea>
-                    </div>
-                    <button className="w-full bg-blue-600 text-white py-4 rounded-lg font-bold hover:bg-blue-700 transition-all transform hover:-translate-y-1 shadow-md hover:shadow-xl flex items-center justify-center gap-2 group">
-                      Send Inquiry Now
-                      <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-                    </button>
-                  </form>
-
-                  <p className="text-xs text-center text-slate-400 mt-4">
-                    <ShieldCheck size={12} className="inline mr-1" />
-                    Your information is 100% secure.
-                  </p>
-                </div>
+                <QuickInquiryForm productName={product.name[locale]} />
 
                 {/* Trust Badge Card */}
                 <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
