@@ -1,0 +1,54 @@
+{
+  "HomePage": {
+    "title": "International Trade Station",
+    "description": "Connecting global business",
+    "Hero": {
+      "badgeYear": "Since 1976",
+      "badgeLicense": "Class A Manufacturing License",
+      "titleLine1": "Industrial Heating Solutions",
+      "titleLine2": "Engineered for Efficiency",
+      "description": "Trusted by 2000+ industries worldwide. We manufacture high-performance oil/gas, biomass, and coal-fired boilers that reduce energy costs and emissions.",
+      "ctaProducts": "Explore Products",
+      "ctaQuote": "Get a Quote",
+      "trustedBy": "Trusted by Industry Leaders"
+    },
+    "Stats": {
+      "experience": "Years Experience",
+      "factoryArea": "Factory Area",
+      "production": "Annual Production",
+      "employees": "Employees"
+    },
+    "Products": {
+      "title": "Our Main Products",
+      "subtitle": "Comprehensive industrial heating solutions for your business"
+    },
+    "About": {
+      "title": "About Yudong Boiler",
+      "subtitle": "Professional Manufacturer Since 1976",
+      "description": "Henan Taikang Yudong Boiler Co., Ltd. is a comprehensive high-tech enterprise integrating scientific research, design, manufacturing, sales, and installation. We hold a Class A Boiler Manufacturing License and Class D Pressure Vessel Manufacturing License.",
+      "cta": "Learn More About Us"
+    },
+    " CTA": {
+      "title": "Ready to Upgrade Your Heating System?",
+      "description": "Contact our engineering team for a free consultation and custom proposal.",
+      "button": "Contact Us Now"
+    }
+  },
+  "ProductsPage": {
+    "title": "Our Products",
+    "subtitle": "Explore our comprehensive range of industrial boilers and pressure vessels, engineered for efficiency, safety, and environmental sustainability.",
+    "requestQuote": "Request Quote",
+    "viewDetails": "View Details"
+  },
+  "Navigation": {
+    "home": "Home",
+    "products": "Products",
+    "about": "About Us",
+    "news": "News",
+    "contact": "Contact"
+  },
+  "Common": {
+    "readMore": "Read More",
+    "contactUs": "Contact Us"
+  }
+}

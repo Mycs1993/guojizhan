@@ -1,0 +1,124 @@
+{
+  "global": {
+    "siteName": "Yudong Boiler",
+    "defaultTitle": "Henan Taikang Yudong Boiler Co., Ltd. - Professional Boiler Manufacturer",
+    "defaultDescription": "Leading industrial boiler and pressure vessel manufacturer in China. Oil/Gas, Biomass, Coal, Electric Boilers, and Thermal Oil Heaters. ISO9001 Certified, Class A License.",
+    "defaultKeywords": [
+      "industrial boiler",
+      "steam boiler",
+      "hot water boiler",
+      "biomass boiler",
+      "gas boiler",
+      "pressure vessel",
+      "China boiler manufacturer",
+      "boiler supplier"
+    ],
+    "baseUrl": "https://www.yudongboiler.com"
+  },
+  "pages": {
+    "home": {
+      "slug": "home",
+      "title": "Professional Boiler Manufacturer",
+      "description": "Leading industrial boiler and pressure vessel manufacturer in China. Trusted by 2000+ industries worldwide.",
+      "keywords": [
+        "industrial boiler",
+        "boiler manufacturer",
+        "China boiler"
+      ],
+      "lastModified": "2024-12-15T00:00:00Z"
+    },
+    "products": {
+      "slug": "products",
+      "title": "Industrial Boilers & Pressure Vessels",
+      "description": "Explore our comprehensive range of industrial boilers: WNS Oil/Gas, SZL Biomass, DZL Coal, Thermal Oil Heaters.",
+      "keywords": [
+        "WNS boiler",
+        "SZL boiler",
+        "DZL boiler",
+        "thermal oil heater"
+      ],
+      "lastModified": "2024-12-15T00:00:00Z"
+    },
+    "contact": {
+      "slug": "contact",
+      "title": "Contact Us - Get a Free Quote",
+      "description": "Contact Henan Yudong Boiler for industrial boiler quotes and technical support.",
+      "keywords": [
+        "boiler quote",
+        "contact boiler manufacturer"
+      ],
+      "lastModified": "2024-12-15T00:00:00Z"
+    },
+    "news": {
+      "slug": "news",
+      "title": "News & Insights - Boiler Industry Updates",
+      "description": "Stay updated with the latest company news, product launches, and industry technical knowledge.",
+      "keywords": [
+        "boiler news",
+        "industrial boiler updates"
+      ],
+      "lastModified": "2024-12-15T00:00:00Z"
+    },
+    "about": {
+      "slug": "about",
+      "title": "About Us - 40+ Years of Excellence",
+      "description": "Founded in 1976, Yudong Boiler is a comprehensive high-tech enterprise with Class A Manufacturing License.",
+      "keywords": [
+        "about yudong boiler",
+        "boiler company history"
+      ],
+      "lastModified": "2024-12-15T00:00:00Z"
+    }
+  },
+  "keywords": [
+    {
+      "id": "kw-1",
+      "keyword": "industrial boiler",
+      "category": "core",
+      "status": "active",
+      "searchVolume": 12000,
+      "difficulty": 65,
+      "createdAt": "2024-12-15T00:00:00Z",
+      "updatedAt": "2024-12-15T00:00:00Z"
+    },
+    {
+      "id": "kw-2",
+      "keyword": "steam boiler manufacturer",
+      "category": "core",
+      "status": "active",
+      "searchVolume": 8500,
+      "difficulty": 55,
+      "createdAt": "2024-12-15T00:00:00Z",
+      "updatedAt": "2024-12-15T00:00:00Z"
+    },
+    {
+      "id": "kw-3",
+      "keyword": "biomass boiler",
+      "category": "product",
+      "status": "active",
+      "searchVolume": 6200,
+      "difficulty": 45,
+      "createdAt": "2024-12-15T00:00:00Z",
+      "updatedAt": "2024-12-15T00:00:00Z"
+    },
+    {
+      "id": "kw-4",
+      "keyword": "gas fired boiler price",
+      "category": "commercial",
+      "status": "active",
+      "searchVolume": 4800,
+      "difficulty": 40,
+      "createdAt": "2024-12-15T00:00:00Z",
+      "updatedAt": "2024-12-15T00:00:00Z"
+    },
+    {
+      "id": "kw-1765857344118",
+      "keyword": "asd",
+      "category": "general",
+      "status": "active",
+      "createdAt": "2025-12-16T03:55:44.118Z",
+      "updatedAt": "2025-12-16T03:55:44.118Z"
+    }
+  ],
+  "aiSuggestions": []
+}

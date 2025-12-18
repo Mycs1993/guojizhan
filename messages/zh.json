@@ -1,0 +1,54 @@
+{
+    "HomePage": {
+        "title": "国际贸易站",
+        "description": "连接全球商业",
+        "Hero": {
+            "badgeYear": "始于 1976",
+            "badgeLicense": "A级锅炉制造资质",
+            "titleLine1": "工业供热解决方案",
+            "titleLine2": "专为高效能打造",
+            "description": "深受全球 2000+ 行业客户信赖。我们制造高性能的燃油/燃气、生物质和燃煤锅炉，助您降低能源成本和排放。",
+            "ctaProducts": "探索产品",
+            "ctaQuote": "获取报价",
+            "trustedBy": "行业领袖的信赖之选"
+        },
+        "Stats": {
+            "experience": "年行业经验",
+            "factoryArea": "厂区面积",
+            "production": "年产能",
+            "employees": "在职员工"
+        },
+        "Products": {
+            "title": "核心产品系列",
+            "subtitle": "为您的企业提供全面的工业供热解决方案"
+        },
+        "About": {
+            "title": "关于豫东锅炉",
+            "subtitle": "始于 1976 年的专业制造商",
+            "description": "河南太康豫东锅炉有限公司是一家集科研、设计、制造、销售、安装于一体的综合性高新技术企业。持有A级锅炉制造许可证和D级压力容器制造许可证。",
+            "cta": "了解更多关于我们"
+        },
+        " CTA": {
+            "title": "准备好升级您的供热系统了吗？",
+            "description": "联系我们的工程团队，获取免费咨询和定制方案。",
+            "button": "立即联系我们"
+        }
+    },
+    "ProductsPage": {
+        "title": "产品中心",
+        "subtitle": "探索我们全面的工业锅炉和压力容器系列，专为高效、安全和环境可持续性而设计。",
+        "requestQuote": "获取报价",
+        "viewDetails": "查看详情"
+    },
+    "Navigation": {
+        "home": "首页",
+        "products": "产品中心",
+        "about": "关于我们",
+        "news": "新闻资讯",
+        "contact": "联系我们"
+    },
+    "Common": {
+        "readMore": "了解更多",
+        "contactUs": "联系我们"
+    }
+}
