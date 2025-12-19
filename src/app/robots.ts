@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://www.yudongboiler.com'; // Replace with your actual domain
+  const baseUrl = 'https://gljyw.top';
   
   return {
     rules: [

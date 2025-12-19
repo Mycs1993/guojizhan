@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { PRODUCT_CATEGORIES } from '@/data/products';
 import { NEWS_ITEMS } from '@/data/news';
 
-const baseUrl = 'https://www.yudongboiler.com';
+const baseUrl = 'https://gljyw.top';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Static pages with appropriate priorities
