@@ -24,10 +24,12 @@ export function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    console.log("=== FORM SUBMIT CLICKED ===", formData);
     setIsSubmitting(true);
     setError(null);
 
     try {
+      console.log("=== SENDING REQUEST TO /api/contact ===");
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: {
@@ -36,15 +38,19 @@ export function ContactForm() {
         body: JSON.stringify(formData),
       });
 
+      console.log("=== RESPONSE STATUS ===", res.status, res.statusText);
+      const responseData = await res.json().catch(() => ({}));
+      console.log("=== RESPONSE DATA ===", responseData);
+
       if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        throw new Error(data.error || "Failed to send message");
+        throw new Error(responseData.error || "Failed to send message");
       }
 
+      console.log("=== SUCCESS ===");
       setIsSubmitted(true);
       setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
     } catch (err) {
-      console.error(err);
+      console.error("=== ERROR ===", err);
       setError("Failed to send message. Please try again later or contact us directly by email.");
     } finally {
       setIsSubmitting(false);
