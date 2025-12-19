@@ -1,53 +1,61 @@
 {
   "global": {
     "siteName": "Yudong Boiler",
-    "defaultTitle": "Henan Taikang Yudong Boiler Co., Ltd. - Professional Boiler Manufacturer",
-    "defaultDescription": "Leading industrial boiler and pressure vessel manufacturer in China. Oil/Gas, Biomass, Coal, Electric Boilers, and Thermal Oil Heaters. ISO9001 Certified, Class A License.",
+    "defaultTitle": "Professional Industrial Boiler Manufacturer | Steam Boiler Supplier",
+    "defaultDescription": "Leading industrial boiler and pressure vessel manufacturer in China. Specializing in steam boilers, biomass boilers, gas boilers, and thermal oil heaters. ISO9001 Certified, Class A License.",
     "defaultKeywords": [
       "industrial boiler",
       "steam boiler",
-      "hot water boiler",
+      "boiler manufacturer",
       "biomass boiler",
       "gas boiler",
+      "thermal oil heater",
       "pressure vessel",
-      "China boiler manufacturer",
-      "boiler supplier"
+      "boiler supplier",
+      "China boiler"
     ],
-    "baseUrl": "https://www.yudongboiler.com"
+    "baseUrl": "https://gljyw.top"
   },
   "pages": {
     "home": {
       "slug": "home",
-      "title": "Professional Boiler Manufacturer",
-      "description": "Leading industrial boiler and pressure vessel manufacturer in China. Trusted by 2000+ industries worldwide.",
+      "title": "Industrial Boiler Manufacturer | Steam Boiler Supplier | China Boiler",
+      "description": "Professional industrial boiler manufacturer in China. We supply steam boilers, biomass boilers, gas boilers, thermal oil heaters, and pressure vessels. ISO9001 certified, trusted by 2000+ industries worldwide.",
       "keywords": [
         "industrial boiler",
+        "steam boiler",
         "boiler manufacturer",
-        "China boiler"
+        "China boiler",
+        "boiler supplier"
       ],
-      "lastModified": "2024-12-15T00:00:00Z"
+      "lastModified": "2024-12-19T00:00:00Z"
     },
     "products": {
       "slug": "products",
-      "title": "Industrial Boilers & Pressure Vessels",
-      "description": "Explore our comprehensive range of industrial boilers: WNS Oil/Gas, SZL Biomass, DZL Coal, Thermal Oil Heaters.",
+      "title": "Industrial Boilers & Pressure Vessels | Biomass, Gas, Steam Boilers",
+      "description": "Comprehensive range of industrial boilers: steam boilers, biomass boilers, gas boilers, thermal oil heaters, and pressure vessels. WNS Oil/Gas, SZL Biomass, DZL Coal boilers available.",
       "keywords": [
-        "WNS boiler",
-        "SZL boiler",
-        "DZL boiler",
-        "thermal oil heater"
+        "industrial boiler",
+        "steam boiler",
+        "biomass boiler",
+        "gas boiler",
+        "thermal oil heater",
+        "pressure vessel"
       ],
-      "lastModified": "2024-12-15T00:00:00Z"
+      "lastModified": "2024-12-19T00:00:00Z"
     },
     "contact": {
       "slug": "contact",
-      "title": "Contact Us - Get a Free Quote",
-      "description": "Contact Henan Yudong Boiler for industrial boiler quotes and technical support.",
+      "title": "Contact Us - Get a Free Boiler Quote | Boiler Supplier",
+      "description": "Contact us for industrial boiler quotes, steam boiler prices, and technical support. Professional boiler supplier serving global markets. Get a free quote today.",
       "keywords": [
-        "boiler quote",
-        "contact boiler manufacturer"
+        "boiler supplier",
+        "boiler manufacturer",
+        "industrial boiler",
+        "steam boiler",
+        "boiler quote"
       ],
-      "lastModified": "2024-12-15T00:00:00Z"
+      "lastModified": "2024-12-19T00:00:00Z"
     },
     "news": {
       "slug": "news",
@@ -79,45 +87,87 @@
       "searchVolume": 12000,
       "difficulty": 65,
       "createdAt": "2024-12-15T00:00:00Z",
-      "updatedAt": "2024-12-15T00:00:00Z"
+      "updatedAt": "2024-12-19T00:00:00Z"
     },
     {
       "id": "kw-2",
-      "keyword": "steam boiler manufacturer",
+      "keyword": "steam boiler",
+      "category": "core",
+      "status": "active",
+      "searchVolume": 10000,
+      "difficulty": 60,
+      "createdAt": "2024-12-19T00:00:00Z",
+      "updatedAt": "2024-12-19T00:00:00Z"
+    },
+    {
+      "id": "kw-3",
+      "keyword": "boiler manufacturer",
       "category": "core",
       "status": "active",
       "searchVolume": 8500,
       "difficulty": 55,
-      "createdAt": "2024-12-15T00:00:00Z",
-      "updatedAt": "2024-12-15T00:00:00Z"
+      "createdAt": "2024-12-19T00:00:00Z",
+      "updatedAt": "2024-12-19T00:00:00Z"
     },
     {
-      "id": "kw-3",
+      "id": "kw-4",
       "keyword": "biomass boiler",
       "category": "product",
       "status": "active",
       "searchVolume": 6200,
       "difficulty": 45,
       "createdAt": "2024-12-15T00:00:00Z",
-      "updatedAt": "2024-12-15T00:00:00Z"
+      "updatedAt": "2024-12-19T00:00:00Z"
     },
     {
-      "id": "kw-4",
-      "keyword": "gas fired boiler price",
-      "category": "commercial",
+      "id": "kw-5",
+      "keyword": "gas boiler",
+      "category": "product",
+      "status": "active",
+      "searchVolume": 5800,
+      "difficulty": 50,
+      "createdAt": "2024-12-19T00:00:00Z",
+      "updatedAt": "2024-12-19T00:00:00Z"
+    },
+    {
+      "id": "kw-6",
+      "keyword": "thermal oil heater",
+      "category": "product",
+      "status": "active",
+      "searchVolume": 3200,
+      "difficulty": 40,
+      "createdAt": "2024-12-19T00:00:00Z",
+      "updatedAt": "2024-12-19T00:00:00Z"
+    },
+    {
+      "id": "kw-7",
+      "keyword": "pressure vessel",
+      "category": "product",
       "status": "active",
       "searchVolume": 4800,
-      "difficulty": 40,
-      "createdAt": "2024-12-15T00:00:00Z",
-      "updatedAt": "2024-12-15T00:00:00Z"
+      "difficulty": 45,
+      "createdAt": "2024-12-19T00:00:00Z",
+      "updatedAt": "2024-12-19T00:00:00Z"
     },
     {
-      "id": "kw-1765857344118",
-      "keyword": "asd",
-      "category": "general",
+      "id": "kw-8",
+      "keyword": "boiler supplier",
+      "category": "commercial",
       "status": "active",
-      "createdAt": "2025-12-16T03:55:44.118Z",
-      "updatedAt": "2025-12-16T03:55:44.118Z"
+      "searchVolume": 4200,
+      "difficulty": 40,
+      "createdAt": "2024-12-19T00:00:00Z",
+      "updatedAt": "2024-12-19T00:00:00Z"
+    },
+    {
+      "id": "kw-9",
+      "keyword": "China boiler",
+      "category": "commercial",
+      "status": "active",
+      "searchVolume": 3600,
+      "difficulty": 35,
+      "createdAt": "2024-12-19T00:00:00Z",
+      "updatedAt": "2024-12-19T00:00:00Z"
     }
   ],
   "aiSuggestions": []
