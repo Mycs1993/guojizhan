@@ -12,6 +12,7 @@ type ContactPayload = {
 export async function POST(request: NextRequest) {
   try {
     const body = (await request.json()) as Partial<ContactPayload>;
+    console.log("=== API CONTACT REQUEST ===", { name: body.name, email: body.email });
 
     if (!body.name || !body.email || !body.message) {
       return NextResponse.json(
@@ -25,6 +26,14 @@ export async function POST(request: NextRequest) {
     const smtpUser = process.env.SMTP_USER;
     const smtpPass = process.env.SMTP_PASS;
     const smtpTo = process.env.SMTP_TO || smtpUser;
+
+    console.log("=== SMTP CONFIG CHECK ===", {
+      hasHost: !!smtpHost,
+      hasUser: !!smtpUser,
+      hasPass: !!smtpPass,
+      hasTo: !!smtpTo,
+      port: smtpPort,
+    });
 
     if (!smtpHost || !smtpUser || !smtpPass || !smtpTo) {
       console.error("SMTP environment variables are not fully configured");
@@ -49,6 +58,8 @@ export async function POST(request: NextRequest) {
         ? `[Website Quote] ${body.subject}`
         : "[Website Quote] New inquiry from contact form";
 
+    console.log("=== ATTEMPTING TO SEND EMAIL ===", { to: smtpTo, subject: subjectLine });
+    
     const mailResult = await transporter.sendMail({
       from: `"Website Contact" <${smtpUser}>`,
       to: smtpTo,
@@ -65,15 +76,17 @@ ${body.message}
       `.trim(),
     });
 
+    console.log("=== EMAIL SEND RESULT ===", { messageId: mailResult.messageId, response: mailResult.response });
+
     if (!mailResult.messageId) {
       throw new Error("Failed to send email");
     }
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error("Error in /api/contact:", error);
+    console.error("=== ERROR IN /api/contact ===", error);
     return NextResponse.json(
-      { success: false, error: "Failed to send message" },
+      { success: false, error: error instanceof Error ? error.message : "Failed to send message" },
       { status: 500 }
     );
   }
