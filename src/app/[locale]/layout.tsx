@@ -11,6 +11,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
+import { getSEOConfig } from "@/lib/seo-service";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,64 +23,68 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const baseUrl = "https://www.yudongboiler.com"; // Replace with your actual domain
+export async function generateMetadata(): Promise<Metadata> {
+  const seoConfig = await getSEOConfig();
+  const baseUrl = seoConfig.global.baseUrl;
+  const global = seoConfig.global;
 
-export const metadata: Metadata = {
-  metadataBase: new URL(baseUrl),
-  title: {
-    default: `${COMPANY_INFO.name} - Professional Boiler Manufacturer`,
-    template: `%s | ${COMPANY_INFO.shortName}`,
-  },
-  description: "Leading industrial boiler and pressure vessel manufacturer in China. Oil/Gas, Biomass, Coal, Electric Boilers, and Thermal Oil Heaters. ISO9001 Certified, Class A License.",
-  keywords: ["industrial boiler", "steam boiler", "hot water boiler", "biomass boiler", "gas boiler", "pressure vessel", "China boiler manufacturer", "boiler supplier"],
-  authors: [{ name: COMPANY_INFO.name }],
-  creator: COMPANY_INFO.name,
-  publisher: COMPANY_INFO.name,
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: baseUrl,
-    siteName: COMPANY_INFO.name,
-    title: `${COMPANY_INFO.name} - Professional Boiler Manufacturer`,
-    description: "Leading industrial boiler and pressure vessel manufacturer in China. Trusted by 2000+ industries worldwide.",
-    images: [
-      {
-        url: `${baseUrl}/og-image.jpg`, // Add your OG image
-        width: 1200,
-        height: 630,
-        alt: COMPANY_INFO.name,
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: `${COMPANY_INFO.name} - Professional Boiler Manufacturer`,
-    description: "Leading industrial boiler and pressure vessel manufacturer in China.",
-    images: [`${baseUrl}/og-image.jpg`],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
+  return {
+    metadataBase: new URL(baseUrl),
+    title: {
+      default: global.defaultTitle,
+      template: `%s | ${global.siteName}`,
+    },
+    description: global.defaultDescription,
+    keywords: global.defaultKeywords,
+    authors: [{ name: COMPANY_INFO.name }],
+    creator: COMPANY_INFO.name,
+    publisher: COMPANY_INFO.name,
+    formatDetection: {
+      email: false,
+      address: false,
+      telephone: false,
+    },
+    openGraph: {
+      type: "website",
+      locale: "en_US",
+      url: baseUrl,
+      siteName: global.siteName,
+      title: global.defaultTitle,
+      description: global.defaultDescription,
+      images: [
+        {
+          url: `${baseUrl}/og-image.jpg`,
+          width: 1200,
+          height: 630,
+          alt: global.siteName,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: global.defaultTitle,
+      description: global.defaultDescription,
+      images: [`${baseUrl}/og-image.jpg`],
+    },
+    robots: {
       index: true,
       follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
     },
-  },
-  verification: {
-    // Add your verification codes when available
-    // google: "your-google-verification-code",
-    // yandex: "your-yandex-verification-code",
-    // bing: "your-bing-verification-code",
-  },
-};
+    verification: {
+      // Add your verification codes when available
+      // google: "your-google-verification-code",
+      // yandex: "your-yandex-verification-code",
+      // bing: "your-bing-verification-code",
+    },
+  };
+}
 
 export default async function RootLayout({
   children,
