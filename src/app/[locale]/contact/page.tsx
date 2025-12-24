@@ -3,7 +3,7 @@ import { COMPANY_INFO } from "@/data/company";
 import { LocalBusinessSchema } from "@/components/seo/LocalBusinessSchema";
 import { ContactForm } from "@/components/contact/ContactForm";
 
-const baseUrl = "https://www.yudongboiler.com";
+const baseUrl = "https://gljyw.top";
 
 export const metadata: Metadata = {
   title: "Contact Us - Get a Free Quote",

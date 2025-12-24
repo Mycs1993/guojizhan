@@ -5,8 +5,8 @@ export function OrganizationSchema() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": COMPANY_INFO.name,
-    "url": "https://www.yudongboiler.com", // Replace with your actual domain
-    "logo": "https://www.yudongboiler.com/logo.png", // Add your logo URL
+    "url": "https://gljyw.top",
+    "logo": "https://gljyw.top/logo.png",
     "description": COMPANY_INFO.intro,
     "address": {
       "@type": "PostalAddress",

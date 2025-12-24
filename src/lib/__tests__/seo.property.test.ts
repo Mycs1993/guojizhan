@@ -96,7 +96,7 @@ describe("SEO Property Tests", () => {
         fc.property(urlPathArb, (path) => {
           const breadcrumbs = generateBreadcrumbs(path);
           expect(breadcrumbs[0].name).toBe("Home");
-          expect(breadcrumbs[0].url).toContain("yudongboiler.com");
+      expect(breadcrumbs[0].url).toContain("gljyw.top");
         })
       );
     });
@@ -211,7 +211,7 @@ describe("Property 8: Sitemap Entry Validity", () => {
     priority: number,
     changeFreq: string
   ) => ({
-    url: `https://www.yudongboiler.com${path}`,
+    url: `https://gljyw.top${path}`,
     lastModified: new Date(),
     changeFrequency: changeFreq,
     priority,

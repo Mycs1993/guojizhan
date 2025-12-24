@@ -1,10 +1,12 @@
 import { Metadata } from "next";
-import Link from "next/link";
-import { NEWS_ITEMS } from "@/data/news";
+import { Link } from "@/i18n/routing";
 import { COMPANY_INFO } from "@/data/company";
 import { Calendar, Tag, ArrowRight } from "lucide-react";
+import { getLocale, getTranslations } from "next-intl/server";
+import { getNewsList, NEWS_REVALIDATE_SECONDS } from "@/lib/news";
+import Image from "next/image";
 
-const baseUrl = "https://www.yudongboiler.com";
+const baseUrl = "https://gljyw.top";
 
 export const metadata: Metadata = {
   title: "News & Insights - Boiler Industry Updates",
@@ -35,15 +37,21 @@ export const metadata: Metadata = {
   },
 };
 
-export default function NewsPage() {
+export const revalidate = NEWS_REVALIDATE_SECONDS;
+
+export default async function NewsPage() {
+  const locale = (await getLocale()) as "en" | "zh";
+  const t = await getTranslations('NewsPage');
+  const news = await getNewsList(locale);
+
   return (
     <div className="bg-slate-50 min-h-screen pb-20">
       {/* Page Header */}
       <div className="bg-slate-900 text-white py-16">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl font-bold mb-4">News & Insights</h1>
+          <h1 className="text-4xl font-bold mb-4">{t('title')}</h1>
           <p className="text-slate-300 text-lg max-w-2xl mx-auto">
-            Stay updated with our latest company news, product launches, and industry technical knowledge.
+            {t('subtitle')}
           </p>
         </div>
       </div>
@@ -51,16 +59,20 @@ export default function NewsPage() {
       {/* News Grid */}
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {NEWS_ITEMS.map((item) => (
+          {news.map((item) => (
             <article 
               key={item.id} 
               className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-slate-100 flex flex-col h-full group"
             >
-              {/* Image Placeholder */}
+              {/* Image */}
               <div className="h-48 bg-slate-200 relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center text-slate-400 font-medium">
-                  News Image {item.id}
-                </div>
+                <Image
+                  src={item.image || "/images/news/default.jpg"}
+                  alt={item.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
                 <div className="absolute inset-0 bg-blue-600/0 group-hover:bg-blue-600/10 transition-colors"></div>
               </div>
 
@@ -88,7 +100,7 @@ export default function NewsPage() {
                   href={`/news/${item.id}`} 
                   className="inline-flex items-center text-blue-600 font-semibold text-sm hover:translate-x-1 transition-transform mt-auto"
                 >
-                  Read More <ArrowRight size={16} className="ml-1" />
+                  {t('readMore')} <ArrowRight size={16} className="ml-1" />
                 </Link>
               </div>
             </article>

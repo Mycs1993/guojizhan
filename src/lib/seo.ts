@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Product } from "@/data/products";
 import { COMPANY_INFO } from "@/data/company";
 
-const BASE_URL = "https://www.yudongboiler.com";
+const BASE_URL = "https://gljyw.top";
 
 export interface BreadcrumbItem {
   name: string;

@@ -1,0 +1,161 @@
+{
+  "HomePage": {
+    "title": "International Trade Station",
+    "description": "Connecting global business",
+    "Hero": {
+      "badgeYear": "Seit 1976",
+      "badgeLicense": "Klasse A Fertigungslizenz",
+      "titleLine1": "Industrielle Heizlösungen",
+      "titleLine2": "Entwickelt für Effizienz",
+      "description": "In dieser lauten Ära haben wir unseren Blick von der Gewinn- und Verlustrechnung zurück auf das Produkt selbst gerichtet.\n\nDenn wir glauben fest daran: Wenn man mit ganzem Herzen Wert für Kunden schafft, wird der Markt einen engagierten Schöpfer niemals im Stich lassen.\n\nGute Produkte herzustellen ist die einzige Abkürzung.",
+      "ctaProducts": "Produkte Entdecken",
+      "ctaQuote": "Angebot Einholen",
+      "trustedBy": "Vertraut von Branchenführern"
+    },
+    "Stats": {
+      "experience": "Jahre Erfahrung",
+      "factoryArea": "Werksfläche",
+      "production": "Jahresproduktion",
+      "employees": "Mitarbeiter"
+    },
+    "Products": {
+      "title": "Unsere Hauptprodukte",
+      "subtitle": "Umfassende industrielle Heizlösungen für Ihr Unternehmen"
+    },
+    "About": {
+      "title": "Über Yudong Boiler",
+      "subtitle": "Professioneller Hersteller Seit 1976",
+      "description": "Henan Taikang Yudong Boiler Co., Ltd. ist ein umfassendes High-Tech-Unternehmen, das wissenschaftliche Forschung, Design, Herstellung, Vertrieb und Installation integriert. Wir besitzen eine Klasse A Kesselfertigungslizenz und eine Klasse D Druckbehälterfertigungslizenz.",
+      "cta": "Mehr Über Uns Erfahren"
+    },
+    " CTA": {
+      "title": "Bereit, Ihr Heizsystem zu Modernisieren?",
+      "description": "Kontaktieren Sie unser Ingenieurteam für eine kostenlose Beratung und ein individuelles Angebot.",
+      "button": "Kontaktieren Sie Uns Jetzt"
+    }
+  },
+  "ProductsPage": {
+    "title": "Unsere Produkte",
+    "subtitle": "Entdecken Sie unser umfassendes Angebot an Industriekesseln und Druckbehältern, entwickelt für Effizienz, Sicherheit und ökologische Nachhaltigkeit.",
+    "requestQuote": "Angebot Anfordern",
+    "viewDetails": "Details Anzeigen"
+  },
+  "Navigation": {
+    "home": "Startseite",
+    "products": "Produkte",
+    "about": "Über Uns",
+    "news": "Aktuelles",
+    "contact": "Kontakt"
+  },
+  "Common": {
+    "readMore": "Weiterlesen",
+    "contactUs": "Kontaktieren Sie Uns"
+  },
+  "NewsPage": {
+    "title": "Aktuelles & Einblicke",
+    "subtitle": "Bleiben Sie auf dem Laufenden mit unseren neuesten Unternehmensnachrichten, Produkteinführungen und technischem Branchenwissen.",
+    "readMore": "Weiterlesen"
+  },
+  "CTASection": {
+    "title": "Bereit, Ihr industrielles Heizsystem zu modernisieren?",
+    "description": "Erhalten Sie innerhalb von 24 Stunden einen maßgeschneiderten Energiespar-Lösungsvorschlag von unseren leitenden Ingenieuren. Maximieren Sie Effizienz und minimieren Sie Kosten noch heute.",
+    "getQuote": "Kostenloses Angebot",
+    "whatsapp": "WhatsApp Uns",
+    "features": "Unverbindliches Angebot • 24/7 Technischer Support • Weltweiter Versand"
+  },
+  "FloatingCTA": {
+    "whatsapp": "Chat auf WhatsApp",
+    "phone": "Anrufen: +86-187-3940-8082",
+    "quote": "Kostenloses Angebot"
+  },
+  "Footer": {
+    "companyIntro": "Gegründet 1976, ist Yudong Boiler ein umfassendes High-Tech-Unternehmen, das wissenschaftliche Forschung, Design, Herstellung, Vertrieb und Installation integriert.",
+    "quickLinks": "Schnelllinks",
+    "ourProducts": "Unsere Produkte",
+    "contactUs": "Kontaktieren Sie Uns",
+    "rightsReserved": "Alle Rechte Vorbehalten.",
+    "privacyPolicy": "Datenschutzrichtlinie",
+    "termsOfService": "Nutzungsbedingungen",
+    "location": "Zhangji Industriezone, Kreis Taikang, Provinz Henan, China",
+    "products": {
+      "oilGas": "Öl/Gas-Kessel",
+      "biomass": "Biomasse-Kessel",
+      "coal": "Kohlekessel",
+      "thermalOil": "Thermalölerhitzer",
+      "pressureVessel": "Druckbehälter"
+    }
+  },
+  "AboutPage": {
+    "title": "Über Uns",
+    "subtitle": "Ein Erbe von Qualität und Innovation seit 1976",
+    "subtitle2": "Branchenführer mit modernster Technologie, außergewöhnlicher Qualität und unerschütterlichem Engagement für den Kundenerfolg.",
+    "companyProfile": "Unternehmensprofil",
+    "intro": "Gegründet 1976, ist Yudong Boiler ein umfassendes High-Tech-Unternehmen, das wissenschaftliche Forschung, Design, Herstellung, Vertrieb und Installation integriert. Wir besitzen eine Klasse A Kesselfertigungslizenz und eine Klasse D Druckbehälterfertigungslizenz. Mit über 40 Jahren Erfahrung sind wir ein vertrauenswürdiger Name in der Industriekesselbranche.",
+    "location": "In der Zhangji Industriezone, Kreis Taikang, Provinz Henan, China gelegen, umfasst unsere hochmoderne Anlage eine Fläche von 60.000 Quadratmetern. Wir sind stolz darauf, einer der führenden Hersteller in der Kesselindustrie zu sein, der sich der Bereitstellung energieeffizienter und umweltfreundlicher Heizlösungen widmet, die höchsten internationalen Standards entsprechen.",
+    "commitment": "Unser Engagement für Qualität wird durch unsere \"Klasse A\" Kesselfertigungslizenz und \"Klasse D\" Druckbehälterfertigungslizenz untermauert. Wir sind auch Ratsmitglied der China Industrial Boiler Association und Mitglied der China Welding Association, was unsere Branchenführerschaft und technische Expertise demonstriert.",
+    "team": "Mit einem Team von über 200 qualifizierten Fachleuten, darunter erfahrene Ingenieure und Techniker, kombinieren wir traditionelle Handwerkskunst mit modernen Fertigungstechniken, um Produkte zu liefern, die die Kundenerwartungen übertreffen.",
+    "yearsExperience": "Jahre Erfahrung",
+    "manufacturingLicense": "Fertigungslizenz",
+    "globalClients": "Globale Kunden",
+    "factoryArea": "Werksfläche",
+    "certifications": "Zertifizierungen & Auszeichnungen",
+    "cert1": "Klasse A Kesselfertigungslizenz (Höchste Stufe)",
+    "cert2": "Klasse D Druckbehälter Design- & Fertigungslizenz",
+    "cert3": "ISO9001:2015 Qualitätsmanagementsystem-Zertifizierung",
+    "cert4": "\"Vertragstreues & Versprechen haltendes\" Unternehmen Auszeichnung",
+    "cert5": "Ratsmitglied der China Industrial Boiler Association",
+    "cert6": "Mitglied der China Welding Association",
+    "globalReach": "Globale Reichweite",
+    "globalReachDesc": "Unsere Produkte sind nicht nur auf dem Inlandsmarkt beliebt, sondern werden auch nach Südostasien, Europa, Nordamerika, in den Nahen Osten und andere Regionen exportiert, was die Stärke der chinesischen Fertigung und unser Engagement für globale Exzellenz zeigt.",
+    "servingClients": "Dienst an 2000+ Industriekunden weltweit",
+    "ourMission": "Unsere Mission",
+    "missionDesc": "Weltklasse-Industrieheizlösungen bereitzustellen, die die Produktivität steigern, die Umweltbelastung reduzieren und dauerhaften Wert für unsere Kunden schaffen. Wir verpflichten uns zu kontinuierlicher Innovation, außergewöhnlicher Qualität und Kundenzufriedenheit bei jedem Projekt, das wir unternehmen.",
+    "ourVision": "Unsere Vision",
+    "visionDesc": "Ein weltweit anerkannter Führer in der Industriekesselherstellung zu werden, bekannt für unsere technologische Innovation, nachhaltigen Praktiken und unerschütterliches Engagement für Exzellenz. Wir streben danach, neue Industriestandards zu setzen und langfristige Partnerschaften mit Kunden weltweit aufzubauen.",
+    "coreStrengths": "Unsere Kernstärken",
+    "strength1Title": "Fortschrittliche Fertigung",
+    "strength1Desc": "Hochmoderne Produktionsanlagen mit automatisiertem Schweißen, Präzisionsbearbeitung und Qualitätskontrollsystemen.",
+    "strength2Title": "Umweltfreundliche Lösungen",
+    "strength2Desc": "Low-NOx-Emissionstechnologie, hocheffiziente Brennwertsysteme und nachhaltige Fertigungspraktiken.",
+    "strength3Title": "Innovation & F&E",
+    "strength3Desc": "Engagiertes F&E-Team, das kontinuierlich neue Technologien entwickelt und bestehende Produkte verbessert.",
+    "strength4Title": "Qualitätssicherung",
+    "strength4Desc": "Strenge Tests in jeder Phase, von Rohstoffen bis zur Endkontrolle, um 100% Qualitätskonformität sicherzustellen.",
+    "productRange": "Umfassendes Produktsortiment",
+    "product1Title": "Dampfkessel",
+    "product1Desc": "WNS-Serie, SZS-Serie, LSS-Serie - Kapazität von 0,5 bis 75 t/h, geeignet für verschiedene industrielle Anwendungen.",
+    "product2Title": "Heißwasserkessel",
+    "product2Desc": "Low-NOx-Brennwert-Heißwasserkessel, druckbeaufschlagte und atmosphärische Modelle für Heizung und Brauchwasser.",
+    "product3Title": "Thermalölerhitzer",
+    "product3Desc": "Hochtemperatur-Thermalölsysteme bis 340°C, ideal für Anwendungen mit präziser Temperaturregelung.",
+    "product4Title": "Biomassekessel",
+    "product4Desc": "Umweltfreundliche Biomasse- und Kohlekessel mit fortschrittlicher Verbrennungstechnologie.",
+    "product5Title": "Elektrokessel",
+    "product5Desc": "Saubere und effiziente elektrische Heizlösungen mit SPS-Steuerung und hoher thermischer Effizienz.",
+    "product6Title": "Druckbehälter",
+    "product6Desc": "Kundenspezifische Druckbehälter, die ASME, PED und anderen internationalen Standards entsprechen.",
+    "serviceSupport": "Service & Support",
+    "service1Title": "Vorverkaufsberatung",
+    "service1Desc": "Fachkundige technische Beratung, um Ihnen bei der Auswahl der richtigen Lösung für Ihre Bedürfnisse zu helfen.",
+    "service2Title": "Kundenspezifisches Design",
+    "service2Desc": "Maßgeschneiderte Lösungen, die auf Ihre spezifischen Anforderungen und lokalen Vorschriften zugeschnitten sind.",
+    "service3Title": "Installationsunterstützung",
+    "service3Desc": "Professionelle Installationsanleitung und Vor-Ort-Unterstützung durch unsere erfahrenen Techniker.",
+    "service4Title": "Kundendienst",
+    "service4Desc": "Umfassende Garantie, Wartungsunterstützung und Ersatzteilversorgung für langfristige Zuverlässigkeit.",
+    "facilities": "Unsere Fertigungsanlagen",
+    "facilitiesDesc": "Unsere 60.000 Quadratmeter große Anlage beherbergt fortschrittliche Produktionslinien, Qualitätstestlabore und ein dediziertes F&E-Zentrum, um sicherzustellen, dass wir Produkte von höchster Qualität liefern.",
+    "facility1Title": "Produktionswerkstatt",
+    "facility1Desc": "Moderne Produktionslinien mit automatisierten Schweißgeräten, CNC-Bearbeitungszentren und Präzisionsmontagestationen. Fähig, jährlich über 5.000 Tonnen Kessel zu produzieren.",
+    "facility2Title": "Qualitätstestlabor",
+    "facility2Desc": "Voll ausgestattetes Testlabor mit hydraulischer Druckprüfung, Ultraschallprüfung, Röntgeninspektion und Materialanalysegeräten zur Sicherstellung der Produktqualität.",
+    "facility3Title": "F&E-Zentrum",
+    "facility3Desc": "Hochmoderne F&E-Einrichtung mit CAD/CAM-Systemen, thermischen Effizienztestgeräten und einem Team erfahrener Ingenieure, die innovative Lösungen entwickeln.",
+    "facility4Title": "Materiallagerung",
+    "facility4Desc": "Organisierter Materiallagerbereich mit strenger Qualitätskontrolle, um sicherzustellen, dass alle Rohstoffe internationalen Standards entsprechen, bevor sie in die Produktion gelangen.",
+    "facility5Title": "Montagebereich",
+    "facility5Desc": "Geräumiger Montagebereich für die Montage von Großkesseln, ausgestattet mit Laufkränen und professionellen Montagewerkzeugen für eine effiziente Produktion.",
+    "facility6Title": "Qualitätskontrolle",
+    "facility6Desc": "Umfassendes Qualitätskontrollsystem mit mehrstufigen Inspektionspunkten, um sicherzustellen, dass jedes Produkt vor der Auslieferung Branchenstandards erfüllt oder übertrifft."
+  }
+}

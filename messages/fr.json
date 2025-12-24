@@ -1,0 +1,161 @@
+{
+  "HomePage": {
+    "title": "Station de Commerce International",
+    "description": "Connecter les affaires mondiales",
+    "Hero": {
+      "badgeYear": "Depuis 1976",
+      "badgeLicense": "Licence de Fabrication de Classe A",
+      "titleLine1": "Solutions de Chauffage Industriel",
+      "titleLine2": "Conçues pour l'Efficacité",
+      "description": "En cette ère bruyante, nous avons détourné notre regard du compte de résultat pour le ramener sur le produit lui-même.\n\nCar nous croyons profondément : Lorsque vous créez de tout cœur de la valeur pour les clients, le marché ne laissera jamais tomber un créateur dévoué.\n\nFaire de bons produits est le seul raccourci.",
+      "ctaProducts": "Explorer les Produits",
+      "ctaQuote": "Obtenir un Devis",
+      "trustedBy": "Reconnu par les Leaders de l'Industrie"
+    },
+    "Stats": {
+      "experience": "Années d'Expérience",
+      "factoryArea": "Surface de l'Usine",
+      "production": "Production Annuelle",
+      "employees": "Employés"
+    },
+    "Products": {
+      "title": "Nos Produits Principaux",
+      "subtitle": "Solutions complètes de chauffage industriel pour votre entreprise"
+    },
+    "About": {
+      "title": "À Propos de Yudong Boiler",
+      "subtitle": "Fabricant Professionnel Depuis 1976",
+      "description": "Henan Taikang Yudong Boiler Co., Ltd. est une entreprise high-tech complète intégrant la recherche scientifique, la conception, la fabrication, la vente et l'installation. Nous détenons une Licence de Fabrication de Chaudières de Classe A et une Licence de Fabrication de Récipients sous Pression de Classe D.",
+      "cta": "En Savoir Plus Sur Nous"
+    },
+    " CTA": {
+      "title": "Prêt à Moderniser Votre Système de Chauffage ?",
+      "description": "Contactez notre équipe d'ingénieurs pour une consultation gratuite et une proposition personnalisée.",
+      "button": "Contactez-nous Maintenant"
+    }
+  },
+  "ProductsPage": {
+    "title": "Nos Produits",
+    "subtitle": "Découvrez notre gamme complète de chaudières industrielles et de récipients sous pression, conçus pour l'efficacité, la sécurité et la durabilité environnementale.",
+    "requestQuote": "Demander un Devis",
+    "viewDetails": "Voir les Détails"
+  },
+  "Navigation": {
+    "home": "Accueil",
+    "products": "Produits",
+    "about": "À Propos",
+    "news": "Actualités",
+    "contact": "Contact"
+  },
+  "Common": {
+    "readMore": "Lire Plus",
+    "contactUs": "Contactez-nous"
+  },
+  "NewsPage": {
+    "title": "Actualités & Perspectives",
+    "subtitle": "Restez informé de nos dernières actualités d'entreprise, lancements de produits et connaissances techniques de l'industrie.",
+    "readMore": "Lire Plus"
+  },
+  "CTASection": {
+    "title": "Prêt à Moderniser Votre Système de Chauffage Industriel ?",
+    "description": "Obtenez une proposition de solution d'économie d'énergie personnalisée de nos ingénieurs seniors sous 24 heures. Maximisez l'efficacité et minimisez les coûts dès aujourd'hui.",
+    "getQuote": "Obtenir Devis Gratuit",
+    "whatsapp": "WhatsApp",
+    "features": "Devis sans engagement • Support Technique 24/7 • Expédition Mondiale"
+  },
+  "FloatingCTA": {
+    "whatsapp": "Chat sur WhatsApp",
+    "phone": "Appeler : +86-187-3940-8082",
+    "quote": "Obtenir Devis Gratuit"
+  },
+  "Footer": {
+    "companyIntro": "Fondée en 1976, Yudong Boiler est une entreprise high-tech complète intégrant la recherche scientifique, la conception, la fabrication, la vente et l'installation.",
+    "quickLinks": "Liens Rapides",
+    "ourProducts": "Nos Produits",
+    "contactUs": "Contactez-nous",
+    "rightsReserved": "Tous Droits Réservés.",
+    "privacyPolicy": "Politique de Confidentialité",
+    "termsOfService": "Conditions d'Utilisation",
+    "location": "Zone Industrielle de Zhangji, Comté de Taikang, Province du Henan, Chine",
+    "products": {
+      "oilGas": "Chaudière Fioul/Gaz",
+      "biomass": "Chaudière Biomasse",
+      "coal": "Chaudière à Charbon",
+      "thermalOil": "Chauffage à Huile Thermique",
+      "pressureVessel": "Récipients sous Pression"
+    }
+  },
+  "AboutPage": {
+    "title": "À Propos de Nous",
+    "subtitle": "Un héritage de qualité et d'innovation depuis 1976",
+    "subtitle2": "Leader de l'industrie avec une technologie de pointe, une qualité exceptionnelle et un engagement inébranlable envers le succès des clients.",
+    "companyProfile": "Profil de l'Entreprise",
+    "intro": "Fondée en 1976, Yudong Boiler est une entreprise high-tech complète intégrant la recherche scientifique, la conception, la fabrication, la vente et l'installation. Nous détenons une Licence de Fabrication de Chaudières de Classe A et une Licence de Fabrication de Récipients sous Pression de Classe D. Avec plus de 40 ans d'expérience, nous sommes un nom de confiance dans l'industrie des chaudières industrielles.",
+    "location": "Situé dans la Zone Industrielle de Zhangji, Comté de Taikang, Province du Henan, Chine, notre installation de pointe couvre une superficie de 60 000 mètres carrés. Nous sommes fiers d'être l'un des principaux fabricants de l'industrie des chaudières, dédié à fournir des solutions de chauffage écoénergétiques et respectueuses de l'environnement qui répondent aux normes internationales les plus élevées.",
+    "commitment": "Notre engagement envers la qualité est soutenu par notre Licence de Fabrication de Chaudières \"Classe A\" et notre Licence de Fabrication de Récipients sous Pression \"Classe D\". Nous sommes également membre du conseil de l'Association Chinoise des Chaudières Industrielles et membre de l'Association Chinoise de Soudage, démontrant notre leadership industriel et notre expertise technique.",
+    "team": "Avec une équipe de plus de 200 professionnels qualifiés, y compris des ingénieurs et techniciens expérimentés, nous combinons l'artisanat traditionnel avec des techniques de fabrication modernes pour livrer des produits qui dépassent les attentes des clients.",
+    "yearsExperience": "Années d'Expérience",
+    "manufacturingLicense": "Licence de Fabrication",
+    "globalClients": "Clients Mondiaux",
+    "factoryArea": "Surface de l'Usine",
+    "certifications": "Certifications & Honneurs",
+    "cert1": "Licence de Fabrication de Chaudières Classe A (Niveau le Plus Élevé)",
+    "cert2": "Licence de Conception & Fabrication de Récipients sous Pression Classe D",
+    "cert3": "Certification du Système de Management de la Qualité ISO9001:2015",
+    "cert4": "Prix Entreprise \"Respect des Contrats & Tenue des Promesses\"",
+    "cert5": "Membre du Conseil de l'Association Chinoise des Chaudières Industrielles",
+    "cert6": "Membre de l'Association Chinoise de Soudage",
+    "globalReach": "Portée Mondiale",
+    "globalReachDesc": "Nos produits sont non seulement populaires sur le marché intérieur, mais sont également exportés vers l'Asie du Sud-Est, l'Europe, l'Amérique du Nord, le Moyen-Orient et d'autres régions, mettant en valeur la force de la fabrication chinoise et notre engagement envers l'excellence mondiale.",
+    "servingClients": "Au Service de 2000+ Clients Industriels dans le Monde",
+    "ourMission": "Notre Mission",
+    "missionDesc": "Fournir des solutions de chauffage industriel de classe mondiale qui améliorent la productivité, réduisent l'impact environnemental et créent une valeur durable pour nos clients. Nous nous engageons à une innovation continue, une qualité exceptionnelle et la satisfaction du client dans chaque projet que nous entreprenons.",
+    "ourVision": "Notre Vision",
+    "visionDesc": "Devenir un leader mondialement reconnu dans la fabrication de chaudières industrielles, connu pour notre innovation technologique, nos pratiques durables et notre engagement inébranlable envers l'excellence. Nous nous efforçons d'établir de nouvelles normes industrielles et de construire des partenariats à long terme avec des clients du monde entier.",
+    "coreStrengths": "Nos Forces Principales",
+    "strength1Title": "Fabrication Avancée",
+    "strength1Desc": "Installations de production de pointe avec soudage automatisé, usinage de précision et systèmes de contrôle de qualité.",
+    "strength2Title": "Solutions Écologiques",
+    "strength2Desc": "Technologie à faible émission de NOx, systèmes de condensation à haute efficacité et pratiques de fabrication durables.",
+    "strength3Title": "Innovation & R&D",
+    "strength3Desc": "Équipe R&D dédiée développant continuellement de nouvelles technologies et améliorant les produits existants.",
+    "strength4Title": "Assurance Qualité",
+    "strength4Desc": "Tests rigoureux à chaque étape, des matières premières à l'inspection finale, assurant une conformité qualité à 100%.",
+    "productRange": "Gamme Complète de Produits",
+    "product1Title": "Chaudières à Vapeur",
+    "product1Desc": "Série WNS, série SZS, série LSS - capacité de 0,5 à 75 t/h, adaptée à diverses applications industrielles.",
+    "product2Title": "Chaudières à Eau Chaude",
+    "product2Desc": "Chaudières à eau chaude à condensation à faible NOx, modèles pressurisés et atmosphériques pour le chauffage et l'eau chaude sanitaire.",
+    "product3Title": "Chauffages à Huile Thermique",
+    "product3Desc": "Systèmes à huile thermique haute température jusqu'à 340°C, idéaux pour les applications de contrôle précis de la température.",
+    "product4Title": "Chaudières Biomasse",
+    "product4Desc": "Chaudières à biomasse et charbon respectueuses de l'environnement avec technologie de combustion avancée.",
+    "product5Title": "Chaudières Électriques",
+    "product5Desc": "Solutions de chauffage électrique propres et efficaces avec contrôle PLC et haute efficacité thermique.",
+    "product6Title": "Récipients sous Pression",
+    "product6Desc": "Récipients sous pression conçus sur mesure répondant aux normes ASME, PED et autres normes internationales.",
+    "serviceSupport": "Service & Support",
+    "service1Title": "Consultation Pré-Vente",
+    "service1Desc": "Consultation technique experte pour vous aider à choisir la bonne solution pour vos besoins.",
+    "service2Title": "Conception Personnalisée",
+    "service2Desc": "Solutions sur mesure conçues pour répondre à vos exigences spécifiques et aux réglementations locales.",
+    "service3Title": "Support d'Installation",
+    "service3Desc": "Conseils d'installation professionnels et support sur site par nos techniciens expérimentés.",
+    "service4Title": "Service Après-Vente",
+    "service4Desc": "Garantie complète, support de maintenance et fourniture de pièces de rechange pour une fiabilité à long terme.",
+    "facilities": "Nos Installations de Fabrication",
+    "facilitiesDesc": "Notre installation de 60 000 mètres carrés abrite des lignes de production avancées, des laboratoires de tests de qualité et un centre R&D dédié, assurant que nous livrons des produits de la plus haute qualité.",
+    "facility1Title": "Atelier de Production",
+    "facility1Desc": "Lignes de production modernes avec équipement de soudage automatisé, centres d'usinage CNC et stations d'assemblage de précision. Capable de produire plus de 5 000 tonnes de chaudières par an.",
+    "facility2Title": "Laboratoire de Tests de Qualité",
+    "facility2Desc": "Laboratoire de tests entièrement équipé avec tests de pression hydraulique, tests ultrasoniques, inspection radiographique et équipement d'analyse de matériaux pour assurer la qualité du produit.",
+    "facility3Title": "Centre R&D",
+    "facility3Desc": "Installation R&D de pointe avec systèmes CAD/CAM, équipement de test d'efficacité thermique et une équipe d'ingénieurs expérimentés développant des solutions innovantes.",
+    "facility4Title": "Stockage des Matériaux",
+    "facility4Desc": "Zone de stockage des matériaux organisée avec un contrôle de qualité strict, assurant que toutes les matières premières répondent aux normes internationales avant d'entrer en production.",
+    "facility5Title": "Zone d'Assemblage",
+    "facility5Desc": "Zone d'assemblage spacieuse pour l'assemblage de chaudières à grande échelle, équipée de ponts roulants et d'outils d'assemblage professionnels pour une production efficace.",
+    "facility6Title": "Contrôle de Qualité",
+    "facility6Desc": "Système complet de contrôle de qualité avec points d'inspection à plusieurs étapes, assurant que chaque produit répond ou dépasse les normes de l'industrie avant livraison."
+  }
+}

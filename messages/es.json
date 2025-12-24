@@ -1,0 +1,161 @@
+{
+  "HomePage": {
+    "title": "Estación de Comercio Internacional",
+    "description": "Conectando negocios globales",
+    "Hero": {
+      "badgeYear": "Desde 1976",
+      "badgeLicense": "Licencia de Fabricación Clase A",
+      "titleLine1": "Soluciones de Calefacción Industrial",
+      "titleLine2": "Diseñadas para la Eficiencia",
+      "description": "En esta era ruidosa, hemos desviado nuestra mirada del estado de resultados hacia el producto mismo.\n\nPorque creemos profundamente: Cuando creas valor para los clientes de todo corazón, el mercado nunca defraudará a un creador dedicado.\n\nHacer buenos productos es el único atajo.",
+      "ctaProducts": "Explorar Productos",
+      "ctaQuote": "Obtener Cotización",
+      "trustedBy": "Confiado por Líderes de la Industria"
+    },
+    "Stats": {
+      "experience": "Años de Experiencia",
+      "factoryArea": "Área de Fábrica",
+      "production": "Producción Anual",
+      "employees": "Empleados"
+    },
+    "Products": {
+      "title": "Nuestros Productos Principales",
+      "subtitle": "Soluciones integrales de calefacción industrial para su negocio"
+    },
+    "About": {
+      "title": "Sobre Yudong Boiler",
+      "subtitle": "Fabricante Profesional Desde 1976",
+      "description": "Henan Taikang Yudong Boiler Co., Ltd. es una empresa integral de alta tecnología que integra investigación científica, diseño, fabricación, ventas e instalación. Poseemos una Licencia de Fabricación de Calderas Clase A y una Licencia de Fabricación de Recipientes a Presión Clase D.",
+      "cta": "Más Sobre Nosotros"
+    },
+    " CTA": {
+      "title": "¿Listo para Actualizar su Sistema de Calefacción?",
+      "description": "Póngase en contacto con nuestro equipo de ingeniería para una consulta gratuita y una propuesta personalizada.",
+      "button": "Contáctenos Ahora"
+    }
+  },
+  "ProductsPage": {
+    "title": "Nuestros Productos",
+    "subtitle": "Explore nuestra amplia gama de calderas industriales y recipientes a presión, diseñados para la eficiencia, seguridad y sostenibilidad ambiental.",
+    "requestQuote": "Solicitar Cotización",
+    "viewDetails": "Ver Detalles"
+  },
+  "Navigation": {
+    "home": "Inicio",
+    "products": "Productos",
+    "about": "Nosotros",
+    "news": "Noticias",
+    "contact": "Contacto"
+  },
+  "Common": {
+    "readMore": "Leer Más",
+    "contactUs": "Contáctenos"
+  },
+  "NewsPage": {
+    "title": "Noticias y Perspectivas",
+    "subtitle": "Manténgase actualizado con nuestras últimas noticias de la empresa, lanzamientos de productos y conocimientos técnicos de la industria.",
+    "readMore": "Leer Más"
+  },
+  "CTASection": {
+    "title": "¿Listo para Actualizar su Sistema de Calefacción Industrial?",
+    "description": "Obtenga una propuesta de solución de ahorro de energía personalizada de nuestros ingenieros senior en 24 horas. Maximice la eficiencia y minimice los costos hoy.",
+    "getQuote": "Obtener Cotización Gratis",
+    "whatsapp": "WhatsApp",
+    "features": "Cotización sin compromiso • Soporte Técnico 24/7 • Envío Mundial"
+  },
+  "FloatingCTA": {
+    "whatsapp": "Chat en WhatsApp",
+    "phone": "Llamar: +86-187-3940-8082",
+    "quote": "Obtener Cotización Gratis"
+  },
+  "Footer": {
+    "companyIntro": "Fundada en 1976, Yudong Boiler es una empresa integral de alta tecnología que integra investigación científica, diseño, fabricación, ventas e instalación.",
+    "quickLinks": "Enlaces Rápidos",
+    "ourProducts": "Nuestros Productos",
+    "contactUs": "Contáctenos",
+    "rightsReserved": "Todos los Derechos Reservados.",
+    "privacyPolicy": "Política de Privacidad",
+    "termsOfService": "Términos de Servicio",
+    "location": "Zona Industrial Zhangji, Condado de Taikang, Provincia de Henan, China",
+    "products": {
+      "oilGas": "Caldera de Petróleo/Gas",
+      "biomass": "Caldera de Biomasa",
+      "coal": "Caldera de Carbón",
+      "thermalOil": "Calentador de Aceite Térmico",
+      "pressureVessel": "Recipientes a Presión"
+    }
+  },
+  "AboutPage": {
+    "title": "Sobre Nosotros",
+    "subtitle": "Un legado de calidad e innovación desde 1976",
+    "subtitle2": "Liderando la industria con tecnología de vanguardia, calidad excepcional y compromiso inquebrantable con el éxito del cliente.",
+    "companyProfile": "Perfil de la Empresa",
+    "intro": "Fundada en 1976, Yudong Boiler es una empresa integral de alta tecnología que integra investigación científica, diseño, fabricación, ventas e instalación. Poseemos una Licencia de Fabricación de Calderas Clase A y una Licencia de Fabricación de Recipientes a Presión Clase D. Con más de 40 años de experiencia, somos un nombre de confianza en la industria de calderas industriales.",
+    "location": "Ubicados en la Zona Industrial Zhangji, Condado de Taikang, Provincia de Henan, China, nuestras instalaciones de última generación cubren un área de 60,000 metros cuadrados. Estamos orgullosos de ser uno de los principales fabricantes en la industria de calderas, dedicados a proporcionar soluciones de calefacción energéticamente eficientes y respetuosas con el medio ambiente que cumplen con los más altos estándares internacionales.",
+    "commitment": "Nuestro compromiso con la calidad está respaldado por nuestra Licencia de Fabricación de Calderas \"Clase A\" y Licencia de Fabricación de Recipientes a Presión \"Clase D\". También somos miembros del consejo de la Asociación de Calderas Industriales de China y miembros de la Asociación de Soldadura de China, lo que demuestra nuestro liderazgo en la industria y experiencia técnica.",
+    "team": "Con un equipo de más de 200 profesionales capacitados, incluidos ingenieros y técnicos experimentados, combinamos la artesanía tradicional con técnicas de fabricación modernas para entregar productos que superan las expectativas del cliente.",
+    "yearsExperience": "Años de Experiencia",
+    "manufacturingLicense": "Licencia de Fabricación",
+    "globalClients": "Clientes Globales",
+    "factoryArea": "Área de Fábrica",
+    "certifications": "Certificaciones y Honores",
+    "cert1": "Licencia de Fabricación de Calderas Clase A (Nivel Más Alto)",
+    "cert2": "Licencia de Diseño y Fabricación de Recipientes a Presión Clase D",
+    "cert3": "Certificación del Sistema de Gestión de Calidad ISO9001:2015",
+    "cert4": "Premio Empresa \"Honrando Contratos y Cumpliendo Promesas\"",
+    "cert5": "Miembro del Consejo de la Asociación de Calderas Industriales de China",
+    "cert6": "Miembro de la Asociación de Soldadura de China",
+    "globalReach": "Alcance Global",
+    "globalReachDesc": "Nuestros productos no solo son populares en el mercado nacional, sino que también se exportan a Sudeste Asiático, Europa, América del Norte, Medio Oriente y otras regiones, mostrando la fortaleza de la fabricación china y nuestro compromiso con la excelencia global.",
+    "servingClients": "Sirviendo a más de 2000 Clientes Industriales en Todo el Mundo",
+    "ourMission": "Nuestra Misión",
+    "missionDesc": "Proporcionar soluciones de calefacción industrial de clase mundial que mejoren la productividad, reduzcan el impacto ambiental y creen valor duradero para nuestros clientes. Estamos comprometidos con la innovación continua, la calidad excepcional y la satisfacción del cliente en cada proyecto que emprendemos.",
+    "ourVision": "Nuestra Visión",
+    "visionDesc": "Convertirnos en un líder mundialmente reconocido en la fabricación de calderas industriales, conocido por nuestra innovación tecnológica, prácticas sostenibles y compromiso inquebrantable con la excelencia. Nos esforzamos por establecer nuevos estándares industriales y construir asociaciones a largo plazo con clientes en todo el mundo.",
+    "coreStrengths": "Nuestras Fortalezas Principales",
+    "strength1Title": "Fabricación Avanzada",
+    "strength1Desc": "Instalaciones de producción de última generación con soldadura automatizada, mecanizado de precisión y sistemas de control de calidad.",
+    "strength2Title": "Soluciones Ecológicas",
+    "strength2Desc": "Tecnología de bajas emisiones de NOx, sistemas de condensación de alta eficiencia y prácticas de fabricación sostenibles.",
+    "strength3Title": "Innovación e I+D",
+    "strength3Desc": "Equipo de I+D dedicado que desarrolla continuamente nuevas tecnologías y mejora los productos existentes.",
+    "strength4Title": "Garantía de Calidad",
+    "strength4Desc": "Pruebas rigurosas en cada etapa, desde las materias primas hasta la inspección final, asegurando el cumplimiento de la calidad al 100%.",
+    "productRange": "Gama Completa de Productos",
+    "product1Title": "Calderas de Vapor",
+    "product1Desc": "Serie WNS, serie SZS, serie LSS - capacidad de 0.5 a 75 t/h, adecuada para diversas aplicaciones industriales.",
+    "product2Title": "Calderas de Agua Caliente",
+    "product2Desc": "Calderas de agua caliente de condensación de bajo NOx, modelos presurizados y atmosféricos para calefacción y agua caliente sanitaria.",
+    "product3Title": "Calentadores de Aceite Térmico",
+    "product3Desc": "Sistemas de aceite térmico de alta temperatura hasta 340°C, ideales para aplicaciones de control de temperatura preciso.",
+    "product4Title": "Calderas de Biomasa",
+    "product4Desc": "Calderas de biomasa y carbón respetuosas con el medio ambiente con tecnología de combustión avanzada.",
+    "product5Title": "Calderas Eléctricas",
+    "product5Desc": "Soluciones de calefacción eléctrica limpias y eficientes con control PLC y alta eficiencia térmica.",
+    "product6Title": "Recipientes a Presión",
+    "product6Desc": "Recipientes a presión diseñados a medida que cumplen con ASME, PED y otros estándares internacionales.",
+    "serviceSupport": "Servicio y Soporte",
+    "service1Title": "Consulta Pre-Venta",
+    "service1Desc": "Consulta técnica experta para ayudarle a elegir la solución adecuada para sus necesidades.",
+    "service2Title": "Diseño Personalizado",
+    "service2Desc": "Soluciones a medida diseñadas para cumplir con sus requisitos específicos y regulaciones locales.",
+    "service3Title": "Soporte de Instalación",
+    "service3Desc": "Guía de instalación profesional y soporte en el sitio de nuestros técnicos experimentados.",
+    "service4Title": "Servicio Post-Venta",
+    "service4Desc": "Garantía completa, soporte de mantenimiento y suministro de repuestos para una fiabilidad a largo plazo.",
+    "facilities": "Nuestras Instalaciones de Fabricación",
+    "facilitiesDesc": "Nuestra instalación de 60,000 metros cuadrados alberga líneas de producción avanzadas, laboratorios de pruebas de calidad y un centro de I+D dedicado, asegurando que entregamos productos de la más alta calidad.",
+    "facility1Title": "Taller de Producción",
+    "facility1Desc": "Líneas de producción modernas con equipos de soldadura automatizados, centros de mecanizado CNC y estaciones de montaje de precisión. Capaz de producir más de 5,000 toneladas de calderas anualmente.",
+    "facility2Title": "Laboratorio de Pruebas de Calidad",
+    "facility2Desc": "Laboratorio de pruebas totalmente equipado con pruebas de presión hidráulica, pruebas ultrasónicas, inspección radiográfica y equipos de análisis de materiales para garantizar la calidad del producto.",
+    "facility3Title": "Centro de I+D",
+    "facility3Desc": "Instalación de I+D de última generación con sistemas CAD/CAM, equipos de prueba de eficiencia térmica y un equipo de ingenieros experimentados que desarrollan soluciones innovadoras.",
+    "facility4Title": "Almacenamiento de Materiales",
+    "facility4Desc": "Área de almacenamiento de materiales organizada con estricto control de calidad, asegurando que todas las materias primas cumplan con los estándares internacionales antes de entrar en producción.",
+    "facility5Title": "Área de Montaje",
+    "facility5Desc": "Espaciosa área de montaje para el ensamblaje de calderas a gran escala, equipada con grúas aéreas y herramientas de montaje profesionales para una producción eficiente.",
+    "facility6Title": "Control de Calidad",
+    "facility6Desc": "Sistema integral de control de calidad con puntos de inspección de múltiples etapas, asegurando que cada producto cumpla o supere los estándares de la industria antes de la entrega."
+  }
+}

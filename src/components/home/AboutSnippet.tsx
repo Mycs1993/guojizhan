@@ -1,6 +1,7 @@
 import { Link } from "@/i18n/routing";
 import { CheckCircle } from "lucide-react";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 export function AboutSnippet() {
   const t = useTranslations('HomePage.About');
@@ -21,11 +22,15 @@ export function AboutSnippet() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:w-1/2">
-            {/* Placeholder for About Image */}
-            <div className="bg-slate-200 rounded-xl overflow-hidden min-h-[400px] relative">
-              <div className="absolute inset-0 flex items-center justify-center text-slate-400 font-medium">
-                Factory Image Placeholder (600x400)
-              </div>
+            {/* About Image */}
+            <div className="rounded-xl overflow-hidden shadow-xl relative min-h-[400px]">
+              <Image 
+                src="/images/about/factory-main.jpg"
+                alt="Yudong Boiler Factory"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
             </div>
           </div>
 

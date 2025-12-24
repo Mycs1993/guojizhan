@@ -12,7 +12,7 @@ export function ContactForm() {
     subject: "",
     message: ""
   });
-  
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -43,7 +43,7 @@ export function ContactForm() {
       console.log("=== RESPONSE DATA ===", responseData);
 
       if (!res.ok) {
-        throw new Error(responseData.error || "Failed to send message");
+        throw new Error(responseData.error || `Server Error: ${res.status}`);
       }
 
       console.log("=== SUCCESS ===");
@@ -51,7 +51,7 @@ export function ContactForm() {
       setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
     } catch (err) {
       console.error("=== ERROR ===", err);
-      setError("Failed to send message. Please try again later or contact us directly by email.");
+      setError(err instanceof Error ? err.message : "Failed to send message.");
     } finally {
       setIsSubmitting(false);
     }
@@ -96,13 +96,13 @@ export function ContactForm() {
             </div>
           </div>
           <div className="bg-slate-200 rounded-xl h-64 overflow-hidden shadow-sm border border-slate-200">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3358.3768!2d115.000613!3d33.947227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzPCsDU2JzUwLjAiTiAxMTXCsDAwJzAyLjIiRQ!5e0!3m2!1sen!2scn!4v1709825421039!5m2!1sen!2scn" 
-              width="100%" 
-              height="100%" 
-              style={{border:0}} 
-              allowFullScreen={true} 
-              loading="lazy" 
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3358.3768!2d115.000613!3d33.947227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzPCsDU2JzUwLjAiTiAxMTXCsDAwJzAyLjIiRQ!5e0!3m2!1sen!2scn!4v1709825421039!5m2!1sen!2scn"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen={true}
+              loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               title="Henan Yudong Boiler Factory Map"
             />
@@ -131,8 +131,16 @@ export function ContactForm() {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 {error && (
-                  <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm">
-                    {error}
+                  <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm mb-4">
+                    <p className="font-semibold">Failed to send:</p>
+                    <p>{error}</p>
+                    <button
+                      type="button"
+                      onClick={handleSubmit}
+                      className="mt-2 text-sm font-medium underline hover:text-red-800"
+                    >
+                      Try Again
+                    </button>
                   </div>
                 )}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

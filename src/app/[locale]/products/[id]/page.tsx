@@ -104,17 +104,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                   </table>
                 </div>
 
-                {/* Download Section - could be localized properly later */}
-                <div className="bg-blue-50 p-6 rounded-xl border border-blue-100 flex flex-col sm:flex-row items-center justify-between gap-4">
-                  <div>
-                    <h4 className="font-bold text-blue-900 mb-1">Download Technical Catalog</h4>
-                    <p className="text-sm text-blue-700">Detailed parameters, drawings and installation guide.</p>
-                  </div>
-                  <button className="flex items-center gap-2 bg-blue-600 text-white px-5 py-2.5 rounded-lg hover:bg-blue-700 transition-colors font-medium text-sm whitespace-nowrap shadow-sm">
-                    <Download size={18} />
-                    Download PDF
-                  </button>
-                </div>
+                {/* Download Section removed per request */}
               </div>
             </div>
 

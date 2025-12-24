@@ -92,7 +92,7 @@ export default function PageSEOEditor({ params }: { params: Promise<{ slug: stri
         <div className="bg-white rounded-lg border p-6">
           <h3 className="text-sm font-semibold text-slate-600 mb-4">Google 搜索预览</h3>
           <div className="border rounded-lg p-4 bg-slate-50">
-            <div className="text-sm text-green-700 mb-1">https://www.yudongboiler.com/{slug === "home" ? "" : slug}</div>
+            <div className="text-sm text-green-700 mb-1">https://gljyw.top/{slug === "home" ? "" : slug}</div>
             <h4 className="text-xl text-blue-800 mb-1 line-clamp-1">{formData.title || "页面标题"}</h4>
             <p className="text-sm text-slate-600 line-clamp-2">{formData.description || "页面描述..."}</p>
           </div>

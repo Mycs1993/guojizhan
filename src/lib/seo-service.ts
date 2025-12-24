@@ -20,7 +20,7 @@ const DEFAULT_CONFIG: SEOConfig = {
     defaultTitle: "Professional Boiler Manufacturer",
     defaultDescription: "Leading industrial boiler manufacturer in China.",
     defaultKeywords: ["industrial boiler", "steam boiler"],
-    baseUrl: "https://www.yudongboiler.com",
+    baseUrl: "https://gljyw.top",
   },
   pages: {},
   keywords: [],

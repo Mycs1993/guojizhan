@@ -1,25 +1,53 @@
 "use client";
 
-import { useState, useTransition } from "react";
-import { Menu, X, Phone, Mail, Globe } from "lucide-react";
+import { useState, useTransition, useRef, useEffect } from "react";
+import { Menu, X, Phone, Mail, Globe, ChevronDown } from "lucide-react";
 import { COMPANY_INFO } from "@/data/company";
 import { Link, usePathname, useRouter } from "@/i18n/routing";
 import { useLocale, useTranslations } from "next-intl";
 
+const languages = [
+  { code: 'en', label: 'English', flag: '🇺🇸' },
+  { code: 'zh', label: '中文', flag: '🇨🇳' },
+  { code: 'es', label: 'Español', flag: '🇪🇸' },
+  { code: 'fr', label: 'Français', flag: '🇫🇷' },
+  { code: 'de', label: 'Deutsch', flag: '🇩🇪' },
+  { code: 'ru', label: 'Русский', flag: '🇷🇺' },
+  { code: 'ar', label: 'العربية', flag: '🇸🇦' },
+];
+
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
+  const langMenuRef = useRef<HTMLDivElement>(null);
   const t = useTranslations('Navigation');
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
   const [isPending, startTransition] = useTransition();
 
-  const handleLocaleChange = () => {
-    const nextLocale = locale === 'en' ? 'zh' : 'en';
+  const handleLanguageChange = (newLocale: string) => {
     startTransition(() => {
-      router.replace(pathname, { locale: nextLocale });
+      router.replace(pathname, { locale: newLocale });
     });
+    setIsLangMenuOpen(false);
+    setIsOpen(false);
   };
+
+  const currentLanguage = languages.find(l => l.code === locale) || languages[0];
+
+  // Close language menu when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (langMenuRef.current && !langMenuRef.current.contains(event.target as Node)) {
+        setIsLangMenuOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const navLinks = [
     { href: "/", label: t('home') },
@@ -44,15 +72,32 @@ export function Header() {
               <span>{COMPANY_INFO.email}</span>
             </div>
           </div>
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-4 relative" ref={langMenuRef}>
             <button
-              onClick={handleLocaleChange}
+              onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
               disabled={isPending}
-              className="flex items-center space-x-1 cursor-pointer hover:text-blue-400 transition-colors"
+              className="flex items-center space-x-2 cursor-pointer hover:text-blue-400 transition-colors py-1"
             >
               <Globe size={16} />
-              <span>{locale === 'en' ? 'English' : '中文'}</span>
+              <span>{currentLanguage.label}</span>
+              <ChevronDown size={14} className={`transition-transform duration-200 ${isLangMenuOpen ? 'rotate-180' : ''}`} />
             </button>
+
+            {/* Language Dropdown */}
+            {isLangMenuOpen && (
+              <div className="absolute top-full right-0 mt-2 w-48 bg-white text-slate-900 rounded-md shadow-lg border border-slate-100 py-2 z-50">
+                {languages.map((lang) => (
+                  <button
+                    key={lang.code}
+                    onClick={() => handleLanguageChange(lang.code)}
+                    className={`w-full text-left px-4 py-2 text-sm hover:bg-slate-50 flex items-center space-x-3 ${locale === lang.code ? 'text-blue-600 bg-blue-50 font-bold' : 'text-slate-900 hover:text-blue-600'}`}
+                  >
+                    <span className="text-lg">{lang.flag}</span>
+                    <span>{lang.label}</span>
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -122,13 +167,24 @@ export function Header() {
             >
               {t('contact')}
             </Link>
+            <div className="border-t border-slate-100 pt-4 mt-2">
+              <div className="flex items-center space-x-2 text-slate-900 mb-3 px-2">
+                <Globe size={16} />
+                <span className="font-bold">Language</span>
+              </div>
+              <div className="grid grid-cols-2 gap-2">
+                {languages.map((lang) => (
             <button
-              onClick={handleLocaleChange}
-              className="flex items-center justify-center space-x-2 text-slate-600 py-2 border-t border-slate-100 mt-2"
+                    key={lang.code}
+                    onClick={() => handleLanguageChange(lang.code)}
+                    className={`flex items-center space-x-2 px-3 py-2 rounded-md text-sm ${locale === lang.code ? 'bg-blue-50 text-blue-600 font-bold' : 'text-slate-900 hover:bg-slate-50'}`}
             >
-              <Globe size={16} />
-              <span>{locale === 'en' ? 'Switch to Chinese' : 'Switch to English'}</span>
+                    <span>{lang.flag}</span>
+                    <span>{lang.label}</span>
             </button>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       )}

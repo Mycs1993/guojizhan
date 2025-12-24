@@ -1,7 +1,12 @@
-import Link from "next/link";
+"use client";
+
 import { ArrowRight } from "lucide-react";
+import { Link } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 
 export function CTASection() {
+  const t = useTranslations('CTASection');
+
   return (
     <section className="bg-blue-700 relative overflow-hidden py-20">
       {/* Abstract Background Shapes */}
@@ -10,19 +15,18 @@ export function CTASection() {
 
       <div className="container mx-auto px-4 relative z-10 text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-          Ready to Upgrade Your Industrial Heating System?
+          {t('title')}
         </h2>
         <p className="text-blue-100 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-          Get a customized energy-saving solution proposal from our senior engineers within 24 hours. 
-          Maximize efficiency and minimize costs today.
+          {t('description')}
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link 
-            href="/contact" 
+          <Link
+            href="/contact"
             className="inline-flex items-center justify-center gap-2 bg-white text-blue-700 font-bold text-lg px-8 py-4 rounded-lg hover:bg-blue-50 transition-colors shadow-lg"
           >
-            Get Free Quote
+            {t('getQuote')}
             <ArrowRight size={20} />
           </Link>
           <a 
@@ -31,12 +35,12 @@ export function CTASection() {
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-white text-white font-bold text-lg px-8 py-4 rounded-lg hover:bg-white/10 transition-colors"
           >
-            WhatsApp Us
+            {t('whatsapp')}
           </a>
         </div>
         
         <p className="mt-6 text-blue-200 text-sm">
-          No obligation quote • 24/7 Technical Support • Worldwide Shipping
+          {t('features')}
         </p>
       </div>
     </section>

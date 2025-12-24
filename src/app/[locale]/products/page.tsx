@@ -15,7 +15,7 @@ const IconMap: Record<string, any> = {
   "Container": Container,
 };
 
-const baseUrl = "https://www.yudongboiler.com";
+const baseUrl = "https://gljyw.top";
 
 export const metadata: Metadata = {
   title: "Industrial Boilers & Pressure Vessels",

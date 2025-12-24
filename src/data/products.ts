@@ -24,6 +24,193 @@ export interface Product {
 
 export const PRODUCT_CATEGORIES: Product[] = [
   {
+    id: "wns-low-nox-hot-water",
+    name: {
+      en: "WNS Low-NOx Condensing Gas Hot Water Boiler",
+      zh: "WNS 低氮冷凝燃气热水锅炉",
+    },
+    description: {
+      en: "Low-NOx condensing hot water boiler with three-pass wet-back structure and built‑in condenser. Efficiency up to ≥99%, designed for ultra‑low NOx emission (≤30mg/Nm³).",
+      zh: "采用三回程全湿背结构并内置冷凝器的低氮燃气热水锅炉，热效率可达 ≥99%，满足 NOx ≤30mg 超低氮排放要求。",
+    },
+    fullDescription: {
+      en: "The WNS low-NOx condensing hot water boiler adopts a mature three-pass full wet-back structure with a large front smoke box. Equipped with a low-NOx burner, large furnace chamber and high-efficiency threaded smoke tubes, combined with FGR flue gas recirculation or fully premixed surface combustion technology, it effectively reduces flame temperature in the high-temperature zone and controls NOx formation, meeting ultra-low emission requirements (NOx ≤ 30 mg/Nm³). The large-diameter corrugated furnace provides sufficient combustion space and absorbs thermal expansion, with large water volume and strong load adaptability. The rear section is fitted with a built-in condenser made of ND steel spiral fin tubes to increase heating surface, fully recover exhaust heat, lower flue gas temperature, and improve overall efficiency. The boiler body uses high-quality insulation and cold-formed steel casing with a rigid frame and removable decorative panels, resulting in a modern appearance and minimal heat loss.",
+      zh: "WNS 低氮冷凝热水锅炉采用成熟的三回程全湿背式结构，大开启前烟箱设计，配置低氮燃烧机配合大炉膛及高效传热螺纹烟管，并可采用烟气外循环（FGR）或全预混表面燃烧技术，有效降低炉膛火焰高温区温度，控制 NOx 浓度上升，经测试可满足 NOx ≤30mg 的超低氮排放标准。锅炉燃烧室由大直径全波纹炉胆组成，燃烧空间大、燃料燃烧充分，辐射受热面积大；锅壳直径大、水容量大，对负荷变化适应能力强、出力稳定。尾部设置内置冷凝器，采用耐低温腐蚀 ND 钢螺旋翅片管，在有限空间内增加传热面积，充分吸收尾部烟气热量，降低排烟温度、提高锅炉热效率，且内置式结构不占用锅炉房面积。本体外表面采用硅酸铝保温并配合高强度冷拉板骨架及可拆卸装饰盖，整体造型美观新颖、散热损失小。",
+    },
+    image: "/images/products/wns-boiler-real.jpg",
+    icon: "Leaf",
+    features: [
+      {
+        en: "Ultra-low NOx emission (≤30 mg/Nm³) with FGR or fully premixed combustion",
+        zh: "配合 FGR 或全预混燃烧技术，NOx 排放 ≤30mg/Nm³，满足超低氮标准",
+      },
+      {
+        en: "Three-pass full wet-back design with large corrugated furnace",
+        zh: "三回程全湿背结构，大直径波纹炉胆，燃烧空间大、燃烧充分",
+      },
+      {
+        en: "Built-in ND steel finned-tube condenser, efficiency up to ≥99%",
+        zh: "尾部内置 ND 钢螺旋翅片管冷凝器，综合热效率可达 ≥99%",
+      },
+      {
+        en: "Large water volume and strong load adaptability, stable output",
+        zh: "锅壳直径大、水容量大，对负荷变化适应能力强、出力稳定",
+      },
+      {
+        en: "High-quality insulation and casing with low heat loss and modern appearance",
+        zh: "硅酸铝保温配合冷拉板骨架与可拆装面板，散热损失小、整体造型美观",
+      },
+    ],
+    specs: [
+      {
+        model: "WNS-0.35MW-LN",
+        capacity: "0.35 MW",
+        pressure: "—",
+        efficiency: "≥99%",
+        fuel: "Natural gas / LNG",
+      },
+      {
+        model: "WNS-0.7MW-LN",
+        capacity: "0.7 MW",
+        pressure: "—",
+        efficiency: "≥99%",
+        fuel: "Natural gas / LNG",
+      },
+      {
+        model: "WNS-1.4MW-LN",
+        capacity: "1.4 MW",
+        pressure: "—",
+        efficiency: "≥99%",
+        fuel: "Natural gas / LNG",
+      },
+      {
+        model: "WNS-2.8MW-LN",
+        capacity: "2.8 MW",
+        pressure: "—",
+        efficiency: "≥99%",
+        fuel: "Natural gas / LNG",
+      },
+      {
+        model: "WNS-4.2MW-LN",
+        capacity: "4.2 MW",
+        pressure: "—",
+        efficiency: "≥99%",
+        fuel: "Natural gas / LNG",
+      },
+      {
+        model: "WNS-7.0MW-LN",
+        capacity: "7.0 MW",
+        pressure: "—",
+        efficiency: "≥99%",
+        fuel: "Natural gas / LNG",
+      },
+      {
+        model: "WNS-10.5MW-LN",
+        capacity: "10.5 MW",
+        pressure: "—",
+        efficiency: "≥99%",
+        fuel: "Natural gas / LNG",
+      },
+      {
+        model: "WNS-14MW-LN",
+        capacity: "14 MW",
+        pressure: "—",
+        efficiency: "≥99%",
+        fuel: "Natural gas / LNG",
+      },
+    ],
+  },
+  {
+    id: "wns-hot-water-boiler",
+    name: {
+      en: "WNS Series Oil/Gas Fired Hot Water Boiler",
+      zh: "WNS 卧式燃油/燃气承压热水锅炉"
+    },
+    description: {
+      en: "Horizontal internal-combustion three-pass pressurized hot water boiler for gas and oil with high efficiency and wide application range.",
+      zh: "全自动燃油/燃气卧式内燃三回程承压热水锅炉，热效率高，适用于采暖及生活热水等多种应用场景。"
+    },
+    fullDescription: {
+      en: "The WNS series pressurized hot water boiler is a fully-automatic horizontal internal-combustion three-pass fire tube boiler. It adopts a corrugated furnace and wet-back structure to absorb thermal expansion and enhance heat transfer. The large water volume and sufficient heating surface ensure stable output and high efficiency. It is widely used for heating and domestic hot water in hotels, hospitals, office buildings, resorts, residential communities, and industrial processes in cold and plateau regions.",
+      zh: "WNS 卧式燃油/燃气承压热水锅炉为全自动卧式内燃三回程火管锅炉，采用下置波纹炉胆和湿背结构，本体所有管子与锅筒及管板均为焊接连接。前烟箱为快开结构，后部设有集防爆与检查于一体的防爆门。锅壳直径大、水容量大，受热面积充足，排烟温度低、热损失小，保证出力足、效率高，对负荷变化适应能力强，广泛应用于高原及严寒地区的企业、宾馆、医院、写字楼、游泳馆、汤泉、住宅、酒店、洗浴中心、学校、商场等采暖及生活热水系统。"
+    },
+    image: "/images/products/wns-boiler.png",
+    icon: "Flame",
+    features: [
+      {
+        en: "Horizontal three-pass wet-back pressurized hot water boiler",
+        zh: "卧式三回程湿背结构承压热水锅炉"
+      },
+      {
+        en: "Corrugated furnace and threaded tubes to reduce thermal stress and enhance heat transfer",
+        zh: "波纹炉胆 + 螺纹烟管设计，强化传热并吸收热胀冷缩"
+      },
+      {
+        en: "Stainless steel outer casing with improved corrosion resistance",
+        zh: "不锈钢外包装，抗腐蚀性能更佳"
+      },
+      {
+        en: "Multiple protections: leakage, low water level, over‑pressure and safety interlocks",
+        zh: "漏电保护、缺水保护、防爆门等多重安全联锁保护"
+      },
+      {
+        en: "Large water volume and strong load adaptability, suitable for district heating",
+        zh: "水容量大、适应负荷变化能力强，适合集中供暖系统"
+      }
+    ],
+    specs: [
+      {
+        model: "WNS0.7-0.7/95/70-Y/Q",
+        capacity: "0.7 MW",
+        pressure: "0.7 MPa",
+        efficiency: "≈90.6%",
+        fuel: "Gas/Oil"
+      },
+      {
+        model: "WNS1.4-0.7/95/70-Y/Q",
+        capacity: "1.4 MW",
+        pressure: "0.7 MPa",
+        efficiency: "≈90.4%",
+        fuel: "Gas/Oil"
+      },
+      {
+        model: "WNS2.8-1.0/95/70-Y/Q",
+        capacity: "2.8 MW",
+        pressure: "1.0 MPa",
+        efficiency: "≈90.6%",
+        fuel: "Gas/Oil"
+      },
+      {
+        model: "WNS4.2-1.0/95/70-Y/Q",
+        capacity: "4.2 MW",
+        pressure: "1.0 MPa",
+        efficiency: "≈90.8%",
+        fuel: "Gas/Oil"
+      },
+      {
+        model: "WNS7.0-1.0/95/70-Y/Q",
+        capacity: "7.0 MW",
+        pressure: "1.0 MPa",
+        efficiency: "≈94.2%",
+        fuel: "Gas/Oil"
+      },
+      {
+        model: "WNS10.5-1.25/115/70-Y/Q",
+        capacity: "10.5 MW",
+        pressure: "1.25 MPa",
+        efficiency: "≈93.5%",
+        fuel: "Gas/Oil"
+      },
+      {
+        model: "WNS14-1.25/115/70-Y/Q",
+        capacity: "14 MW",
+        pressure: "1.25 MPa",
+        efficiency: "≈93.1%",
+        fuel: "Gas/Oil"
+      }
+    ]
+  },
+  {
     id: "wns-oil-gas-boiler",
     name: {
       en: "WNS Series Oil/Gas Fired Steam Boiler",
@@ -201,6 +388,222 @@ export const PRODUCT_CATEGORIES: Product[] = [
     specs: [
       { model: "LSH0.5-0.7-T", capacity: "0.5 t/h", pressure: "0.7 MPa", efficiency: "86%", fuel: "Biomass" },
       { model: "LSH1.0-0.7-T", capacity: "1.0 t/h", pressure: "0.7 MPa", efficiency: "86%", fuel: "Biomass" }
+    ]
+  },
+  {
+    id: "commercial-low-nox-mold-temp",
+    name: {
+      en: "Commercial Low-NOx Oil/Gas Mold Temperature Controller",
+      zh: "商用低氮燃油/气模温机"
+    },
+    description: {
+      en: "New type boiler product with air preheater, reducing flue gas temperature to around 120°C. Thermal efficiency up to 95%+.",
+      zh: "新型锅炉产品，利用空气预热器将排烟温度降至120°C左右、助燃风温度预热到100°C以上，热效率可高达95%以上。"
+    },
+    fullDescription: {
+      en: "Oil/gas mold temperature controller is a new type boiler product designed to address the high flue gas temperature issue of small gas thermal oil furnaces. It uses an air preheater to reduce flue gas temperature to around 120°C and preheat combustion air to above 100°C, achieving thermal efficiency of 95%+. Thermal oil replaces steam for heating, with low heat loss, precise temperature control, and high system thermal utilization. It is a safe, efficient, and energy-saving heating equipment.",
+      zh: "燃油/气模温机是新型锅炉产品，该产品针对小型燃气导热油炉排烟温度过高的缺点，利用空气预热器将排烟温度降至120°C左右、助燃风温度预热到100°C以上，热效率可高达95%以上。导热油替代蒸汽供热，热损失小，供热温度可精确控制，并且能对介质运行进行高精密控制工作，系统热利用率高，运行维修方便，是一种安全、高效、节能的供热设备。"
+    },
+    image: "/images/products/commercial-low-nox-mold-temp.jpg",
+    icon: "Thermometer",
+    features: [
+      {
+        en: "Quick Installation: Skid-mounted design, complete assembly of furnace body, air preheater, gas burner, PLC control system, circulation pump, expansion tank, filter, oil-gas separator, etc.",
+        zh: "安装快:撬装式出厂，将炉本体、空气预热器、燃气燃烧器、PLC控制系统、循环泵、膨胀罐、过滤器、油气分离器等整体组装，现场接气、电、导热油进出口即可;"
+      },
+      {
+        en: "Labor Saving: PLC control, one-button operation, unattended operation, no need for specialized boiler operator",
+        zh: "人工省:PLC控制，一键操作，可无人值守，可不需要专门司炉工;"
+      },
+      {
+        en: "Space Saving: Highly integrated, skid-mounted assembly, low heat loss and pipe resistance, saves space",
+        zh: "占地小:高度集成，撬装装配，热损和管阻小，节省场地;"
+      },
+      {
+        en: "Dual Coil Furnace Body: Fast flow rate, sufficient output, low resistance",
+        zh: "双盘管炉体:流速快、出力足、阻力小;"
+      },
+      {
+        en: "Original Imported Gas Components: High efficiency, excellent quality, few failures, long service life",
+        zh: "原装进口燃气组件:效率高、质量优、故障少、寿命长;"
+      }
+    ],
+    specs: [
+      { model: "YY(Q)W-60Y(Q)", capacity: "60 kW", pressure: "1.2 MPa", efficiency: "93%", fuel: "Gas/Oil" },
+      { model: "YY(Q)W-100Y(Q)", capacity: "100 kW", pressure: "1.2 MPa", efficiency: "93%", fuel: "Gas/Oil" },
+      { model: "YY(Q)W-240Y(Q)", capacity: "240 kW", pressure: "1.2 MPa", efficiency: "93%", fuel: "Gas/Oil" },
+      { model: "YY(Q)W-350Y(Q)", capacity: "350 kW", pressure: "1.2 MPa", efficiency: "93%", fuel: "Gas/Oil" },
+      { model: "YY(Q)W-500Y(Q)", capacity: "500 kW", pressure: "1.2 MPa", efficiency: "93%", fuel: "Gas/Oil" },
+      { model: "YY(Q)W-700Y(Q)", capacity: "700 kW", pressure: "1.2 MPa", efficiency: "93%", fuel: "Gas/Oil" }
+    ]
+  },
+  {
+    id: "cwdr-electric-hot-water",
+    name: {
+      en: "CWDR Series Horizontal Electric Hot Water Boiler",
+      zh: "CWDR 卧式电加热热水锅炉"
+    },
+    description: {
+      en: "Fully automatic electric hot water boiler with PLC control. Novel design, compact structure, efficient energy conversion.",
+      zh: "全自动电加热热水锅炉采用PLC控制，设计新颖，结构紧凑，通过全新的电热元件排列组合加热方式，实现了能量的高效转换。"
+    },
+    fullDescription: {
+      en: "CWDR series fully automatic electric hot water boiler adopts PLC (Programmable Logic Controller) control with novel design and compact structure. Through a new arrangement of electric heating elements, it achieves efficient energy conversion and provides high-quality hot water. The boiler body and electrical control cabinet are separated to avoid aging of electrical components due to heat, extending service life. Electric heating tubes are selected from high-quality domestic and imported products with normal service life of about 20,000 hours and thermal efficiency of nearly 99%. Operation is quiet and clean, meeting environmental requirements.",
+      zh: "CWDR系列全自动电加热热水锅炉采用PLC(可编程逻辑控制器)控制，设计新颖，结构紧凑，通过全新的电热元件排列组合加热方式，实现了能量的高效转换，提供优质的热水。采用炉体电控制柜分离方式，避免了电器元件受热老化而影响使用寿命。电热管选用国内外优质产品、正常使用寿命约20000小时，热效率近99%，运行安静、清洁，符合环保的要求，是真正的绿色环保节能型产品，不会向大气排放NOx(氮氧化合物)。"
+    },
+    image: "/images/products/cwdr-electric-hot-water.jpg",
+    icon: "Zap",
+    features: [
+      {
+        en: "Horizontal package electric hot water boiler with electric heating tubes arranged at both ends, advanced and reasonable structure",
+        zh: "卧式快装电加热热水锅炉，电热管左右两端布置，结构先进合理。且满水运行，保证电热管所产生的热量能及时传导，使之得到充分的冷却，从而延长其寿命，并提高锅炉的热效率;亦能有效地减少热水带气，提高出口热水的品质。"
+      },
+      {
+        en: "Multiple automatic alarms and interlock protection functions: high/low water level, water shortage, overcurrent, short circuit, phase loss, leakage, etc., safe and reliable operation",
+        zh: "具有高低水位、缺水、过流、短路、缺相、漏电等自动报警及多重联锁保护功能，运行安全可靠。"
+      },
+      {
+        en: "High-quality electric heating elements with low surface load, good heat transfer effect, long service life",
+        zh: "采用优质电加热元件，表面负荷低，换热效果好，使用寿命长。"
+      },
+      {
+        en: "Electric heating elements automatically add or subtract according to set load parameters, achieving balanced operation",
+        zh: "电热元件按设置的负荷参数，依据大小自动加减，实现均衡工作。"
+      },
+      {
+        en: "PLC fully automatic control: automatic pressure regulation, automatic water supply, timed automatic start/stop, manual emergency operation available",
+        zh: "PLC全自动控制：可实现自动调压，自动补水，定时自动启停，又可手动应急操作，使用方便可靠。"
+      }
+    ],
+    specs: [
+      { model: "CWDR0.21", capacity: "0.21 MW", pressure: "—", efficiency: "98%", fuel: "Electric" },
+      { model: "CWDR0.5", capacity: "0.5 MW", pressure: "—", efficiency: "98%", fuel: "Electric" },
+      { model: "CWDR0.7", capacity: "0.7 MW", pressure: "—", efficiency: "98%", fuel: "Electric" },
+      { model: "CWDR1", capacity: "1 MW", pressure: "—", efficiency: "98%", fuel: "Electric" },
+      { model: "CWDR2.1", capacity: "2.1 MW", pressure: "—", efficiency: "98%", fuel: "Electric" },
+      { model: "CWDR2.8", capacity: "2.8 MW", pressure: "—", efficiency: "98%", fuel: "Electric" }
+    ]
+  },
+  {
+    id: "wdr-electric-steam",
+    name: {
+      en: "WDR Series Horizontal Electric Steam Boiler",
+      zh: "WDR 型卧式电加热蒸汽锅炉"
+    },
+    description: {
+      en: "Horizontal electric steam boiler with PLC control. Efficient energy conversion, provides high-quality saturated steam.",
+      zh: "卧式电加热蒸汽锅炉采用PLC控制，通过全新的电热元件排列组合加热方式，实现能量的高效转换，提供优质饱和蒸汽。"
+    },
+    fullDescription: {
+      en: "WDR series horizontal electric steam boiler adopts PLC (Programmable Logic Controller) control. Through a new arrangement of electric heating elements, it achieves efficient energy conversion and provides high-quality saturated steam. The boiler body and electrical control cabinet are separated to avoid aging of electrical components due to heat. Each group of electric heating elements adopts centralized bundle-type flange connection, independently set, with simple structure, high mechanical strength, safety and reliability, convenient replacement, and long service life.",
+      zh: "WDR型卧式电加热蒸汽锅炉采用PLC(可编程逻辑控制器)控制，通过全新的电热元件排列组合加热方式，实现能量的高效转换，提供优质饱和蒸汽。采用炉体电控制柜分离方式，避免了电器元件受热老化而影响使用寿命。该锅炉的每组电热元件采用集中束型法兰连接，独立设置，具有结构简单，机械强度高，安全可靠，更换方便，使用寿命长。"
+    },
+    image: "/images/products/wdr-electric-steam.jpg",
+    icon: "Zap",
+    features: [
+      {
+        en: "Horizontal package design with electric heating tubes arranged at front and rear ends, advanced and reasonable structure. Large steam and water space ensures timely heat conduction, full cooling, extended life, and improved thermal efficiency",
+        zh: "卧式快装，电热管前后两端布置，结构先进合理。且汽、水空间大，保证电热管所产生的热量能及时传导，使之得到充分的冷却，从而延长其寿命，并提高锅炉的热效率;亦能有效地减少饱和蒸汽的带水，提高蒸汽的品质。"
+      },
+      {
+        en: "Multiple automatic alarms and interlock protection: overpressure, high/low water level, water shortage, overcurrent, short circuit, phase loss, leakage, etc., safe and reliable operation",
+        zh: "具有超压、高低水位、缺水、过流、短路、缺相、漏电等自动报警及多重联锁保护功能，运行安全可靠。"
+      },
+      {
+        en: "High-quality electric heating elements with low surface load, good heat transfer effect, long service life",
+        zh: "采用优质电加热元件，表面负荷低，换热效果好，使用寿命长。"
+      },
+      {
+        en: "Electric heating elements automatically add or subtract according to set load parameters, achieving balanced operation",
+        zh: "电热元件按设置的负荷参数，依据大小自动加减，实现均衡工作。"
+      },
+      {
+        en: "PLC fully automatic control: automatic pressure regulation, automatic water supply, timed automatic start/stop, manual emergency operation available",
+        zh: "PLC全自动控制：可实现自动调压，自动补水，定时自动启停，又可手动应急操作，使用方便可靠。"
+      }
+    ],
+    specs: [
+      { model: "Custom", capacity: "—", pressure: "—", efficiency: "—", fuel: "Electric" }
+    ]
+  },
+  {
+    id: "commercial-low-nox-condensing-hot-water",
+    name: {
+      en: "Commercial Low-NOx Condensing Hot Water Boiler",
+      zh: "商用低氮冷凝热水锅炉"
+    },
+    description: {
+      en: "Commercial low-NOx condensing hot water boiler with silicon-aluminum main heat exchanger. Integrated combustion chamber, flue, and water channel.",
+      zh: "商用低氮冷凝热水锅炉其核心部件主热交换器的材质为硅铝，集燃烧室、烟道、水道于一体。"
+    },
+    fullDescription: {
+      en: "Commercial low-NOx condensing hot water boiler's core component is the main heat exchanger made of silicon-aluminum, integrating combustion chamber, flue, and water channel. The cast aluminum heat exchanger has good corrosion resistance. Within a limited volume, the columnar heat absorption columns have a large heat exchange area. The combustion chamber and outlet are located above the main heat exchanger, with water inlet at the bottom. Water flows from bottom to top with gradually increasing temperature, while flue gas flows from top to bottom with gradually decreasing temperature, ensuring counter-flow heat exchange at every point.",
+      zh: "商用低氮冷凝热水锅炉其核心部件主热交换器的材质为硅铝，集燃烧室、烟道、水道于一体。铸铝热交换器具有良好的抗腐蚀性能，在有限的体积内，柱态的吸热柱具有较大的换热面积。燃烧室及出口位于主热交换器上方，进水口位于底部，水流自下而上温度逐渐逐渐增加，烟气自上而下温度逐渐递减，逆向流动以保证换热器中的每个点都能进行充分换热，吸收烟气中显热和大部分水蒸汽潜热，有限的降低排烟温度，使烟气中的水蒸气饱和析出，达到真正高效、节能、环保的目的。"
+    },
+    image: "/images/products/commercial-low-nox-condensing-hot-water.jpg",
+    icon: "Leaf",
+    features: [],
+    specs: [
+      { model: "Custom", capacity: "—", pressure: "—", efficiency: "—", fuel: "Gas/Oil" }
+    ]
+  },
+  {
+    id: "dzh-biomass-chain-grate",
+    name: {
+      en: "DZH Single Drum Vertical Quick-load Moving Grate Boiler",
+      zh: "DZH 单锅筒纵置式快装活动炉排锅炉"
+    },
+    description: {
+      en: "Horizontal three-pass water-fire tube boiler. Uses biomass fuel made from agricultural and forestry waste.",
+      zh: "卧式三回程水火管式锅炉。燃料是农林废物作为原材料，经过粉碎、混合、挤压、烘干等工艺制成的生物质燃料。"
+    },
+    fullDescription: {
+      en: "DZH single drum vertical moving grate boiler is a horizontal three-pass water-fire tube boiler. The fuel is biomass fuel made from agricultural and forestry waste as raw materials, processed through crushing, mixing, extrusion, and drying to form various shapes (such as blocks, pellets, etc.) that can be directly burned. It does not require uniform feeding and can choose manual or mechanical feeding according to fuel characteristics.",
+      zh: "DZH单锅筒纵置式活动炉排锅炉是一种卧式三回程水火管式锅炉。锅炉的燃料是农林废物作为原材料，经过粉碎、混合、挤压、烘干等工艺，制成各种成型(如块状、颗粒状等)的，可直接燃烧的一种新型清洁燃料生物质燃料。不要求均匀给料，可根据燃料特效可选择人工给料和机械给料的方式。"
+    },
+    image: "/images/products/dzh-biomass-chain-grate.jpg",
+    icon: "Leaf",
+    features: [
+      {
+        en: "According to fuel characteristics, manual or mechanical feeding can be selected",
+        zh: "根据燃料特性，采用人工给料或机械给料方式。"
+      },
+      {
+        en: "By adjusting the controlled secondary air volume, the combustion ignition speed can be controlled",
+        zh: "通过调整控速二次风量，可控制燃烧引燃速度。"
+      },
+      {
+        en: "Long wood strips (L≤2M) can be burned without crushing",
+        zh: "长木条(L≤2M)无需破碎即可燃烧。"
+      },
+      {
+        en: "Uniform feeding is not required",
+        zh: "不要求给料均匀。"
+      }
+    ],
+    specs: [
+      { model: "Custom", capacity: "—", pressure: "—", efficiency: "—", fuel: "Biomass" }
+    ]
+  },
+  {
+    id: "yglw-organic-heat-carrier",
+    name: {
+      en: "YG(L)W Organic Heat Carrier Furnace (Thermal Oil Heater)",
+      zh: "YG（L）W有机热载体炉（导热油炉）"
+    },
+    description: {
+      en: "Industrial heating equipment using biomass/coal as fuel and thermal oil as heat carrier. High temperature (340°C) at low pressure.",
+      zh: "工业生产使用的供热设备，以生物质/煤为燃料及烟道气为热源，以导热油为热载体，供热温度可高达340°C。"
+    },
+    fullDescription: {
+      en: "YG(L)W organic heat carrier furnace (thermal oil heater) is industrial heating equipment using biomass/coal as fuel and thermal oil as heat carrier. Through forced liquid-phase circulation by circulation oil pump, heat is delivered to heat-using equipment and then returned to the heating furnace for reheating. It is a high-temperature, low-pressure, energy-saving equipment with heating temperature up to 340°C, generally operating at pressure below 1.0MPa, safe and reliable due to working in liquid phase state.",
+      zh: "YG（L）W有机热载体炉（简称YG（L）W导热油炉）是工业生产使用的供热设备，以生物质/煤为燃料及烟道气为热源，以导热油为热载体通过循环油泵强制热载体液相循环，将热量输送给用热设备后，再返回加热炉重新加热的高温、低压、节能设备，供热温度可高达340℃，而一般在工作压力1.0MPa以下，因为工作在液相状态，安全可靠。"
+    },
+    image: "/images/products/yglw-organic-heat-carrier.jpg",
+    icon: "Thermometer",
+    features: [],
+    specs: [
+      { model: "Custom", capacity: "—", pressure: "—", efficiency: "—", fuel: "Biomass/Coal" }
     ]
   }
 ];

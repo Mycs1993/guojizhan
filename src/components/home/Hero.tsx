@@ -7,11 +7,8 @@ import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 
 const BACKGROUND_IMAGES = [
-  // Industrial Factory / Workshop
-  "http://www.yudongguolu.com/templets/default/images/banner2.jpg",
-  // Blue Industrial Pipes/Boiler - Replaced with a cleaner industrial shot
+  "/images/hero/banner-1.jpg", // local image
   "https://images.unsplash.com/photo-1565457599723-93339f40822e?auto=format&fit=crop&q=80",
-  // Engineering / Welding
   "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80",
 ];
 
@@ -71,7 +68,7 @@ export function Hero() {
             </span>
           </h1>
 
-          <p className="text-lg text-slate-300 mb-8 leading-relaxed max-w-2xl drop-shadow-md">
+          <p className="text-xl md:text-2xl text-slate-300 mb-8 leading-relaxed max-w-4xl drop-shadow-md whitespace-pre-line">
             {t('description')}
           </p>
 

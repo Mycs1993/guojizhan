@@ -1,10 +1,12 @@
 "use client";
 
 import { MessageSquare, Phone, Mail } from "lucide-react";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 export function FloatingCTA() {
+  const t = useTranslations('FloatingCTA');
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -17,7 +19,7 @@ export function FloatingCTA() {
         className="flex items-center justify-end group"
       >
         <span className="bg-green-600 text-white text-sm font-medium px-3 py-2 rounded-l-md opacity-0 group-hover:opacity-100 -mr-4 group-hover:mr-2 transition-all duration-300 shadow-md">
-          Chat on WhatsApp
+          {t('whatsapp')}
         </span>
         <div className="bg-green-500 text-white p-3 rounded-full shadow-lg hover:scale-110 transition-transform flex items-center justify-center w-12 h-12">
           <MessageSquare size={24} fill="currentColor" />
@@ -30,7 +32,7 @@ export function FloatingCTA() {
         className="flex items-center justify-end group"
       >
         <span className="bg-blue-600 text-white text-sm font-medium px-3 py-2 rounded-l-md opacity-0 group-hover:opacity-100 -mr-4 group-hover:mr-2 transition-all duration-300 shadow-md whitespace-nowrap">
-          Call: +86-187-3940-8082
+          {t('phone')}
         </span>
         <div className="bg-blue-600 text-white p-3 rounded-full shadow-lg hover:scale-110 transition-transform flex items-center justify-center w-12 h-12">
           <Phone size={24} />
@@ -43,7 +45,7 @@ export function FloatingCTA() {
         className="flex items-center justify-end group"
       >
         <span className="bg-orange-600 text-white text-sm font-medium px-3 py-2 rounded-l-md opacity-0 group-hover:opacity-100 -mr-4 group-hover:mr-2 transition-all duration-300 shadow-md whitespace-nowrap">
-          Get a Free Quote
+          {t('quote')}
         </span>
         <div className="bg-orange-500 text-white p-3 rounded-full shadow-lg hover:scale-110 transition-transform flex items-center justify-center w-12 h-12">
           <Mail size={24} />

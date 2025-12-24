@@ -22,23 +22,35 @@ export async function POST(request: NextRequest) {
     }
 
     const smtpHost = process.env.SMTP_HOST;
-    const smtpPort = process.env.SMTP_PORT ? Number(process.env.SMTP_PORT) : 587;
+    let smtpPort = process.env.SMTP_PORT ? Number(process.env.SMTP_PORT) : 587;
     const smtpUser = process.env.SMTP_USER;
     const smtpPass = process.env.SMTP_PASS;
     const smtpTo = process.env.SMTP_TO || smtpUser;
 
+    // Special handling for QQ Mail
+    let secure = smtpPort === 465;
+    if (smtpHost === "smtp.qq.com" && !process.env.SMTP_PORT) {
+      console.log("=== QQ MAIL DETECTED: Defaulting to Port 465 (Secure) ===");
+      smtpPort = 465;
+      secure = true;
+    }
+
     console.log("=== SMTP CONFIG CHECK ===", {
-      hasHost: !!smtpHost,
+      host: smtpHost,
       hasUser: !!smtpUser,
       hasPass: !!smtpPass,
       hasTo: !!smtpTo,
       port: smtpPort,
+      secure,
     });
 
     if (!smtpHost || !smtpUser || !smtpPass || !smtpTo) {
       console.error("SMTP environment variables are not fully configured");
       return NextResponse.json(
-        { success: false, error: "Mail service is not configured" },
+        {
+          success: false,
+          error: "Mail service is not configured (Missing SMTP variables). Please check server logs."
+        },
         { status: 500 }
       );
     }
@@ -46,7 +58,7 @@ export async function POST(request: NextRequest) {
     const transporter = nodemailer.createTransport({
       host: smtpHost,
       port: smtpPort,
-      secure: smtpPort === 465,
+      secure: secure,
       auth: {
         user: smtpUser,
         pass: smtpPass,
@@ -59,7 +71,22 @@ export async function POST(request: NextRequest) {
         : "[Website Quote] New inquiry from contact form";
 
     console.log("=== ATTEMPTING TO SEND EMAIL ===", { to: smtpTo, subject: subjectLine });
-    
+
+    try {
+      // Verify connection configuration
+      await transporter.verify();
+      console.log("=== SMTP CONNECTION VERIFIED ===");
+    } catch (verifyError) {
+      console.error("=== SMTP CONNECTION FAILED ===", verifyError);
+      return NextResponse.json(
+        {
+          success: false,
+          error: `SMTP Connection Failed: ${verifyError instanceof Error ? verifyError.message : "Unknown error"}`
+        },
+        { status: 500 }
+      );
+    }
+
     const mailResult = await transporter.sendMail({
       from: `"Website Contact" <${smtpUser}>`,
       to: smtpTo,
@@ -79,14 +106,17 @@ ${body.message}
     console.log("=== EMAIL SEND RESULT ===", { messageId: mailResult.messageId, response: mailResult.response });
 
     if (!mailResult.messageId) {
-      throw new Error("Failed to send email");
+      throw new Error("Failed to send email (No message ID returned)");
     }
 
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error("=== ERROR IN /api/contact ===", error);
     return NextResponse.json(
-      { success: false, error: error instanceof Error ? error.message : "Failed to send message" },
+      {
+        success: false,
+        error: error instanceof Error ? error.message : "Internal Server Error"
+      },
       { status: 500 }
     );
   }

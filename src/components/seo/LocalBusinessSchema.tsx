@@ -4,13 +4,13 @@ export function LocalBusinessSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://www.yudongboiler.com/#localbusiness",
+    "@id": "https://gljyw.top/#localbusiness",
     name: COMPANY_INFO.name,
     alternateName: COMPANY_INFO.shortName,
     description: COMPANY_INFO.intro,
-    url: "https://www.yudongboiler.com",
-    logo: "https://www.yudongboiler.com/logo.png",
-    image: "https://www.yudongboiler.com/og-image.jpg",
+    url: "https://gljyw.top",
+    logo: "https://gljyw.top/logo.png",
+    image: "https://gljyw.top/og-image.jpg",
     telephone: COMPANY_INFO.phone,
     email: COMPANY_INFO.email,
     address: {
