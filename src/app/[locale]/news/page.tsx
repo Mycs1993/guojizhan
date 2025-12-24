@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
 };
 
-export const revalidate = NEWS_REVALIDATE_SECONDS;
+export const revalidate = 3600;
 
 export default async function NewsPage() {
   const locale = (await getLocale()) as "en" | "zh";
