@@ -56,18 +56,18 @@ export default async function NewsDetailPage({ params }: PageProps) {
   }
 
   const paragraphs =
-    locale === "zh" ? item!.content.zh : item!.content.en;
+    locale === "zh" ? (item.content?.zh || []) : (item.content?.en || []);
 
   return (
     <div className="bg-slate-50 min-h-screen pb-20">
       <ArticleSchema
         article={{
-          id: String(item!.id),
-          title: item!.title,
-          excerpt: item!.summary,
-          date: item!.date,
-          image: item!.image,
-          category: item!.category,
+          id: String(item.id),
+          title: item.title,
+          excerpt: item.summary,
+          date: item.date,
+          image: item.image,
+          category: item.category,
         }}
       />
       {/* Hero */}
@@ -82,17 +82,17 @@ export default async function NewsDetailPage({ params }: PageProps) {
           </Link>
 
           <h1 className="text-3xl md:text-4xl font-bold mb-4">
-            {item!.title}
+            {item.title}
           </h1>
 
           <div className="flex flex-wrap items-center gap-4 text-sm text-slate-300">
             <span className="flex items-center gap-1">
               <Calendar size={16} />
-              {item!.date}
+              {item.date}
             </span>
             <span className="inline-flex items-center gap-1 bg-slate-800/70 px-3 py-1 rounded-full text-blue-200 font-medium">
               <Tag size={14} />
-              {item!.category}
+              {item.category}
             </span>
           </div>
         </div>
@@ -104,8 +104,8 @@ export default async function NewsDetailPage({ params }: PageProps) {
           {/* Image */}
           <div className="h-64 md:h-80 bg-slate-200 relative overflow-hidden">
             <Image
-              src={item!.image || "/images/news/default.jpg"}
-              alt={item!.title}
+              src={item.image || "/images/news/default.jpg"}
+              alt={item.title}
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 60vw"
