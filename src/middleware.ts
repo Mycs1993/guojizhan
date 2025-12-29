@@ -9,10 +9,10 @@ export default function middleware(request: NextRequest) {
 
     // Nuclear option: if it starts with /admin, /api, or /test, bypass everything immediately
     if (
-        pathname.startsWith('/admin') ||
+        pathname.startsWith('/manage') ||
         pathname.startsWith('/api') ||
         pathname.startsWith('/test') ||
-        pathname === '/admin'
+        pathname === '/manage'
     ) {
         return NextResponse.next();
     }
