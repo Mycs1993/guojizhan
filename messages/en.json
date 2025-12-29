@@ -53,8 +53,9 @@
   },
   "NewsPage": {
     "title": "News & Insights",
-    "subtitle": "Stay updated with our latest company news, product launches, and industry technical knowledge.",
-    "readMore": "Read More"
+    "subtitle": "Discover our latest accomplishments, product developments, and expert insights in the boiler industry.",
+    "readMore": "Read More",
+    "backToList": "Back to News"
   },
   "CTASection": {
     "title": "Ready to Upgrade Your Industrial Heating System?",

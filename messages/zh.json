@@ -53,8 +53,9 @@
     },
     "NewsPage": {
         "title": "新闻与见解",
-        "subtitle": "了解我们最新的公司动态、新品发布和行业技术知识。",
-        "readMore": "阅读更多"
+        "subtitle": "探索我们在锅炉行业的最新成就、产品动态和专家见解。",
+        "readMore": "阅读全文",
+        "backToList": "返回列表"
     },
     "CTASection": {
         "title": "准备好升级您的工业供热系统了吗？",

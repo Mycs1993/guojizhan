@@ -86,6 +86,8 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
+import { headers } from 'next/headers';
+
 export default async function RootLayout({
   children,
   params,
@@ -100,9 +102,27 @@ export default async function RootLayout({
     notFound();
   }
 
+  // Check if this is an admin route
+  const headersList = await headers();
+  const pathname = headersList.get('x-pathname') || headersList.get('x-invoke-path') || '';
+  const isAdminRoute = pathname.includes('/admin');
+
   // Providing all messages to the client
   // side is the easiest way to get started
   const messages = await getMessages();
+
+  // For admin routes, return a minimal layout
+  if (isAdminRoute) {
+    return (
+      <html lang={locale}>
+        <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+          <NextIntlClientProvider messages={messages}>
+            {children}
+          </NextIntlClientProvider>
+        </body>
+      </html>
+    );
+  }
 
   return (
     <html lang={locale}>

@@ -30,8 +30,8 @@ async function readLocalNewsJson(): Promise<NewsItem[] | null> {
     const rawItems = Array.isArray(data)
       ? data
       : Array.isArray(data?.items)
-      ? data.items
-      : [];
+        ? data.items
+        : [];
 
     const items: NewsItem[] = rawItems.map((n: any) => ({
       id: n.id ?? "",
@@ -69,8 +69,8 @@ async function fetchRemoteNews(): Promise<NewsItem[] | null> {
     const rawItems = Array.isArray(data)
       ? data
       : Array.isArray(data?.items)
-      ? data.items
-      : [];
+        ? data.items
+        : [];
 
     const items: NewsItem[] = rawItems.map((n: any) => ({
       id: n.id ?? "",
@@ -90,32 +90,49 @@ async function fetchRemoteNews(): Promise<NewsItem[] | null> {
   }
 }
 
+import { articleService } from "./articles";
+
 export async function getNewsList(locale: NewsLocale): Promise<NewsItem[]> {
   const remote = await fetchRemoteNews();
   const localJson = await readLocalNewsJson();
-  
-  // If we have remote or local JSON data, use it
+
+  // Fetch dynamic articles from our new service
+  const dynamicArticles = await articleService.getAllArticles(false);
+  const mappedDynamic: NewsItem[] = dynamicArticles.map(a => ({
+    id: a.slug, // Use slug for public URLs
+    title: a.title,
+    date: new Date(a.publishedAt).toISOString().split('T')[0],
+    summary: a.summary,
+    category: "News",
+    image: a.coverImage,
+    locale: locale // Currently assumes same locale for all articles, or refine later
+  }));
+
+  let baseList: NewsItem[] = [];
+
   if (remote || localJson) {
-    const merged = remote ?? localJson ?? [];
-    return merged
-      .filter((item) => !item.locale || item.locale === locale)
-      .sort((a, b) => (a.date > b.date ? -1 : 1));
+    baseList = (remote ?? localJson ?? []);
+  } else {
+    baseList = NEWS_ITEMS_LOCALIZED.map(item => ({
+      id: item.id,
+      title: item.title[locale],
+      date: item.date,
+      summary: item.summary[locale],
+      category: item.category[locale],
+      image: item.image,
+      locale,
+      content: {
+        en: item.content.en,
+        zh: item.content.zh
+      }
+    }));
   }
-  
-  // Otherwise, use localized static data
-  return NEWS_ITEMS_LOCALIZED.map(item => ({
-    id: item.id,
-    title: item.title[locale],
-    date: item.date,
-    summary: item.summary[locale],
-    category: item.category[locale],
-    image: item.image,
-    locale,
-    content: {
-      en: item.content.en,
-      zh: item.content.zh
-    }
-  })).sort((a, b) => (a.date > b.date ? -1 : 1));
+
+  const merged = [...mappedDynamic, ...baseList];
+
+  return merged
+    .filter((item) => !item.locale || item.locale === locale)
+    .sort((a, b) => (a.date > b.date ? -1 : 1));
 }
 
 export async function getNewsById(

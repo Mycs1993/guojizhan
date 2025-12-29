@@ -1,137 +1,73 @@
-import { getSEOConfig } from "@/lib/seo-service";
-import { Key, FileText, Sparkles, TrendingUp } from "lucide-react";
-import Link from "next/link";
+import { articleService } from '@/lib/articles';
+import Link from 'next/link';
+import LogoutButton from '@/components/admin/LogoutButton';
 
-export default async function AdminDashboardPage() {
-  const config = await getSEOConfig();
-  
-  const stats = [
-    {
-      label: "活跃关键词",
-      value: config.keywords.filter((k) => k.status === "active").length,
-      icon: Key,
-      href: "/admin/keywords",
-      color: "bg-blue-500",
-    },
-    {
-      label: "页面配置",
-      value: Object.keys(config.pages).length,
-      icon: FileText,
-      href: "/admin/pages",
-      color: "bg-green-500",
-    },
-    {
-      label: "AI 推荐",
-      value: config.aiSuggestions.filter((s) => s.status === "pending").length,
-      icon: Sparkles,
-      href: "/admin/ai-suggestions",
-      color: "bg-purple-500",
-    },
-    {
-      label: "总关键词",
-      value: config.keywords.length,
-      icon: TrendingUp,
-      href: "/admin/keywords",
-      color: "bg-orange-500",
-    },
-  ];
+export const dynamic = 'force-dynamic';
+
+export default async function AdminDashboard() {
+  const articles = await articleService.getAllArticles(true);
 
   return (
-    <div>
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-slate-900">仪表盘</h1>
-        <p className="text-slate-500 mt-2">SEO 配置概览</p>
-      </div>
-
-      {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-        {stats.map((stat) => (
-          <Link
-            key={stat.label}
-            href={stat.href}
-            className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow"
-          >
-            <div className="flex items-center gap-4">
-              <div className={`${stat.color} p-3 rounded-lg text-white`}>
-                <stat.icon size={24} />
-              </div>
-              <div>
-                <p className="text-3xl font-bold text-slate-900">{stat.value}</p>
-                <p className="text-slate-500 text-sm">{stat.label}</p>
-              </div>
-            </div>
-          </Link>
-        ))}
-      </div>
-
-      {/* Recent Keywords */}
-      <div className="bg-white rounded-xl shadow-sm p-6 mb-8">
-        <h2 className="text-xl font-bold text-slate-900 mb-4">最近关键词</h2>
-        <div className="space-y-3">
-          {config.keywords.slice(0, 5).map((keyword) => (
-            <div
-              key={keyword.id}
-              className="flex items-center justify-between py-3 border-b border-slate-100 last:border-0"
+    <div className="min-h-screen p-8 bg-gray-50 text-gray-900">
+      <div className="max-w-6xl mx-auto">
+        <div className="flex justify-between items-center mb-8">
+          <div>
+            <h1 className="text-3xl font-bold text-gray-900">管理后台</h1>
+            <p className="text-gray-500">欢迎回来，管理员</p>
+          </div>
+          <div className="flex gap-4">
+            <Link
+              href="/en/admin/articles/new"
+              className="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition font-semibold shadow-sm"
             >
-              <div>
-                <p className="font-medium text-slate-900">{keyword.keyword}</p>
-                <p className="text-sm text-slate-500">{keyword.category}</p>
-              </div>
-              <div className="flex items-center gap-4">
-                {keyword.searchVolume && (
-                  <span className="text-sm text-slate-500">
-                    搜索量: {keyword.searchVolume.toLocaleString()}
-                  </span>
-                )}
-                <span
-                  className={`px-2 py-1 rounded-full text-xs font-medium ${
-                    keyword.status === "active"
-                      ? "bg-green-100 text-green-700"
-                      : "bg-slate-100 text-slate-600"
-                  }`}
-                >
-                  {keyword.status === "active" ? "活跃" : "停用"}
-                </span>
-              </div>
-            </div>
-          ))}
+              + 新建文章
+            </Link>
+            <LogoutButton />
+          </div>
         </div>
-        <Link
-          href="/admin/keywords"
-          className="block mt-4 text-blue-600 hover:text-blue-700 font-medium text-sm"
-        >
-          查看全部关键词 →
-        </Link>
-      </div>
 
-      {/* Quick Actions */}
-      <div className="bg-white rounded-xl shadow-sm p-6">
-        <h2 className="text-xl font-bold text-slate-900 mb-4">快捷操作</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <Link
-            href="/admin/keywords"
-            className="p-4 border border-slate-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors"
-          >
-            <Key className="text-blue-600 mb-2" size={24} />
-            <p className="font-medium text-slate-900">添加关键词</p>
-            <p className="text-sm text-slate-500">管理网站关键词</p>
-          </Link>
-          <Link
-            href="/admin/pages"
-            className="p-4 border border-slate-200 rounded-lg hover:border-green-300 hover:bg-green-50 transition-colors"
-          >
-            <FileText className="text-green-600 mb-2" size={24} />
-            <p className="font-medium text-slate-900">编辑页面 SEO</p>
-            <p className="text-sm text-slate-500">优化页面元数据</p>
-          </Link>
-          <Link
-            href="/admin/ai-suggestions"
-            className="p-4 border border-slate-200 rounded-lg hover:border-purple-300 hover:bg-purple-50 transition-colors"
-          >
-            <Sparkles className="text-purple-600 mb-2" size={24} />
-            <p className="font-medium text-slate-900">AI 关键词推荐</p>
-            <p className="text-sm text-slate-500">智能发现新关键词</p>
-          </Link>
+        <div className="bg-white rounded-xl shadow-lg border overflow-hidden">
+          <table className="min-w-full divide-y divide-gray-200">
+            <thead className="bg-gray-50">
+              <tr>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">标题</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">状态</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">日期</th>
+                <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">操作</th>
+              </tr>
+            </thead>
+            <tbody className="bg-white divide-y divide-gray-200">
+              {articles.map((article) => (
+                <tr key={article.id}>
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <div className="text-sm font-medium text-gray-900">{article.title}</div>
+                    <div className="text-xs text-gray-500">{article.slug}</div>
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap">
+                    <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${article.status === 'published' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'
+                      }`}>
+                      {article.status === 'published' ? '已发布' : '草稿'}
+                    </span>
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    {new Date(article.publishedAt).toLocaleDateString()}
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                    <Link href={`/en/admin/articles/${article.id}`} className="text-indigo-600 hover:text-indigo-900">
+                      编辑
+                    </Link>
+                  </td>
+                </tr>
+              ))}
+              {articles.length === 0 && (
+                <tr>
+                  <td colSpan={4} className="px-6 py-10 text-center text-gray-500">
+                    暂无文章
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

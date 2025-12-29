@@ -1,66 +1,46 @@
-import { cookies } from "next/headers";
+import { SignJWT, jwtVerify } from 'jose';
+import { cookies } from 'next/headers';
 
-// 简单的 token 生成（生产环境应使用 JWT）
-const TOKEN_SECRET = process.env.ADMIN_TOKEN_SECRET || "seo-admin-secret-key-change-in-production";
-const ADMIN_USERNAME = process.env.ADMIN_USERNAME || "admin";
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "admin123";
-const TOKEN_COOKIE_NAME = "seo-admin-token";
-const TOKEN_EXPIRY = 24 * 60 * 60 * 1000; // 24 hours
+const SECRET = new TextEncoder().encode(process.env.ADMIN_TOKEN_SECRET || 'change-this-secret');
+const ALG = 'HS256';
 
-// 简单的 token 编码（生产环境应使用 JWT）
-function encodeToken(data: { username: string; exp: number }): string {
-  const payload = JSON.stringify(data);
-  return Buffer.from(payload).toString("base64");
+export async function login(password: string) {
+  const envPassword = (process.env.ADMIN_PASSWORD || '').trim();
+  console.log('Login attempt with password:', password);
+  console.log('Expected password from env (trimmed):', envPassword);
+  console.log('Password match:', password === envPassword);
+
+  if (password !== envPassword) return false;
+
+  const token = await new SignJWT({ role: 'admin' })
+    .setProtectedHeader({ alg: ALG })
+    .setIssuedAt()
+    .setExpirationTime('24h')
+    .sign(SECRET);
+
+  const cookieStore = await cookies();
+  cookieStore.set('admin_session', token, {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: 'lax',
+    path: '/',
+  });
+  return true;
 }
 
-function decodeToken(token: string): { username: string; exp: number } | null {
+export async function getSession() {
+  const cookieStore = await cookies();
+  const token = cookieStore.get('admin_session')?.value;
+  if (!token) return null;
   try {
-    const payload = Buffer.from(token, "base64").toString("utf-8");
-    return JSON.parse(payload);
+    const { payload } = await jwtVerify(token, SECRET);
+    return payload;
   } catch {
     return null;
   }
 }
 
-export function validateCredentials(username: string, password: string): boolean {
-  return username === ADMIN_USERNAME && password === ADMIN_PASSWORD;
-}
-
-export function generateToken(username: string): string {
-  const exp = Date.now() + TOKEN_EXPIRY;
-  return encodeToken({ username, exp });
-}
-
-export function verifyToken(token: string): { valid: boolean; username?: string } {
-  const decoded = decodeToken(token);
-  if (!decoded) return { valid: false };
-  if (decoded.exp < Date.now()) return { valid: false };
-  return { valid: true, username: decoded.username };
-}
-
-export async function setAuthCookie(token: string): Promise<void> {
+export async function logout() {
   const cookieStore = await cookies();
-  cookieStore.set(TOKEN_COOKIE_NAME, token, {
-    httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
-    sameSite: "lax",
-    maxAge: TOKEN_EXPIRY / 1000,
-    path: "/",
-  });
-}
-
-export async function clearAuthCookie(): Promise<void> {
-  const cookieStore = await cookies();
-  cookieStore.delete(TOKEN_COOKIE_NAME);
-}
-
-export async function getAuthToken(): Promise<string | null> {
-  const cookieStore = await cookies();
-  return cookieStore.get(TOKEN_COOKIE_NAME)?.value || null;
-}
-
-export async function isAuthenticated(): Promise<boolean> {
-  const token = await getAuthToken();
-  if (!token) return false;
-  return verifyToken(token).valid;
+  cookieStore.delete('admin_session');
 }
