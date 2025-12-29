@@ -6,12 +6,17 @@ const intlMiddleware = createMiddleware(routing);
 
 export default function middleware(request: NextRequest) {
     const { pathname } = request.nextUrl;
-    
-    // Exclude admin and api routes from internationalization
-    if (pathname.startsWith('/admin') || pathname.startsWith('/api')) {
+
+    // Nuclear option: if it starts with /admin, /api, or /test, bypass everything immediately
+    if (
+        pathname.startsWith('/admin') ||
+        pathname.startsWith('/api') ||
+        pathname.startsWith('/test') ||
+        pathname === '/admin'
+    ) {
         return NextResponse.next();
     }
-    
+
     // Apply internationalization middleware for other routes
     return intlMiddleware(request);
 }
