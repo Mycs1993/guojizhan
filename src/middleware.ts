@@ -1,12 +1,24 @@
 import createMiddleware from 'next-intl/middleware';
 import { routing } from './i18n/routing';
+import { NextRequest, NextResponse } from 'next/server';
 
-export default createMiddleware(routing);
+const intlMiddleware = createMiddleware(routing);
+
+export default function middleware(request: NextRequest) {
+    const { pathname } = request.nextUrl;
+    
+    // Exclude admin and api routes from internationalization
+    if (pathname.startsWith('/admin') || pathname.startsWith('/api')) {
+        return NextResponse.next();
+    }
+    
+    // Apply internationalization middleware for other routes
+    return intlMiddleware(request);
+}
 
 export const config = {
-    // Match only internationalized pathnames, exclude admin and api
+    // Match all paths except static files and Next.js internals
     matcher: [
-        '/',
-        '/((?!admin|api|_next|_vercel|.*\\..*).*)'
+        '/((?!_next|_vercel|.*\\..*).*)'
     ]
 };
