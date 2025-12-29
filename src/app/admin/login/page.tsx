@@ -2,6 +2,7 @@
 import { useState } from 'react';
 
 export const dynamic = 'force-dynamic';
+export const runtime = 'edge';
 
 export default function AdminLoginPage() {
     const [password, setPassword] = useState('');
