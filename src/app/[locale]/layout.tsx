@@ -105,7 +105,7 @@ export default async function RootLayout({
   // Check if this is an admin route
   const headersList = await headers();
   const pathname = headersList.get('x-pathname') || headersList.get('x-invoke-path') || '';
-  const isAdminRoute = pathname.includes('/admin');
+  const isAdminRoute = pathname.includes('/manage');
 
   // Providing all messages to the client
   // side is the easiest way to get started

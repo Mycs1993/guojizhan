@@ -6,7 +6,7 @@ import { getSession } from '@/lib/auth';
 export default async function EditArticlePage({ params }: { params: Promise<{ id: string }> }) {
     const session = await getSession();
     if (!session) {
-        redirect('/admin/login');
+        redirect('/manage/login');
     }
 
     const { id } = await params;

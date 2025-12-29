@@ -2,10 +2,10 @@
 
 export default function DeleteArticleButton({ articleId }: { articleId: string }) {
     const handleDelete = async () => {
-        if (!confirm('确定要删除这篇文章吗？此操作不可恢复。')) return;
+        if (!confirm('确定要删除这篇文章吗？此操作不可恢复�?)) return;
 
         try {
-            const res = await fetch(`/api/admin/articles/${articleId}`, { method: 'DELETE' });
+            const res = await fetch(`/api/manage/articles/${articleId}`, { method: 'DELETE' });
             if (res.ok) {
                 window.location.reload();
             } else {

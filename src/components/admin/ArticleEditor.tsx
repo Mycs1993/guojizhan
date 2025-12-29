@@ -49,7 +49,7 @@ export default function ArticleEditor({ initialData }: ArticleEditorProps) {
         setError('');
 
         try {
-            const res = await fetch('/api/admin/articles', {
+            const res = await fetch('/api/manage/articles', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -58,7 +58,7 @@ export default function ArticleEditor({ initialData }: ArticleEditorProps) {
             });
 
             if (res.ok) {
-                router.push('/admin/dashboard');
+                router.push('/manage/dashboard');
                 router.refresh();
             } else {
                 setError('Failed to save article');
@@ -137,13 +137,13 @@ export default function ArticleEditor({ initialData }: ArticleEditorProps) {
                         if (form) {
                             setLoading(true);
                             try {
-                                const res = await fetch('/api/admin/articles', {
+                                const res = await fetch('/api/manage/articles', {
                                     method: 'POST',
                                     headers: { 'Content-Type': 'application/json' },
                                     body: JSON.stringify({ ...formData, status: 'draft' }),
                                 });
                                 if (res.ok) {
-                                    router.push('/admin/dashboard');
+                                    router.push('/manage/dashboard');
                                     router.refresh();
                                 } else {
                                     setError('保存失败');
@@ -170,13 +170,13 @@ export default function ArticleEditor({ initialData }: ArticleEditorProps) {
                         }
                         setLoading(true);
                         try {
-                            const res = await fetch('/api/admin/articles', {
+                            const res = await fetch('/api/manage/articles', {
                                 method: 'POST',
                                 headers: { 'Content-Type': 'application/json' },
                                 body: JSON.stringify({ ...formData, status: 'published' }),
                             });
                             if (res.ok) {
-                                router.push('/admin/dashboard');
+                                router.push('/manage/dashboard');
                                 router.refresh();
                             } else {
                                 setError('发布失败');
@@ -189,7 +189,7 @@ export default function ArticleEditor({ initialData }: ArticleEditorProps) {
                     }}
                     className="py-2 px-6 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700 disabled:opacity-50"
                 >
-                    {loading ? '处理中...' : '发布文章'}
+                    {loading ? '处理�?..' : '发布文章'}
                 </button>
             </div>
         </form>

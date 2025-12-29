@@ -20,11 +20,11 @@ export interface NewsItem {
 }
 
 /**
- * 生成产品页面的 Metadata
+ * 生成产品页面�?Metadata
  * Requirements: 1.2, 2.2
  */
 /**
- * 生成产品页面的 Metadata
+ * 生成产品页面�?Metadata
  * Requirements: 1.2, 2.2
  */
 export function generateProductMetadata(product: Product, locale: 'en' | 'zh' = 'en'): Metadata {
@@ -77,7 +77,7 @@ export function generateProductMetadata(product: Product, locale: 'en' | 'zh' = 
 }
 
 /**
- * 生成新闻文章页面的 Metadata
+ * 生成新闻文章页面�?Metadata
  * Requirements: 2.5
  */
 export function generateNewsMetadata(news: NewsItem): Metadata {
@@ -114,7 +114,7 @@ export function generateNewsMetadata(news: NewsItem): Metadata {
 }
 
 /**
- * 根据路径生成面包屑导航数据
+ * 根据路径生成面包屑导航数�?
  * Requirements: 2.3
  */
 export function generateBreadcrumbs(path: string, customNames?: Record<string, string>): BreadcrumbItem[] {
@@ -137,7 +137,7 @@ export function generateBreadcrumbs(path: string, customNames?: Record<string, s
 }
 
 /**
- * 格式化 URL 段为可读名称
+ * 格式�?URL 段为可读名称
  */
 function formatSegmentName(segment: string): string {
   return segment

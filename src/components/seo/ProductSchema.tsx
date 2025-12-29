@@ -6,8 +6,8 @@ export function ProductSchema({ productId, locale }: { productId: string, locale
   if (!product) return null;
 
   const baseUrl = "https://gljyw.top";
-  // 给搜索引擎的示例价，B2B 实际报价走询盘，但需要提供 price 字段以满足富摘要要求
-  // 使用大于 0 的数值以避免 Merchant listings 校验为无效
+  // 给搜索引擎的示例价，B2B 实际报价走询盘，但需要提�?price 字段以满足富摘要要求
+  // 使用大于 0 的数值以避免 Merchant listings 校验为无�?
   const fallbackPrice = 1000;
   const priceValidUntil = new Date();
   priceValidUntil.setFullYear(priceValidUntil.getFullYear() + 1);

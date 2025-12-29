@@ -1,5 +1,5 @@
 'use client';
-import ArticleEditor from '@/components/admin/ArticleEditor';
+import ArticleEditor from '@/components/manage/ArticleEditor';
 
 export default function NewArticlePage() {
     return (

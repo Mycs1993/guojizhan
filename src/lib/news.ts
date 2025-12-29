@@ -51,9 +51,9 @@ async function readLocalNewsJson(): Promise<NewsItem[] | null> {
 }
 
 /**
- * 从远程 JSON 获取新闻
+ * 从远�?JSON 获取新闻
  * 期望结构：数组，字段 id/title/date/summary/category/image/locale/content.en/content.zh
- * 如果 JSON 外层是 { items: [...] } 也会尝试读取 items
+ * 如果 JSON 外层�?{ items: [...] } 也会尝试读取 items
  */
 async function fetchRemoteNews(): Promise<NewsItem[] | null> {
   if (!NEWS_JSON_URL) return null;

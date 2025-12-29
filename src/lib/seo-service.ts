@@ -13,7 +13,7 @@ import type {
 const CONFIG_PATH = path.join(process.cwd(), "src/data/seo-config.json");
 const BACKUP_DIR = path.join(process.cwd(), "src/data/backups");
 
-// 默认配置（当文件不存在时使用）
+// 默认配置（当文件不存在时使用�?
 const DEFAULT_CONFIG: SEOConfig = {
   global: {
     siteName: "Yudong Boiler",
@@ -38,11 +38,11 @@ export async function getSEOConfig(): Promise<SEOConfig> {
   }
 }
 
-// 保存配置（带备份）
+// 保存配置（带备份�?
 export async function saveSEOConfig(config: SEOConfig): Promise<void> {
   // 创建备份
   await createBackup();
-  // 保存新配置
+  // 保存新配�?
   await fs.writeFile(CONFIG_PATH, JSON.stringify(config, null, 2), "utf-8");
 }
 
@@ -54,7 +54,7 @@ async function createBackup(): Promise<void> {
     const backupPath = path.join(BACKUP_DIR, `seo-config-${timestamp}.json`);
     const currentData = await fs.readFile(CONFIG_PATH, "utf-8");
     await fs.writeFile(backupPath, currentData, "utf-8");
-    // 只保留最近 10 个备份
+    // 只保留最�?10 个备�?
     await cleanOldBackups();
   } catch {
     // 备份失败不影响主流程
@@ -69,7 +69,7 @@ async function cleanOldBackups(): Promise<void> {
   }
 }
 
-// ============ 关键词操作 ============
+// ============ 关键词操�?============
 
 export async function getKeywords(): Promise<Keyword[]> {
   const config = await getSEOConfig();

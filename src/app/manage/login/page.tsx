@@ -22,7 +22,7 @@ export default function AdminLoginPage() {
             });
 
             if (res.ok) {
-                window.location.href = '/admin/dashboard';
+                window.location.href = '/manage/dashboard';
             } else {
                 setError('密码错误');
             }
@@ -45,7 +45,7 @@ export default function AdminLoginPage() {
                     <form onSubmit={handleSubmit} className="space-y-6">
                         <div>
                             <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
-                                管理员密码
+                                管理员密�?
                             </label>
                             <input
                                 id="password"
@@ -53,7 +53,7 @@ export default function AdminLoginPage() {
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition"
-                                placeholder="请输入密码"
+                                placeholder="请输入密�?
                                 required
                                 autoFocus
                             />
@@ -70,7 +70,7 @@ export default function AdminLoginPage() {
                             disabled={loading}
                             className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-200 disabled:opacity-50"
                         >
-                            {loading ? '登录中...' : '登录'}
+                            {loading ? '登录�?..' : '登录'}
                         </button>
                     </form>
                 </div>

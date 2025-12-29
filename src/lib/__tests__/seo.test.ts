@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import fc from 'fast-check';
 
-// 测试辅助函数：验证 URL 格式
+// 测试辅助函数：验�?URL 格式
 export function isValidUrl(url: string): boolean {
   try {
     new URL(url);
@@ -11,13 +11,13 @@ export function isValidUrl(url: string): boolean {
   }
 }
 
-// 测试辅助函数：验证 ISO 日期格式
+// 测试辅助函数：验�?ISO 日期格式
 export function isValidISODate(dateString: string): boolean {
   const date = new Date(dateString);
   return !isNaN(date.getTime());
 }
 
-// 测试辅助函数：验证 Schema.org JSON-LD 基本结构
+// 测试辅助函数：验�?Schema.org JSON-LD 基本结构
 export function isValidSchemaOrg(schema: Record<string, unknown>): boolean {
   return (
     schema['@context'] === 'https://schema.org' &&
@@ -66,7 +66,7 @@ export const newsItemArb = fc.record({
   category: fc.constantFrom('Company News', 'Industry News', 'Product Update'),
 });
 
-// 基础测试：验证辅助函数
+// 基础测试：验证辅助函�?
 describe('SEO Test Utilities', () => {
   it('isValidUrl should validate URLs correctly', () => {
     expect(isValidUrl('https://example.com')).toBe(true);

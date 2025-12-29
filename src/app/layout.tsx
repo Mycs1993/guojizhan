@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   // Root layout required by Next.js App Router
-  // This handles routes that are excluded from middleware (like /admin)
+  // This handles routes that are excluded from middleware (like /manage)
   // Locale routes have their own layout at src/app/[locale]/layout.tsx
   return (
     <html lang="zh">

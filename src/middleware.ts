@@ -7,7 +7,7 @@ const intlMiddleware = createMiddleware(routing);
 export default function middleware(request: NextRequest) {
     const { pathname } = request.nextUrl;
 
-    // Nuclear option: if it starts with /admin, /api, or /test, bypass everything immediately
+    // Nuclear option: if it starts with /manage, /api, or /test, bypass everything immediately
     if (
         pathname.startsWith('/manage') ||
         pathname.startsWith('/api') ||

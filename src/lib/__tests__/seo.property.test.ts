@@ -9,10 +9,10 @@ import {
 } from "../seo";
 import type { Product } from "@/data/products";
 
-// 配置 fast-check 运行 100 次迭代
+// 配置 fast-check 运行 100 次迭�?
 fc.configureGlobal({ numRuns: 100 });
 
-// 产品数据生成器
+// 产品数据生成�?
 const productArb = fc.record({
   id: fc.string({ minLength: 3, maxLength: 30 }),
   name: fc.string({ minLength: 5, maxLength: 100 }),
@@ -33,7 +33,7 @@ const productArb = fc.record({
   ),
 }) as fc.Arbitrary<Product>;
 
-// 新闻数据生成器
+// 新闻数据生成�?
 const newsItemArb: fc.Arbitrary<NewsItem> = fc.record({
   id: fc.string({ minLength: 3, maxLength: 30 }),
   title: fc.string({ minLength: 10, maxLength: 100 }),
@@ -46,7 +46,7 @@ const newsItemArb: fc.Arbitrary<NewsItem> = fc.record({
   category: fc.constantFrom("Company News", "Industry News", "Product Update"),
 });
 
-// URL 路径生成器
+// URL 路径生成�?
 const urlPathArb = fc
   .array(fc.stringMatching(/^[a-z0-9-]+$/), { minLength: 1, maxLength: 5 })
   .map((segments) => "/" + segments.filter((s) => s.length > 0).join("/"));
@@ -257,7 +257,7 @@ describe("Property 8: Sitemap Entry Validity", () => {
 
 // **Feature: seo-enhancement, Property 10: Image Alt Text Presence**
 describe("Property 10: Image Alt Text Presence", () => {
-  // 模拟生成产品图片 alt 文本的函数
+  // 模拟生成产品图片 alt 文本的函�?
   const generateProductImageAlt = (productName: string, description: string) => {
     return `${productName} - ${description}`;
   };
@@ -299,7 +299,7 @@ describe("Property 1: Title Tag Format Consistency", () => {
   it("page title should follow template pattern with company name", () => {
     fc.assert(
       fc.property(
-        fc.stringMatching(/^[a-zA-Z0-9\s-]{3,50}$/), // 只使用安全字符
+        fc.stringMatching(/^[a-zA-Z0-9\s-]{3,50}$/), // 只使用安全字�?
         (pageTitle) => {
           const template = `%s | ${COMPANY_SHORT_NAME}`;
           const fullTitle = applyTitleTemplate(pageTitle, template);
