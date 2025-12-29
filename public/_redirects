@@ -1,0 +1,5 @@
+# Netlify Routing Rules
+# Force /manage and /api to bypass any SPA routing
+/manage/*  /manage/:splat  200
+/api/*     /.netlify/functions/___nextjs-nft-api/:splat  200
+/*          /index.html      200
