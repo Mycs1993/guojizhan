@@ -6,11 +6,8 @@ const ALG = 'HS256';
 
 export async function login(password: string) {
   const envPassword = (process.env.ADMIN_PASSWORD || '').trim();
-  console.log('Login attempt with password:', password);
-  console.log('Expected password from env (trimmed):', envPassword);
-  console.log('Password match:', password === envPassword);
 
-  if (password !== envPassword) return false;
+  if (!envPassword || password !== envPassword) return false;
 
   const token = await new SignJWT({ role: 'admin' })
     .setProtectedHeader({ alg: ALG })
