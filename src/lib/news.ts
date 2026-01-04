@@ -1,4 +1,4 @@
-import "server-only";
+﻿import "server-only";
 import { NEWS_ITEMS, NEWS_ITEMS_LOCALIZED } from "@/data/news";
 import { promises as fs } from "node:fs";
 import path from "node:path";
@@ -51,9 +51,9 @@ async function readLocalNewsJson(): Promise<NewsItem[] | null> {
 }
 
 /**
- * 从远�?JSON 获取新闻
- * 期望结构：数组，字段 id/title/date/summary/category/image/locale/content.en/content.zh
- * 如果 JSON 外层�?{ items: [...] } 也会尝试读取 items
+ * 浠庤繙绋?JSON 鑾峰彇鏂伴椈
+ * 鏈熸湜缁撴瀯锛氭暟缁勶紝瀛楁 id/title/date/summary/category/image/locale/content.en/content.zh
+ * 濡傛灉 JSON 澶栧眰鏄?{ items: [...] } 涔熶細灏濊瘯璇诲彇 items
  */
 async function fetchRemoteNews(): Promise<NewsItem[] | null> {
   if (!NEWS_JSON_URL) return null;
@@ -151,3 +151,4 @@ export async function getNewsById(
 export const getNewsItem = getNewsById;
 
 export const NEWS_REVALIDATE_SECONDS = REVALIDATE_SECONDS;
+

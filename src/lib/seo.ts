@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Product } from "@/data/products";
 import { COMPANY_INFO } from "@/data/company";
 
@@ -20,11 +20,11 @@ export interface NewsItem {
 }
 
 /**
- * 生成产品页面�?Metadata
+ * 鐢熸垚浜у搧椤甸潰鐨?Metadata
  * Requirements: 1.2, 2.2
  */
 /**
- * 生成产品页面�?Metadata
+ * 鐢熸垚浜у搧椤甸潰鐨?Metadata
  * Requirements: 1.2, 2.2
  */
 export function generateProductMetadata(product: Product, locale: 'en' | 'zh' = 'en'): Metadata {
@@ -77,7 +77,7 @@ export function generateProductMetadata(product: Product, locale: 'en' | 'zh' = 
 }
 
 /**
- * 生成新闻文章页面�?Metadata
+ * 鐢熸垚鏂伴椈鏂囩珷椤甸潰鐨?Metadata
  * Requirements: 2.5
  */
 export function generateNewsMetadata(news: NewsItem): Metadata {
@@ -114,7 +114,7 @@ export function generateNewsMetadata(news: NewsItem): Metadata {
 }
 
 /**
- * 根据路径生成面包屑导航数�?
+ * 鏍规嵁璺緞鐢熸垚闈㈠寘灞戝鑸暟鎹?
  * Requirements: 2.3
  */
 export function generateBreadcrumbs(path: string, customNames?: Record<string, string>): BreadcrumbItem[] {
@@ -137,7 +137,7 @@ export function generateBreadcrumbs(path: string, customNames?: Record<string, s
 }
 
 /**
- * 格式�?URL 段为可读名称
+ * 鏍煎紡鍖?URL 娈典负鍙鍚嶇О
  */
 function formatSegmentName(segment: string): string {
   return segment
@@ -147,7 +147,7 @@ function formatSegmentName(segment: string): string {
 }
 
 /**
- * 生成 BreadcrumbList Schema JSON-LD
+ * 鐢熸垚 BreadcrumbList Schema JSON-LD
  */
 export function generateBreadcrumbSchema(items: BreadcrumbItem[]): object {
   return {
@@ -163,7 +163,7 @@ export function generateBreadcrumbSchema(items: BreadcrumbItem[]): object {
 }
 
 /**
- * 生成 Article Schema JSON-LD
+ * 鐢熸垚 Article Schema JSON-LD
  */
 export function generateArticleSchema(news: NewsItem): object {
   return {
@@ -192,3 +192,4 @@ export function generateArticleSchema(news: NewsItem): object {
     },
   };
 }
+

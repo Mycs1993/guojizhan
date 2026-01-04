@@ -1,4 +1,4 @@
-import { promises as fs } from "fs";
+﻿import { promises as fs } from "fs";
 import path from "path";
 import type {
   SEOConfig,
@@ -13,7 +13,7 @@ import type {
 const CONFIG_PATH = path.join(process.cwd(), "src/data/seo-config.json");
 const BACKUP_DIR = path.join(process.cwd(), "src/data/backups");
 
-// 默认配置（当文件不存在时使用�?
+// 榛樿閰嶇疆锛堝綋鏂囦欢涓嶅瓨鍦ㄦ椂浣跨敤锛?
 const DEFAULT_CONFIG: SEOConfig = {
   global: {
     siteName: "Yudong Boiler",
@@ -27,7 +27,7 @@ const DEFAULT_CONFIG: SEOConfig = {
   aiSuggestions: [],
 };
 
-// 读取配置
+// 璇诲彇閰嶇疆
 export async function getSEOConfig(): Promise<SEOConfig> {
   try {
     const data = await fs.readFile(CONFIG_PATH, "utf-8");
@@ -38,15 +38,15 @@ export async function getSEOConfig(): Promise<SEOConfig> {
   }
 }
 
-// 保存配置（带备份�?
+// 淇濆瓨閰嶇疆锛堝甫澶囦唤锛?
 export async function saveSEOConfig(config: SEOConfig): Promise<void> {
-  // 创建备份
+  // 鍒涘缓澶囦唤
   await createBackup();
-  // 保存新配�?
+  // 淇濆瓨鏂伴厤缃?
   await fs.writeFile(CONFIG_PATH, JSON.stringify(config, null, 2), "utf-8");
 }
 
-// 创建备份
+// 鍒涘缓澶囦唤
 async function createBackup(): Promise<void> {
   try {
     await fs.mkdir(BACKUP_DIR, { recursive: true });
@@ -54,10 +54,10 @@ async function createBackup(): Promise<void> {
     const backupPath = path.join(BACKUP_DIR, `seo-config-${timestamp}.json`);
     const currentData = await fs.readFile(CONFIG_PATH, "utf-8");
     await fs.writeFile(backupPath, currentData, "utf-8");
-    // 只保留最�?10 个备�?
+    // 鍙繚鐣欐渶杩?10 涓浠?
     await cleanOldBackups();
   } catch {
-    // 备份失败不影响主流程
+    // 澶囦唤澶辫触涓嶅奖鍝嶄富娴佺▼
   }
 }
 
@@ -69,7 +69,7 @@ async function cleanOldBackups(): Promise<void> {
   }
 }
 
-// ============ 关键词操�?============
+// ============ 鍏抽敭璇嶆搷浣?============
 
 export async function getKeywords(): Promise<Keyword[]> {
   const config = await getSEOConfig();
@@ -115,7 +115,7 @@ export async function deleteKeyword(id: string): Promise<boolean> {
   return true;
 }
 
-// ============ 页面 SEO 操作 ============
+// ============ 椤甸潰 SEO 鎿嶄綔 ============
 
 export async function getPageSEO(slug: string): Promise<PageSEO | null> {
   const config = await getSEOConfig();
@@ -138,7 +138,7 @@ export async function updatePageSEO(slug: string, data: UpdatePageSEORequest): P
   return config.pages[slug];
 }
 
-// ============ AI 建议操作 ============
+// ============ AI 寤鸿鎿嶄綔 ============
 
 export async function getAISuggestions(): Promise<KeywordSuggestion[]> {
   const config = await getSEOConfig();
@@ -163,7 +163,7 @@ export async function acceptSuggestion(id: string): Promise<boolean> {
   if (!suggestion) return false;
   
   suggestion.status = "accepted";
-  // 添加到关键词列表
+  // 娣诲姞鍒板叧閿瘝鍒楄〃
   config.keywords.push({
     id: `kw-${Date.now()}`,
     keyword: suggestion.keyword,
@@ -185,3 +185,4 @@ export async function dismissSuggestion(id: string): Promise<boolean> {
   await saveSEOConfig(config);
   return true;
 }
+
