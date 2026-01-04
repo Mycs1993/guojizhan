@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { PRODUCT_CATEGORIES } from "@/data/products";
+import { routing } from "@/i18n/routing";
 import { NEWS_ITEMS } from "@/data/news";
 import { promises as fs } from "node:fs";
 import path from "node:path";
@@ -14,8 +15,8 @@ async function readLocalNewsJson(): Promise<Array<{ id: number | string; date?: 
     const rawItems = Array.isArray(data)
       ? data
       : Array.isArray(data?.items)
-      ? data.items
-      : [];
+        ? data.items
+        : [];
 
     return rawItems
       .map((n: any) => ({ id: n.id, date: n.date }))
@@ -26,58 +27,58 @@ async function readLocalNewsJson(): Promise<Array<{ id: number | string; date?: 
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  // Static pages with appropriate priorities
-  // Homepage: 1.0, Products: 0.9, Other pages: 0.8
-  const staticPages: MetadataRoute.Sitemap = [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 1.0,
-    },
-    {
-      url: `${baseUrl}/products`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/about`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/news`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
+  const locales = routing.locales;
+
+  // 1. Static pages
+  const staticRoutes = [
+    "", // Homepage
+    "/products",
+    "/about",
+    "/contact",
+    "/news",
   ];
 
-  // Dynamic product pages - priority 0.9 (high value pages)
-  const productPages: MetadataRoute.Sitemap = PRODUCT_CATEGORIES.map((product) => ({
-    url: `${baseUrl}/products/${product.id}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly",
-    priority: 0.9,
-  }));
+  const staticPages: MetadataRoute.Sitemap = [];
 
-  // News pages - priority 0.7
+  for (const locale of locales) {
+    for (const route of staticRoutes) {
+      staticPages.push({
+        url: `${baseUrl}/${locale}${route}`,
+        lastModified: new Date(),
+        changeFrequency: route === "" ? "weekly" : "monthly", // Homepage updates more often
+        priority: route === "" ? 1.0 : 0.8,
+      });
+    }
+  }
+
+  // 2. Dynamic product pages
+  const productPages: MetadataRoute.Sitemap = [];
+  for (const locale of locales) {
+    for (const product of PRODUCT_CATEGORIES) {
+      productPages.push({
+        url: `${baseUrl}/${locale}/products/${product.id}`,
+        lastModified: new Date(),
+        changeFrequency: "monthly",
+        priority: 0.9,
+      });
+    }
+  }
+
+  // 3. News pages
   const localNews = await readLocalNewsJson();
   const newsSource = localNews ?? NEWS_ITEMS;
-  const newsPages: MetadataRoute.Sitemap = newsSource.map((news: any) => ({
-    url: `${baseUrl}/news/${news.id}`,
-    lastModified: news.date ? new Date(news.date) : new Date(),
-    changeFrequency: "weekly",
-    priority: 0.7,
-  }));
+  const newsPages: MetadataRoute.Sitemap = [];
+
+  for (const locale of locales) {
+    for (const news of newsSource) {
+      newsPages.push({
+        url: `${baseUrl}/${locale}/news/${news.id}`,
+        lastModified: news.date ? new Date(news.date) : new Date(),
+        changeFrequency: "weekly",
+        priority: 0.7,
+      });
+    }
+  }
 
   return [...staticPages, ...productPages, ...newsPages];
 }
