@@ -1,4 +1,33 @@
-﻿export const PRODUCT_CATEGORIES = [
+﻿export interface Product {
+  id: string;
+  name: {
+    en: string;
+    zh: string;
+  };
+  description: {
+    en: string;
+    zh: string;
+  };
+  fullDescription: {
+    en: string;
+    zh: string;
+  };
+  image: string;
+  icon: string;
+  features: {
+    en: string;
+    zh: string;
+  }[];
+  specs: {
+    model: string;
+    capacity: string;
+    pressure: string;
+    efficiency: string;
+    fuel: string;
+  }[];
+}
+
+export const PRODUCT_CATEGORIES: Product[] = [
   {
     id: "wns-oil-gas-steam-boiler",
     name: {
