@@ -1,13 +1,17 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { PRODUCT_CATEGORIES } from "@/data/products";
 import { CheckCircle, MessageSquare, ShieldCheck, Clock, Download } from "lucide-react";
 import { notFound } from "next/navigation";
 import { ProductSchema } from "@/components/seo/ProductSchema";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { generateProductMetadata, generateBreadcrumbs } from "@/lib/seo";
+import { getSEOConfig } from "@/lib/seo-service";
+import { routing } from "@/i18n/routing";
 import { getLocale } from "next-intl/server";
 import { QuickInquiryForm } from "@/components/contact/QuickInquiryForm";
+import { ProductFAQ } from "@/components/product/ProductFAQ";
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const { id } = await params;
@@ -18,7 +22,22 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     return {};
   }
 
-  return generateProductMetadata(product, locale);
+  const meta = await generateProductMetadata(product, locale);
+  const seoConfig = await getSEOConfig();
+  const baseUrl = seoConfig.global.baseUrl;
+
+  const languages: Record<string, string> = {};
+  routing.locales.forEach((l) => {
+    languages[l] = `${baseUrl}/${l}/products/${product.id}`;
+  });
+
+  return {
+    ...meta,
+    alternates: {
+      canonical: `${baseUrl}/${locale}/products/${product.id}`,
+      languages: languages,
+    }
+  };
 }
 
 export default async function ProductDetailPage({ params }: { params: Promise<{ id: string }> }) {
@@ -61,7 +80,14 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
               {/* Product Image */}
               <div className="bg-slate-100 rounded-xl overflow-hidden aspect-video mb-8 relative flex items-center justify-center border border-slate-200">
                 <span className="text-slate-400 text-lg font-medium">High Resolution Image of {product.name[locale]}</span>
-                <img src={product.image} alt={product.name[locale]} className="absolute inset-0 w-full h-full object-cover" />
+                <Image
+                  src={product.image}
+                  alt={product.name[locale]}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 66vw, 100vw"
+                  priority
+                />
               </div>
 
               <div className="prose prose-slate max-w-none">
@@ -104,7 +130,10 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
                   </table>
                 </div>
 
-                {/* Download Section removed per request */}
+                {/* FAQ Section Integrated into Main Content Flow */}
+                <div className="mt-12">
+                  <ProductFAQ locale={locale} />
+                </div>
               </div>
             </div>
 

@@ -28,11 +28,6 @@ export async function generateMetadata(): Promise<Metadata> {
   const baseUrl = seoConfig.global.baseUrl;
   const global = seoConfig.global;
 
-  const languages: Record<string, string> = {};
-  routing.locales.forEach((locale) => {
-    languages[locale] = `${baseUrl}/${locale}`;
-  });
-
   return {
     metadataBase: new URL(baseUrl),
     title: {
@@ -48,10 +43,6 @@ export async function generateMetadata(): Promise<Metadata> {
       email: false,
       address: false,
       telephone: false,
-    },
-    alternates: {
-      canonical: `${baseUrl}/en`,
-      languages: languages,
     },
     openGraph: {
       type: "website",
