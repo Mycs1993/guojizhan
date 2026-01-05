@@ -19,7 +19,7 @@ export function QuickInquiryForm({ productName }: QuickInquiryFormProps) {
     setError(null);
 
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("/.netlify/functions/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
