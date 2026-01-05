@@ -29,8 +29,9 @@ export function ContactForm() {
     setError(null);
 
     try {
-      console.log("=== SENDING REQUEST TO /api/contact ===");
-      const res = await fetch("/api/contact", {
+      const endpoint = "/api/contact";
+      console.log(`=== SENDING REQUEST TO ${endpoint} ===`);
+      const res = await fetch(endpoint, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
