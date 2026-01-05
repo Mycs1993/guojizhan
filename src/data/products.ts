@@ -43,7 +43,7 @@ export const PRODUCT_CATEGORIES: Product[] = [
       en: "The WNS series horizontal internal combustion boiler is a three-pass wet-back shell boiler. It features a corrugated furnace and advanced burner technology to ensure high combustion efficiency and low nitrogen emissions. Ideal for food processing, chemical, and textile industries.",
       zh: "WNS系列卧式内燃锅炉采用三回程湿背式结构。配备波纹炉胆和先进燃烧器技术，确保燃烧效率高且氮氧化物排放低。非常适合食品加工、化工和纺织行业。"
     },
-    image: "/images/products/wns-steam-boiler.jpg",
+    image: "/images/products/wns-series-steam-boiler.png",
     icon: "Flame",
     features: [
       { en: "High Thermal Efficiency ≥ 98%", zh: "热效率 ≥ 98%" },
