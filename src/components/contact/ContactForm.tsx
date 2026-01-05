@@ -29,7 +29,7 @@ export function ContactForm() {
     setError(null);
 
     try {
-      const endpoint = "/api/contact";
+      const endpoint = "/.netlify/functions/contact";
       console.log(`=== SENDING REQUEST TO ${endpoint} ===`);
       const res = await fetch(endpoint, {
         method: "POST",
