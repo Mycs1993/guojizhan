@@ -7,7 +7,8 @@ const intlMiddleware = createMiddleware(routing);
 export default function middleware(request: NextRequest) {
     const { pathname } = request.nextUrl;
 
-    // Bypass admin, API, and test routes from locale handling.
+    // Double safety: Bypass admin, API, and test routes.
+    // Ideally the matching config handles this, but explicit check doesn't hurt.
     if (
         pathname.startsWith('/manage') ||
         pathname.startsWith('/admin') ||
@@ -22,8 +23,8 @@ export default function middleware(request: NextRequest) {
 }
 
 export const config = {
-    // Match all paths except static files and Next.js internals
+    // Match all paths except static files, Next.js internals, and API routes
     matcher: [
-        '/((?!_next|_vercel|.*\\..*).*)'
+        '/((?!api|_next|_vercel|.*\\..*).*)'
     ]
 };
