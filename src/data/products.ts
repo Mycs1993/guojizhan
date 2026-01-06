@@ -147,7 +147,7 @@ export const PRODUCT_CATEGORIES: Product[] = [
       en: "YGL(W) Organic Heat Carrier Boiler uses biomass or coal as fuel and thermal oil as the heat carrier. It provides high operating temperatures (up to 340°C) at low pressures (<1.0MPa), making it ideal for industries requiring precise high-temperature heating.",
       zh: "YG(L)W有机热载体炉（导热油炉）以生物质/煤为燃料，导热油为热载体。可提供高达340°C的高温供热，而工作压力低（<1.0MPa），非常适合需要精确高温加热的行业。"
     },
-    image: "/images/products/yglw-organic-heat-carrier.jpg",
+    image: "/images/products/thermal-oil-heater-premium.png",
     icon: "Thermometer",
     features: [
       { en: "High Temp (340°C) Low Pressure", zh: "高温 (340°C) 低压" },
@@ -179,7 +179,7 @@ export const PRODUCT_CATEGORIES: Product[] = [
       en: "The YY(Q)W series uses a horizontal chamber structure with a three-pass coil design. It offers rapid heating and precise temperature control, perfect for petrochemical, textile printing, and plastic industries.",
       zh: "YY(Q)W系列采用卧式燃烧室结构和三回程盘管设计。具有加热快、控温精确的特点，非常适合石油化工、纺织印染和塑料行业。"
     },
-    image: "/images/products/yglw-organic-heat-carrier.jpg", // Reusing thermal oil image
+    image: "/images/products/thermal-oil-heater-premium.png", // Reusing thermal oil image
     icon: "Thermometer",
     features: [
       { en: "Three-pass Coil Design", zh: "三回程盘管设计" },
@@ -211,7 +211,7 @@ export const PRODUCT_CATEGORIES: Product[] = [
       en: "WNS series pressure hot water boiler adopts a corrugated furnace and thread smoke tube structure. It provides stable hot water supply for hotels, hospitals, and residential district heating.",
       zh: "WNS系列承压热水锅炉采用波纹炉胆和螺纹烟管结构。为酒店、医院和住宅小区供暖提供稳定的热水供应。"
     },
-    image: "/images/products/wns-steam-boiler.jpg", // Reusing WNS image
+    image: "/images/products/wns-series-steam-boiler.png", // Reusing WNS image
     icon: "Waves",
     features: [
       { en: "Pressurized Operation", zh: "承压运行" },
@@ -243,7 +243,7 @@ export const PRODUCT_CATEGORIES: Product[] = [
       en: "CWNS atmospheric hot water boiler operates at atmospheric pressure, eliminating explosion risks. It is equipped with imported burners and advanced controllers for automated operation.",
       zh: "CWNS常压热水锅炉在常压下运行，消除了爆炸风险。配备进口燃烧器和先进控制器，实现自动化运行。"
     },
-    image: "/images/products/wns-steam-boiler.jpg",
+    image: "/images/products/wns-series-steam-boiler.png",
     icon: "ShieldCheck",
     features: [
       { en: "No Explosion Risk", zh: "无爆炸风险" },
@@ -275,7 +275,7 @@ export const PRODUCT_CATEGORIES: Product[] = [
       en: "The CLHS vertical boiler has a compact footprint and is easy to install. It uses a high-efficiency heat transfer structure to produce hot water quickly, making it suitable for swimming pools, hotels, and schools.",
       zh: "CLHS立式锅炉占地面积小，安装方便。采用高效传热结构，产热水快，适用于游泳池、酒店和学校。"
     },
-    image: "/images/products/wns-steam-boiler.jpg", // Placeholder
+    image: "/images/products/wns-series-steam-boiler.png", // Placeholder
     icon: "ArrowUp",
     features: [
       { en: "Small Footprint", zh: "占地小" },
@@ -339,7 +339,7 @@ export const PRODUCT_CATEGORIES: Product[] = [
       en: "This boiler operates under negative pressure, ensuring absolute safety. The built-in heat exchanger provides clean hot water. Advanced combustion technology achieves ultra-low NOx emissions.",
       zh: "该锅炉在负压下运行，确保绝对安全。内置换热器提供清洁热水。先进的燃烧技术实现了超低氮氧化物排放。"
     },
-    image: "/images/products/wns-steam-boiler.jpg",
+    image: "/images/products/wns-series-steam-boiler.png",
     icon: "Leaf",
     features: [
       { en: "Absolute Safety (Vacuum)", zh: "绝对安全 (真空)" },
@@ -371,7 +371,7 @@ export const PRODUCT_CATEGORIES: Product[] = [
       en: "Using high-quality electric heating elements, the CWDR boiler provides silent and pollution-free heating. It features PID temperature control for precise energy management.",
       zh: "CWDR锅炉采用优质电加热元件，提供静音、无污染的供暖。具有PID温度控制功能，可进行精确的能源管理。"
     },
-    image: "/images/products/wns-steam-boiler.jpg",
+    image: "/images/products/wns-series-steam-boiler.png",
     icon: "Zap",
     features: [
       { en: "Zero Pollution", zh: "零污染" },
@@ -435,7 +435,7 @@ export const PRODUCT_CATEGORIES: Product[] = [
       en: "WDR series offers larger steam capacity using electric power. It separates the heating elements from the boiler connection for easier maintenance and safety.",
       zh: "WDR系列利用电力提供更大的蒸汽容量。它将加热元件与锅炉连接分离，便于维护和安全。"
     },
-    image: "/images/products/wns-steam-boiler.jpg",
+    image: "/images/products/wns-series-steam-boiler.png",
     icon: "Zap",
     features: [
       { en: "Large Power Handling", zh: "大功率处理" },
@@ -499,7 +499,7 @@ export const PRODUCT_CATEGORIES: Product[] = [
       en: "The gas steam generator produces steam in seconds. Its modular design allows for multiple units to work together to meet fluctuating steam demands efficiently.",
       zh: "燃气蒸汽发生器在几秒钟内产生蒸汽。其模块化设计允许多台设备协同工作，高效满足波动的蒸汽需求。"
     },
-    image: "/images/products/wns-steam-boiler.jpg",
+    image: "/images/products/wns-series-steam-boiler.png",
     icon: "Flame",
     features: [
       { en: "5 Seconds to Steam", zh: "5秒出汽" },
@@ -627,7 +627,7 @@ export const PRODUCT_CATEGORIES: Product[] = [
       en: "Meeting strict environmental regulations, this generator produces steam with extremely low NOx emissions. It is quiet, efficient, and requires no special boiler room.",
       zh: "满足严格的环保法规，产生极低氮氧化物排放的蒸汽。安静、高效，无需专用锅炉房。"
     },
-    image: "/images/products/wns-steam-boiler.jpg",
+    image: "/images/products/wns-series-steam-boiler.png",
     icon: "Leaf",
     features: [
       { en: "NOx < 30mg/m³", zh: "氮氧化物 < 30mg/m³" },
