@@ -275,7 +275,7 @@ export const PRODUCT_CATEGORIES: Product[] = [
       en: "The CLHS vertical boiler has a compact footprint and is easy to install. It uses a high-efficiency heat transfer structure to produce hot water quickly, making it suitable for swimming pools, hotels, and schools.",
       zh: "CLHS立式锅炉占地面积小，安装方便。采用高效传热结构，产热水快，适用于游泳池、酒店和学校。"
     },
-    image: "/images/products/wns-series-steam-boiler.png", // Placeholder
+    image: "/images/products/clhs-vertical-hot-water-boiler-premium.png", // Placeholder
     icon: "ArrowUp",
     features: [
       { en: "Small Footprint", zh: "占地小" },
