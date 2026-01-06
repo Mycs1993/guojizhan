@@ -435,7 +435,7 @@ export const PRODUCT_CATEGORIES: Product[] = [
       en: "WDR series offers larger steam capacity using electric power. It separates the heating elements from the boiler connection for easier maintenance and safety.",
       zh: "WDR系列利用电力提供更大的蒸汽容量。它将加热元件与锅炉连接分离，便于维护和安全。"
     },
-    image: "/images/products/wns-series-steam-boiler.png",
+    image: "/images/products/wdr-electric-steam-boiler-premium.png",
     icon: "Zap",
     features: [
       { en: "Large Power Handling", zh: "大功率处理" },
