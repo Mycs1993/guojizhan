@@ -339,7 +339,7 @@ export const PRODUCT_CATEGORIES: Product[] = [
       en: "This boiler operates under negative pressure, ensuring absolute safety. The built-in heat exchanger provides clean hot water. Advanced combustion technology achieves ultra-low NOx emissions.",
       zh: "该锅炉在负压下运行，确保绝对安全。内置换热器提供清洁热水。先进的燃烧技术实现了超低氮氧化物排放。"
     },
-    image: "/images/products/low-nitrogen-vacuum-boiler-premium.png",
+    image: "/images/products/low-nitrogen-vacuum-boiler-premium-red.png",
     icon: "Leaf",
     features: [
       { en: "Absolute Safety (Vacuum)", zh: "绝对安全 (真空)" },
