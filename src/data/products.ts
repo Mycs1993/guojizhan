@@ -147,7 +147,7 @@ export const PRODUCT_CATEGORIES: Product[] = [
       en: "YGL(W) Organic Heat Carrier Boiler uses biomass or coal as fuel and thermal oil as the heat carrier. It provides high operating temperatures (up to 340°C) at low pressures (<1.0MPa), making it ideal for industries requiring precise high-temperature heating.",
       zh: "YG(L)W有机热载体炉（导热油炉）以生物质/煤为燃料，导热油为热载体。可提供高达340°C的高温供热，而工作压力低（<1.0MPa），非常适合需要精确高温加热的行业。"
     },
-    image: "/images/products/thermal-oil-heater-premium.png",
+    image: "/images/products/yglw-biomass-thermal-oil-heater-premium.png",
     icon: "Thermometer",
     features: [
       { en: "High Temp (340°C) Low Pressure", zh: "高温 (340°C) 低压" },
