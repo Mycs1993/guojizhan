@@ -499,7 +499,7 @@ export const PRODUCT_CATEGORIES: Product[] = [
       en: "The gas steam generator produces steam in seconds. Its modular design allows for multiple units to work together to meet fluctuating steam demands efficiently.",
       zh: "燃气蒸汽发生器在几秒钟内产生蒸汽。其模块化设计允许多台设备协同工作，高效满足波动的蒸汽需求。"
     },
-    image: "/images/products/wns-series-steam-boiler.png",
+    image: "/images/products/gas-steam-generator-premium.jpg",
     icon: "Flame",
     features: [
       { en: "5 Seconds to Steam", zh: "5秒出汽" },
