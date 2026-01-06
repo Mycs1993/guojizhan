@@ -595,7 +595,7 @@ export const PRODUCT_CATEGORIES: Product[] = [
       en: "The DZH series is suitable for burning rough biomass like wood logs and waste. The moving grate prevents slagging and ensures full combustion.",
       zh: "DZH系列适合燃烧原木和废料等粗生物质。活动炉排可防止结渣并确保充分燃烧。"
     },
-    image: "/images/products/dzl-biomass-boiler.jpg",
+    image: "/images/products/dzh-manual-biomass-boiler-premium.png",
     icon: "Hammer", // Manual work
     features: [
       { en: "Suitable for Wood Logs", zh: "适合烧原木" },
