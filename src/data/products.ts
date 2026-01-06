@@ -211,7 +211,7 @@ export const PRODUCT_CATEGORIES: Product[] = [
       en: "WNS series pressure hot water boiler adopts a corrugated furnace and thread smoke tube structure. It provides stable hot water supply for hotels, hospitals, and residential district heating.",
       zh: "WNS系列承压热水锅炉采用波纹炉胆和螺纹烟管结构。为酒店、医院和住宅小区供暖提供稳定的热水供应。"
     },
-    image: "/images/products/wns-series-steam-boiler.png", // Reusing WNS image
+    image: "/images/products/wns-hot-water-boiler-premium.jpg", // Reusing WNS image
     icon: "Waves",
     features: [
       { en: "Pressurized Operation", zh: "承压运行" },
