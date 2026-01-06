@@ -627,7 +627,7 @@ export const PRODUCT_CATEGORIES: Product[] = [
       en: "Meeting strict environmental regulations, this generator produces steam with extremely low NOx emissions. It is quiet, efficient, and requires no special boiler room.",
       zh: "满足严格的环保法规，产生极低氮氧化物排放的蒸汽。安静、高效，无需专用锅炉房。"
     },
-    image: "/images/products/wns-series-steam-boiler.png",
+    image: "/images/products/low-nitrogen-steam-generator-premium.png",
     icon: "Leaf",
     features: [
       { en: "NOx < 30mg/m³", zh: "氮氧化物 < 30mg/m³" },
