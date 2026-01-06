@@ -307,7 +307,7 @@ export const PRODUCT_CATEGORIES: Product[] = [
       en: "LSS series is a vertical once-through boiler. It requires no large water volume and can generate steam within minutes of startup. Its compact design is perfect for limited spaces.",
       zh: "LSS系列是一种立式贯流锅炉。它不需要大水容量，启动后几分钟内即可产生蒸汽。其紧凑的设计非常适合有限的空间。"
     },
-    image: "/images/products/szs-water-tube-boiler-premium.png",
+    image: "/images/products/lss-vertical-steam-boiler-premium.jpg",
     icon: "Zap",
     features: [
       { en: "Quick Steam Generation", zh: "快速出汽" },
