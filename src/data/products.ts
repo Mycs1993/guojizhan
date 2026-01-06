@@ -179,7 +179,7 @@ export const PRODUCT_CATEGORIES: Product[] = [
       en: "The YY(Q)W series uses a horizontal chamber structure with a three-pass coil design. It offers rapid heating and precise temperature control, perfect for petrochemical, textile printing, and plastic industries.",
       zh: "YY(Q)W系列采用卧式燃烧室结构和三回程盘管设计。具有加热快、控温精确的特点，非常适合石油化工、纺织印染和塑料行业。"
     },
-    image: "/images/products/thermal-oil-heater-premium.png", // Reusing thermal oil image
+    image: "/images/products/yyqw-thermal-oil-heater-premium.png", // Reusing thermal oil image
     icon: "Thermometer",
     features: [
       { en: "Three-pass Coil Design", zh: "三回程盘管设计" },
