@@ -531,7 +531,7 @@ export const PRODUCT_CATEGORIES: Product[] = [
       en: "SZL boiler features double drums and a water tube assembly chain grate. It offers high efficiency, overload protection, and suitability for various solid fuels.",
       zh: "SZL锅炉采用双锅筒和水管组装链条炉排。具有效率高、过载保护强、适用多种固体燃料的特点。"
     },
-    image: "/images/products/dzl-biomass-boiler.jpg",
+    image: "/images/products/szl-chain-grate-boiler-premium.png",
     icon: "Factory",
     features: [
       { en: "Cyclone Burnout Chamber", zh: "旋风燃尽室" },
