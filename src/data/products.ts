@@ -371,7 +371,7 @@ export const PRODUCT_CATEGORIES: Product[] = [
       en: "Using high-quality electric heating elements, the CWDR boiler provides silent and pollution-free heating. It features PID temperature control for precise energy management.",
       zh: "CWDR锅炉采用优质电加热元件，提供静音、无污染的供暖。具有PID温度控制功能，可进行精确的能源管理。"
     },
-    image: "/images/products/wns-series-steam-boiler.png",
+    image: "/images/products/wdr-electric-steam-boiler-premium.png",
     icon: "Zap",
     features: [
       { en: "Zero Pollution", zh: "零污染" },
