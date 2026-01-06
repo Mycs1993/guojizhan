@@ -563,7 +563,7 @@ export const PRODUCT_CATEGORIES: Product[] = [
       en: "Designed for grain drying, wood drying, and workshop heating. It burns biomass to produce pure hot air directly without water or steam as a medium.",
       zh: "专为谷物干燥、木材干燥和车间供暖设计。燃烧生物质直接产生纯净热风，无需水或蒸汽作为介质。"
     },
-    image: "/images/products/dzl-biomass-boiler.jpg",
+    image: "/images/products/biomass-hot-air-stove-premium.png",
     icon: "Wind",
     features: [
       { en: "High Thermal Efficiency", zh: "热效率高" },
