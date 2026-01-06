@@ -25,7 +25,7 @@ export function AboutSnippet() {
             {/* About Image */}
             <div className="rounded-xl overflow-hidden shadow-xl relative min-h-[400px]">
               <Image
-                src="/images/about/about-intro.jpg"
+                src="/images/factory-gate-premium.jpg"
                 alt="Yudong Boiler Factory"
                 fill
                 className="object-cover"
