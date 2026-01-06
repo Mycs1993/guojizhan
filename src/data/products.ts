@@ -243,7 +243,7 @@ export const PRODUCT_CATEGORIES: Product[] = [
       en: "CWNS atmospheric hot water boiler operates at atmospheric pressure, eliminating explosion risks. It is equipped with imported burners and advanced controllers for automated operation.",
       zh: "CWNS常压热水锅炉在常压下运行，消除了爆炸风险。配备进口燃烧器和先进控制器，实现自动化运行。"
     },
-    image: "/images/products/wns-series-steam-boiler.png",
+    image: "/images/products/cwns-hot-water-boiler-premium.png",
     icon: "ShieldCheck",
     features: [
       { en: "No Explosion Risk", zh: "无爆炸风险" },
