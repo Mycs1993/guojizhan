@@ -83,7 +83,7 @@ export const PRODUCT_CATEGORIES: Product[] = [
       en: "The SZS series boiler features a double-drum 'D' type layout with a membrane water wall structure. It offers excellent sealing, large combustion chamber, and high steam quality. Designed for high pressure and large capacity industrial applications.",
       zh: "SZS系列锅炉采用双锅筒“D”型布置和膜式水冷壁结构。密封性好，燃烧室大，蒸汽品质高。专为高压和大容量工业应用设计。"
     },
-    image: "/images/products/szs-steam-boiler.jpg",
+    image: "/images/products/szs-water-tube-boiler-premium.png",
     icon: "Factory",
     features: [
       { en: "Large Capacity up to 100T/h", zh: "最大容量可达 100T/h" },
@@ -115,7 +115,7 @@ export const PRODUCT_CATEGORIES: Product[] = [
       en: "The DZL series is a package chain grate boiler with threaded smoke tubes. It is designed to burn biomass pellets or coal efficiently. The structure is compact, easy to install, and provides stable operation.",
       zh: "DZL系列是采用螺纹烟管的组装链条炉排锅炉。设计用于高效燃烧生物质颗粒或煤炭。结构紧凑，安装方便，运行稳定。"
     },
-    image: "/images/products/dzl-biomass-boiler.jpg",
+    image: "/images/products/dzl-biomass-boiler-premium.png",
     icon: "Leaf",
     features: [
       { en: "Fuel Flexibility (Coal/Biomass)", zh: "燃料适应性强 (煤/生物质)" },
@@ -307,7 +307,7 @@ export const PRODUCT_CATEGORIES: Product[] = [
       en: "LSS series is a vertical once-through boiler. It requires no large water volume and can generate steam within minutes of startup. Its compact design is perfect for limited spaces.",
       zh: "LSS系列是一种立式贯流锅炉。它不需要大水容量，启动后几分钟内即可产生蒸汽。其紧凑的设计非常适合有限的空间。"
     },
-    image: "/images/products/szs-steam-boiler.jpg",
+    image: "/images/products/szs-water-tube-boiler-premium.png",
     icon: "Zap",
     features: [
       { en: "Quick Steam Generation", zh: "快速出汽" },
@@ -403,7 +403,7 @@ export const PRODUCT_CATEGORIES: Product[] = [
       en: "LDR electric steam boiler is designed for small steam requirements. It is easy to operate, clean, and reliable. Ideal for laboratories, garment ironing, and food steaming.",
       zh: "LDR电蒸汽锅炉专为小蒸汽需求而设计。操作简单，清洁可靠。非常适合实验室、服装熨烫和食品蒸煮。"
     },
-    image: "/images/products/szs-steam-boiler.jpg",
+    image: "/images/products/szs-water-tube-boiler-premium.png",
     icon: "Zap",
     features: [
       { en: "One-button Operation", zh: "一键操作" },
