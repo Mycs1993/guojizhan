@@ -403,7 +403,7 @@ export const PRODUCT_CATEGORIES: Product[] = [
       en: "LDR electric steam boiler is designed for small steam requirements. It is easy to operate, clean, and reliable. Ideal for laboratories, garment ironing, and food steaming.",
       zh: "LDR电蒸汽锅炉专为小蒸汽需求而设计。操作简单，清洁可靠。非常适合实验室、服装熨烫和食品蒸煮。"
     },
-    image: "/images/products/szs-water-tube-boiler-premium.png",
+    image: "/images/products/ldr-electric-steam-boiler-premium.png",
     icon: "Zap",
     features: [
       { en: "One-button Operation", zh: "一键操作" },
