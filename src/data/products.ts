@@ -43,7 +43,7 @@ export const PRODUCT_CATEGORIES: Product[] = [
       en: "The WNS series horizontal internal combustion boiler is a three-pass wet-back shell boiler. It features a corrugated furnace and advanced burner technology to ensure high combustion efficiency and low nitrogen emissions. Ideal for food processing, chemical, and textile industries.",
       zh: "WNS系列卧式内燃锅炉采用三回程湿背式结构。配备波纹炉胆和先进燃烧器技术，确保燃烧效率高且氮氧化物排放低。非常适合食品加工、化工和纺织行业。"
     },
-    image: "/images/products/wns-series-steam-boiler.png",
+    image: "/images/products/wns-series-steam-boiler.jpg",
     icon: "Flame",
     features: [
       { en: "High Thermal Efficiency ≥ 98%", zh: "热效率 ≥ 98%" },
@@ -83,7 +83,7 @@ export const PRODUCT_CATEGORIES: Product[] = [
       en: "The SZS series boiler features a double-drum 'D' type layout with a membrane water wall structure. It offers excellent sealing, large combustion chamber, and high steam quality. Designed for high pressure and large capacity industrial applications.",
       zh: "SZS系列锅炉采用双锅筒“D”型布置和膜式水冷壁结构。密封性好，燃烧室大，蒸汽品质高。专为高压和大容量工业应用设计。"
     },
-    image: "/images/products/szs-water-tube-boiler-premium.png",
+    image: "/images/products/szs-water-tube-boiler-premium.jpg",
     icon: "Factory",
     features: [
       { en: "Large Capacity up to 100T/h", zh: "最大容量可达 100T/h" },
@@ -115,7 +115,7 @@ export const PRODUCT_CATEGORIES: Product[] = [
       en: "The DZL series is a package chain grate boiler with threaded smoke tubes. It is designed to burn biomass pellets or coal efficiently. The structure is compact, easy to install, and provides stable operation.",
       zh: "DZL系列是采用螺纹烟管的组装链条炉排锅炉。设计用于高效燃烧生物质颗粒或煤炭。结构紧凑，安装方便，运行稳定。"
     },
-    image: "/images/products/dzl-biomass-boiler-premium.png",
+    image: "/images/products/dzl-biomass-boiler-premium.jpg",
     icon: "Leaf",
     features: [
       { en: "Fuel Flexibility (Coal/Biomass)", zh: "燃料适应性强 (煤/生物质)" },
@@ -147,7 +147,7 @@ export const PRODUCT_CATEGORIES: Product[] = [
       en: "YGL(W) Organic Heat Carrier Boiler uses biomass or coal as fuel and thermal oil as the heat carrier. It provides high operating temperatures (up to 340°C) at low pressures (<1.0MPa), making it ideal for industries requiring precise high-temperature heating.",
       zh: "YG(L)W有机热载体炉（导热油炉）以生物质/煤为燃料，导热油为热载体。可提供高达340°C的高温供热，而工作压力低（<1.0MPa），非常适合需要精确高温加热的行业。"
     },
-    image: "/images/products/yglw-biomass-thermal-oil-heater-premium.png",
+    image: "/images/products/yglw-biomass-thermal-oil-heater-premium.jpg",
     icon: "Thermometer",
     features: [
       { en: "High Temp (340°C) Low Pressure", zh: "高温 (340°C) 低压" },
@@ -179,7 +179,7 @@ export const PRODUCT_CATEGORIES: Product[] = [
       en: "The YY(Q)W series uses a horizontal chamber structure with a three-pass coil design. It offers rapid heating and precise temperature control, perfect for petrochemical, textile printing, and plastic industries.",
       zh: "YY(Q)W系列采用卧式燃烧室结构和三回程盘管设计。具有加热快、控温精确的特点，非常适合石油化工、纺织印染和塑料行业。"
     },
-    image: "/images/products/yyqw-thermal-oil-heater-premium.png", // Reusing thermal oil image
+    image: "/images/products/yyqw-thermal-oil-heater-premium.jpg", // Reusing thermal oil image
     icon: "Thermometer",
     features: [
       { en: "Three-pass Coil Design", zh: "三回程盘管设计" },
@@ -243,7 +243,7 @@ export const PRODUCT_CATEGORIES: Product[] = [
       en: "CWNS atmospheric hot water boiler operates at atmospheric pressure, eliminating explosion risks. It is equipped with imported burners and advanced controllers for automated operation.",
       zh: "CWNS常压热水锅炉在常压下运行，消除了爆炸风险。配备进口燃烧器和先进控制器，实现自动化运行。"
     },
-    image: "/images/products/cwns-hot-water-boiler-premium.png",
+    image: "/images/products/cwns-hot-water-boiler-premium.jpg",
     icon: "ShieldCheck",
     features: [
       { en: "No Explosion Risk", zh: "无爆炸风险" },
@@ -275,7 +275,7 @@ export const PRODUCT_CATEGORIES: Product[] = [
       en: "The CLHS vertical boiler has a compact footprint and is easy to install. It uses a high-efficiency heat transfer structure to produce hot water quickly, making it suitable for swimming pools, hotels, and schools.",
       zh: "CLHS立式锅炉占地面积小，安装方便。采用高效传热结构，产热水快，适用于游泳池、酒店和学校。"
     },
-    image: "/images/products/clhs-vertical-hot-water-boiler-premium.png", // Placeholder
+    image: "/images/products/clhs-vertical-hot-water-boiler-premium.jpg", // Placeholder
     icon: "ArrowUp",
     features: [
       { en: "Small Footprint", zh: "占地小" },
@@ -339,7 +339,7 @@ export const PRODUCT_CATEGORIES: Product[] = [
       en: "This boiler operates under negative pressure, ensuring absolute safety. The built-in heat exchanger provides clean hot water. Advanced combustion technology achieves ultra-low NOx emissions.",
       zh: "该锅炉在负压下运行，确保绝对安全。内置换热器提供清洁热水。先进的燃烧技术实现了超低氮氧化物排放。"
     },
-    image: "/images/products/low-nitrogen-vacuum-boiler-premium-red.png",
+    image: "/images/products/low-nitrogen-vacuum-boiler-premium-red.jpg",
     icon: "Leaf",
     features: [
       { en: "Absolute Safety (Vacuum)", zh: "绝对安全 (真空)" },
@@ -371,7 +371,7 @@ export const PRODUCT_CATEGORIES: Product[] = [
       en: "Using high-quality electric heating elements, the CWDR boiler provides silent and pollution-free heating. It features PID temperature control for precise energy management.",
       zh: "CWDR锅炉采用优质电加热元件，提供静音、无污染的供暖。具有PID温度控制功能，可进行精确的能源管理。"
     },
-    image: "/images/products/wdr-electric-steam-boiler-premium.png",
+    image: "/images/products/wdr-electric-steam-boiler-premium.jpg",
     icon: "Zap",
     features: [
       { en: "Zero Pollution", zh: "零污染" },
@@ -435,7 +435,7 @@ export const PRODUCT_CATEGORIES: Product[] = [
       en: "WDR series offers larger steam capacity using electric power. It separates the heating elements from the boiler connection for easier maintenance and safety.",
       zh: "WDR系列利用电力提供更大的蒸汽容量。它将加热元件与锅炉连接分离，便于维护和安全。"
     },
-    image: "/images/products/wdr-electric-steam-boiler-premium.png",
+    image: "/images/products/wdr-electric-steam-boiler-premium.jpg",
     icon: "Zap",
     features: [
       { en: "Large Power Handling", zh: "大功率处理" },
@@ -531,7 +531,7 @@ export const PRODUCT_CATEGORIES: Product[] = [
       en: "SZL boiler features double drums and a water tube assembly chain grate. It offers high efficiency, overload protection, and suitability for various solid fuels.",
       zh: "SZL锅炉采用双锅筒和水管组装链条炉排。具有效率高、过载保护强、适用多种固体燃料的特点。"
     },
-    image: "/images/products/szl-chain-grate-boiler-premium.png",
+    image: "/images/products/szl-chain-grate-boiler-premium.jpg",
     icon: "Factory",
     features: [
       { en: "Cyclone Burnout Chamber", zh: "旋风燃尽室" },
@@ -563,7 +563,7 @@ export const PRODUCT_CATEGORIES: Product[] = [
       en: "Designed for grain drying, wood drying, and workshop heating. It burns biomass to produce pure hot air directly without water or steam as a medium.",
       zh: "专为谷物干燥、木材干燥和车间供暖设计。燃烧生物质直接产生纯净热风，无需水或蒸汽作为介质。"
     },
-    image: "/images/products/biomass-hot-air-stove-premium.png",
+    image: "/images/products/biomass-hot-air-stove-premium.jpg",
     icon: "Wind",
     features: [
       { en: "High Thermal Efficiency", zh: "热效率高" },
@@ -595,7 +595,7 @@ export const PRODUCT_CATEGORIES: Product[] = [
       en: "The DZH series is suitable for burning rough biomass like wood logs and waste. The moving grate prevents slagging and ensures full combustion.",
       zh: "DZH系列适合燃烧原木和废料等粗生物质。活动炉排可防止结渣并确保充分燃烧。"
     },
-    image: "/images/products/dzh-manual-biomass-boiler-premium.png",
+    image: "/images/products/dzh-manual-biomass-boiler-premium.jpg",
     icon: "Hammer", // Manual work
     features: [
       { en: "Suitable for Wood Logs", zh: "适合烧原木" },
@@ -611,69 +611,6 @@ export const PRODUCT_CATEGORIES: Product[] = [
         fuel: "Wood / Biomass"
       }
     ]
-  },
-  // 19. Low Nitrogen Gas Steam Generator (New)
-  {
-    id: "low-nitrogen-gas-steam-generator",
-    name: {
-      en: "Low Nitrogen Gas Steam Generator",
-      zh: "低氮燃气蒸汽发生器"
-    },
-    description: {
-      en: "Eco-friendly steam generator with NOx < 30mg.",
-      zh: "氮氧化物低于30mg的环保蒸汽发生器。"
-    },
-    fullDescription: {
-      en: "Meeting strict environmental regulations, this generator produces steam with extremely low NOx emissions. It is quiet, efficient, and requires no special boiler room.",
-      zh: "满足严格的环保法规，产生极低氮氧化物排放的蒸汽。安静、高效，无需专用锅炉房。"
-    },
-    image: "/images/products/low-nitrogen-steam-generator-premium.png",
-    icon: "Leaf",
-    features: [
-      { en: "NOx < 30mg/m³", zh: "氮氧化物 < 30mg/m³" },
-      { en: "Fully Premixed Combustion", zh: "全预混燃烧" },
-      { en: "Smart IoT Control", zh: "智能物联网控制" }
-    ],
-    specs: [
-      {
-        model: "LHS-0.5T-LN",
-        capacity: "500 kg/h",
-        pressure: "0.8 MPa",
-        efficiency: "≥ 98%",
-        fuel: "Natural Gas"
-      }
-    ]
-  },
-  // 20. Electric Heating Steam Generator (New)
-  {
-    id: "electric-heating-steam-generator",
-    name: {
-      en: "Electric Heating Steam Generator",
-      zh: "电加热蒸汽发生器"
-    },
-    description: {
-      en: "Small footprint, automatic electric steam supply.",
-      zh: "占地小，全自动电力蒸汽供应。"
-    },
-    fullDescription: {
-      en: "A perfect solution for point-of-use steam in hospitals, labs, and saunas. No fuel piping required, just electrical connection and water supply.",
-      zh: "医院、实验室和桑拿房即用型蒸汽的完美解决方案。无需燃料管道，只需连接电源和水源。"
-    },
-    image: "/images/products/szs-steam-boiler.jpg",
-    icon: "Zap",
-    features: [
-      { en: "Easy to Install", zh: "安装容易" },
-      { en: "Automatic Water Refill", zh: "自动补水" },
-      { en: "Overheat Protection", zh: "过热保护" }
-    ],
-    specs: [
-      {
-        model: "LDR-0.05T",
-        capacity: "50 kg/h",
-        pressure: "0.4 MPa",
-        efficiency: "98%",
-        fuel: "Electricity"
-      }
-    ]
   }
 ];
+
