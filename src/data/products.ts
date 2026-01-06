@@ -403,7 +403,7 @@ export const PRODUCT_CATEGORIES: Product[] = [
       en: "LDR electric steam boiler is designed for small steam requirements. It is easy to operate, clean, and reliable. Ideal for laboratories, garment ironing, and food steaming.",
       zh: "LDR电蒸汽锅炉专为小蒸汽需求而设计。操作简单，清洁可靠。非常适合实验室、服装熨烫和食品蒸煮。"
     },
-    image: "/images/products/ldr-electric-steam-boiler-premium.png",
+    image: "/images/products/ldr-electric-steam-boiler-premium-v2.jpg",
     icon: "Zap",
     features: [
       { en: "One-button Operation", zh: "一键操作" },
@@ -467,7 +467,7 @@ export const PRODUCT_CATEGORIES: Product[] = [
       en: "This steam generator uses biomass pellets as fuel. With a water capacity of less than 30L, it is often exempt from strict annual boiler inspections. It is efficient and easy to manage.",
       zh: "该蒸汽发生器使用生物质颗粒作为燃料。水容量小于30L，通常免除严格的年度锅炉检查。高效且易于管理。"
     },
-    image: "/images/products/dzl-biomass-boiler.jpg",
+    image: "/images/products/biomass-steam-generator-premium.jpg",
     icon: "Leaf",
     features: [
       { en: "Inspection Exemption", zh: "免报检" },
