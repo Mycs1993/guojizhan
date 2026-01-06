@@ -7,7 +7,7 @@ import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 
 const BACKGROUND_IMAGES = [
-  "/images/hero/banner-1.jpg", // local image
+  "/images/factory-gate-premium.jpg", // local image
   "https://images.unsplash.com/photo-1565457599723-93339f40822e?auto=format&fit=crop&q=80",
   "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80",
 ];
