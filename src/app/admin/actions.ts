@@ -60,7 +60,15 @@ export async function saveArticleAction(formData: FormData) {
   const summary = getString(formData, "summary");
   const content = getString(formData, "content", { trim: false });
   const slug = getString(formData, "slug") || undefined;
-  const coverImage = getString(formData, "coverImage") || undefined;
+  let coverImage = getString(formData, "coverImage") || undefined;
+
+  const coverImageFile = formData.get("coverImageFile") as File;
+  if (coverImageFile && coverImageFile.size > 0) {
+    if (coverImageFile.size > 5 * 1024 * 1024) {
+      throw new Error("Image size should be less than 5MB");
+    }
+    coverImage = await articleService.uploadImage(coverImageFile);
+  }
   const author = getString(formData, "author") || "Admin";
   const status = getString(formData, "status") === "published" ? "published" : "draft";
   const tags = parseTags(getString(formData, "tags"));

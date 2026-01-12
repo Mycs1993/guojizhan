@@ -1,13 +1,16 @@
 import { COMPANY_INFO } from "@/data/company";
 
-export function LocalBusinessSchema() {
+export function LocalBusinessSchema({ locale = 'en' }: { locale?: string }) {
+  // Helper to safely access localized string
+  const getLocalized = (obj: any) => obj[locale] || obj['en'] || '';
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": "https://gljyw.top/#localbusiness",
-    name: COMPANY_INFO.name,
-    alternateName: COMPANY_INFO.shortName,
-    description: COMPANY_INFO.intro,
+    name: getLocalized(COMPANY_INFO.name),
+    alternateName: getLocalized(COMPANY_INFO.shortName),
+    description: getLocalized(COMPANY_INFO.intro),
     url: "https://gljyw.top",
     logo: "https://gljyw.top/logo.png",
     image: "https://gljyw.top/og-image.jpg",
@@ -15,7 +18,7 @@ export function LocalBusinessSchema() {
     email: COMPANY_INFO.email,
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Zhangji Industrial Zone",
+      streetAddress: getLocalized(COMPANY_INFO.location),
       addressLocality: "Taikang County",
       addressRegion: "Henan Province",
       postalCode: "461400",

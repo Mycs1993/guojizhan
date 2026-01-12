@@ -3,6 +3,7 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
+import { COMPANY_INFO } from "@/data/company";
 
 export function CTASection() {
   const t = useTranslations('CTASection');
@@ -20,7 +21,7 @@ export function CTASection() {
         <p className="text-blue-100 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
           {t('description')}
         </p>
-        
+
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             href="/contact"
@@ -29,8 +30,8 @@ export function CTASection() {
             {t('getQuote')}
             <ArrowRight size={20} />
           </Link>
-          <a 
-            href="https://wa.me/8618739408082" 
+          <a
+            href={`https://wa.me/${COMPANY_INFO.phone.replace(/[^0-9]/g, '')}`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-white text-white font-bold text-lg px-8 py-4 rounded-lg hover:bg-white/10 transition-colors"
@@ -38,7 +39,7 @@ export function CTASection() {
             {t('whatsapp')}
           </a>
         </div>
-        
+
         <p className="mt-6 text-blue-200 text-sm">
           {t('features')}
         </p>

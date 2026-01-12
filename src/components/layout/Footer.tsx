@@ -3,7 +3,7 @@
 import { Link } from "@/i18n/routing";
 import { Phone, Mail, MapPin, Facebook, Twitter, Linkedin } from "lucide-react";
 import { COMPANY_INFO } from "@/data/company";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 
 export function Footer() {
   const t = useTranslations('Footer');
@@ -90,7 +90,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500">
-          <p>&copy; {currentYear} {COMPANY_INFO.name} {t('rightsReserved')}</p>
+          <p>&copy; {currentYear} {(COMPANY_INFO.name as any)[useLocale()]} {t('rightsReserved')}</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link href="/privacy" className="hover:text-white">{t('privacyPolicy')}</Link>
             <Link href="/terms" className="hover:text-white">{t('termsOfService')}</Link>

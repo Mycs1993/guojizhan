@@ -28,7 +28,7 @@ export function Header() {
 
   const handleLanguageChange = (newLocale: string) => {
     startTransition(() => {
-      router.replace(pathname, { locale: newLocale });
+      router.replace(pathname, { locale: newLocale, scroll: false });
     });
     setIsLangMenuOpen(false);
     setIsOpen(false);
@@ -52,6 +52,8 @@ export function Header() {
   const navLinks = [
     { href: "/", label: t('home') },
     { href: "/products", label: t('products') },
+    { href: "/solutions", label: t('solutions') },
+    { href: "/projects", label: t('cases') },
     { href: "/about", label: t('about') },
     { href: "/news", label: t('news') },
     // { href: "/contact", label: t('contact') }, // Create separate button for contact
@@ -112,7 +114,15 @@ export function Header() {
                 HENAN YUDONG<span className="text-blue-600">BOILER</span>
               </span>
               <span className="text-xs text-slate-500 tracking-widest uppercase">
-                Since {COMPANY_INFO.founded}
+                {{
+                  en: 'Since',
+                  zh: '始于',
+                  es: 'Desde',
+                  fr: 'Depuis',
+                  de: 'Seit',
+                  ru: 'С',
+                  ar: 'منذ'
+                }[locale] || 'Since'} {COMPANY_INFO.founded}
               </span>
             </div>
           </Link>
@@ -174,14 +184,14 @@ export function Header() {
               </div>
               <div className="grid grid-cols-2 gap-2">
                 {languages.map((lang) => (
-            <button
+                  <button
                     key={lang.code}
                     onClick={() => handleLanguageChange(lang.code)}
                     className={`flex items-center space-x-2 px-3 py-2 rounded-md text-sm ${locale === lang.code ? 'bg-blue-50 text-blue-600 font-bold' : 'text-slate-900 hover:bg-slate-50'}`}
-            >
+                  >
                     <span>{lang.flag}</span>
                     <span>{lang.label}</span>
-            </button>
+                  </button>
                 ))}
               </div>
             </div>

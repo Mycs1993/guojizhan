@@ -3,24 +3,46 @@ import { COMPANY_INFO } from "@/data/company";
 import { CheckCircle, Award, Users, Globe, Factory, Target, TrendingUp, Shield, Zap, Leaf } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { FacilityImage } from "@/components/about/FacilityImage";
+import { GlobalMap } from "@/components/about/GlobalMap";
 import Image from "next/image";
 
 const baseUrl = "https://gljyw.top";
 
-export const metadata: Metadata = {
-  title: "About Us - Leading Industrial Boiler Manufacturer Since 1976",
-  description: `${COMPANY_INFO.name} - A legacy of quality and innovation since ${COMPANY_INFO.founded}. Class A Boiler Manufacturing License, ISO9001 Certified. Exported to Southeast Asia, Europe, North America. Trusted by 2000+ industrial clients worldwide.`,
-  keywords: ["boiler manufacturer", "China boiler factory", "industrial boiler supplier", "pressure vessel manufacturer", "boiler company", "ISO9001 boiler", "steam boiler manufacturer"],
-  openGraph: {
-    title: "About Us - Leading Industrial Boiler Manufacturer Since 1976",
-    description: `${COMPANY_INFO.name} - Over 40 years of experience in industrial boiler manufacturing.`,
-    url: `${baseUrl}/about`,
-    type: "website",
-  },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "AboutPage" });
 
-export default async function AboutPage() {
+  const getCompInfo = (key: keyof typeof COMPANY_INFO) => (COMPANY_INFO[key] as any)[locale] || (COMPANY_INFO[key] as any)['en'];
+  const companyName = getCompInfo('name');
+
+  return {
+    title: t("title"),
+    description: `${companyName} - ${t("subtitle")}. ${t("intro").slice(0, 100)}...`,
+    keywords: ["boiler manufacturer", "China boiler factory", "industrial boiler supplier", "pressure vessel manufacturer", "boiler company", "ISO9001 boiler", "steam boiler manufacturer"],
+    openGraph: {
+      title: t("title"),
+      description: `${companyName} - ${t("subtitle")}`,
+      url: `${baseUrl}/about`,
+      type: "website",
+    },
+  };
+}
+
+export default async function AboutPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
   const t = await getTranslations("AboutPage");
+
+  const getCompInfo = (key: keyof typeof COMPANY_INFO) => (COMPANY_INFO[key] as any)[locale] || (COMPANY_INFO[key] as any)['en'];
+  const companyName = getCompInfo('name');
+
   return (
     <div className="bg-white min-h-screen">
       {/* Page Header */}
@@ -28,7 +50,7 @@ export default async function AboutPage() {
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">{t("title")}</h1>
           <p className="text-slate-300 text-xl max-w-3xl mx-auto">
-            {COMPANY_INFO.name} - {t("subtitle")}
+            {companyName} - {t("subtitle")}
           </p>
           <p className="text-slate-400 mt-4 max-w-2xl mx-auto">
             {t("subtitle2")}
@@ -43,10 +65,10 @@ export default async function AboutPage() {
             <h2 className="text-3xl font-bold text-slate-900 mb-6">{t("companyProfile")}</h2>
             <div className="prose prose-slate lg:prose-lg text-slate-600">
               <p className="mb-4">
-                {t("intro")}
+                {getCompInfo('intro')}
               </p>
               <p className="mb-4">
-                {t("location")}
+                {getCompInfo('location')}
               </p>
               <p className="mb-4">
                 {t("commitment")}
@@ -55,7 +77,7 @@ export default async function AboutPage() {
                 {t("team")}
               </p>
             </div>
-            
+
             <div className="mt-8 grid grid-cols-2 gap-4">
               <div className="p-6 bg-gradient-to-br from-blue-50 to-slate-50 rounded-lg border border-blue-100">
                 <div className="text-blue-600 font-bold text-4xl mb-2">{new Date().getFullYear() - COMPANY_INFO.founded}+</div>
@@ -74,8 +96,13 @@ export default async function AboutPage() {
                 <div className="text-sm text-slate-600 font-medium">{t("factoryArea")}</div>
               </div>
             </div>
+
+            {/* Global Map Section */}
+            <div className="mt-8 h-64 md:h-80">
+              <GlobalMap />
+            </div>
           </div>
-          
+
           <div className="space-y-8">
             <div className="bg-gradient-to-br from-slate-50 to-blue-50 p-8 rounded-2xl border border-slate-200 shadow-sm">
               <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
@@ -107,39 +134,47 @@ export default async function AboutPage() {
                   <CheckCircle className="text-green-500 mt-1 flex-shrink-0" size={20} />
                   <span className="text-slate-700">{t("cert6")}</span>
                 </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="text-green-500 mt-1 flex-shrink-0" size={20} />
+                  <span className="text-slate-700">{t("cert7")}</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="text-green-500 mt-1 flex-shrink-0" size={20} />
+                  <span className="text-slate-700">{t("cert8")}</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="text-green-500 mt-1 flex-shrink-0" size={20} />
+                  <span className="text-slate-700">{t("cert9")}</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="text-green-500 mt-1 flex-shrink-0" size={20} />
+                  <span className="text-slate-700">{t("cert10")}</span>
+                </li>
               </ul>
 
               <div className="grid grid-cols-3 gap-3 pt-4 border-t border-slate-200">
                 {[1, 2, 3, 4, 5, 6].map((i) => (
-                   <div key={i} className="relative aspect-[3/4] bg-white rounded-lg overflow-hidden shadow-sm border border-slate-100">
-                       <Image 
-                           src={`/images/about/certificates/cert-${i}.jpg`} 
-                           alt={`Certificate ${i}`}
-                           fill
-                           className="object-contain p-1"
-                           sizes="(max-width: 768px) 33vw, 15vw"
-                       />
-                   </div>
+                  <div key={i} className="relative aspect-[3/4] bg-white rounded-lg overflow-hidden shadow-sm border border-slate-100">
+                    <Image
+                      src={`/images/about/certificates/cert-${i}.jpg`}
+                      alt={`Certificate ${i}`}
+                      fill
+                      className="object-contain p-1"
+                      sizes="(max-width: 768px) 33vw, 15vw"
+                    />
+                  </div>
                 ))}
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-blue-600 to-blue-700 text-white p-8 rounded-2xl shadow-lg">
-              <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-                <Globe className="text-blue-200" size={24} />
-                {t("globalReach")}
-              </h3>
-              <p className="mb-6 text-blue-100 leading-relaxed">
-                {t("globalReachDesc")}
-              </p>
-              <div className="flex items-center gap-2 font-medium text-lg">
-                <Users size={24} className="text-blue-200" />
-                <span>{t("servingClients")}</span>
-              </div>
-            </div>
+
           </div>
         </div>
+      </div>
 
+
+
+      <div className="container mx-auto px-4 py-16">
         {/* Mission & Vision Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
           <div className="bg-gradient-to-br from-blue-50 to-white p-8 rounded-2xl border border-blue-100 shadow-sm">
@@ -295,7 +330,7 @@ export default async function AboutPage() {
           </div>
         </div>
       </div>
-      
+
       {/* Factory Image Placeholder Section */}
       <div className="bg-gradient-to-br from-slate-100 to-slate-200 py-20">
         <div className="container mx-auto px-4">
@@ -318,7 +353,7 @@ export default async function AboutPage() {
                 <p className="text-sm text-slate-600">{t("facility1Desc")}</p>
               </div>
             </div>
-            
+
             <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
               <FacilityImage
                 src="/images/facilities/quality-testing-lab.jpg"
@@ -333,7 +368,7 @@ export default async function AboutPage() {
                 <p className="text-sm text-slate-600">{t("facility2Desc")}</p>
               </div>
             </div>
-            
+
             <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
               <FacilityImage
                 src="/images/facilities/rd-center.jpg"
@@ -348,7 +383,7 @@ export default async function AboutPage() {
                 <p className="text-sm text-slate-600">{t("facility3Desc")}</p>
               </div>
             </div>
-            
+
             <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
               <FacilityImage
                 src="/images/facilities/material-storage.jpg"
@@ -363,7 +398,7 @@ export default async function AboutPage() {
                 <p className="text-sm text-slate-600">{t("facility4Desc")}</p>
               </div>
             </div>
-            
+
             <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
               <FacilityImage
                 src="/images/facilities/assembly-area.jpg"
@@ -378,7 +413,7 @@ export default async function AboutPage() {
                 <p className="text-sm text-slate-600">{t("facility5Desc")}</p>
               </div>
             </div>
-            
+
             <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
               <FacilityImage
                 src="/images/facilities/quality-control.jpg"

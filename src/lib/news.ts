@@ -3,10 +3,11 @@ import { NEWS_ITEMS, NEWS_ITEMS_LOCALIZED } from "@/data/news";
 import { promises as fs } from "node:fs";
 import path from "node:path";
 
-export type NewsLocale = "en" | "zh";
+export type NewsLocale = "en" | "zh" | "es" | "ar" | "fr" | "ru" | "de";
 
 export type NewsItem = {
   id: number | string;
+  slug?: string;
   title: string;
   date: string;
   summary: string;
@@ -16,6 +17,11 @@ export type NewsItem = {
   content?: {
     en?: string[];
     zh?: string[];
+    es?: string[];
+    ar?: string[];
+    fr?: string[];
+    ru?: string[];
+    de?: string[];
   };
 };
 
@@ -90,6 +96,15 @@ async function fetchRemoteNews(): Promise<NewsItem[] | null> {
   }
 }
 
+// Helper to generate SEO-friendly slugs
+function slugify(text: string) {
+  return text.toLowerCase()
+    .replace(/[^\w\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .trim();
+}
+
 import { articleService } from "./articles";
 
 export async function getNewsList(locale: NewsLocale): Promise<NewsItem[]> {
@@ -99,7 +114,8 @@ export async function getNewsList(locale: NewsLocale): Promise<NewsItem[]> {
   // Fetch dynamic articles from our new service
   const dynamicArticles = await articleService.getAllArticles(false);
   const mappedDynamic: NewsItem[] = dynamicArticles.map(a => ({
-    id: a.slug, // Use slug for public URLs
+    id: a.id,
+    slug: a.slug,
     title: a.title,
     date: new Date(a.publishedAt).toISOString().split('T')[0],
     summary: a.summary,
@@ -115,6 +131,7 @@ export async function getNewsList(locale: NewsLocale): Promise<NewsItem[]> {
   } else {
     baseList = NEWS_ITEMS_LOCALIZED.map(item => ({
       id: item.id,
+      slug: slugify(item.title.en),
       title: item.title[locale],
       date: item.date,
       summary: item.summary[locale],
@@ -123,7 +140,12 @@ export async function getNewsList(locale: NewsLocale): Promise<NewsItem[]> {
       locale,
       content: {
         en: item.content.en,
-        zh: item.content.zh
+        zh: item.content.zh,
+        es: item.content.es,
+        ar: item.content.ar,
+        fr: item.content.fr,
+        ru: item.content.ru,
+        de: item.content.de
       }
     }));
   }
@@ -144,6 +166,17 @@ export async function getNewsById(
     list.find((n) => String(n.id) === String(id)) ??
     list.find((n) => Number(n.id) === Number(id));
 
+  return found ?? null;
+}
+
+export async function getNewsBySlug(
+  slug: string,
+  locale: NewsLocale
+): Promise<NewsItem | null> {
+  const list = await getNewsList(locale);
+  // Try finding by slug first, fallback to ID if it looks like an ID
+  const found = list.find((n) => n.slug === slug) ??
+    list.find((n) => String(n.id) === slug);
   return found ?? null;
 }
 

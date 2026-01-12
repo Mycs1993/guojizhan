@@ -23,10 +23,18 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
   const seoConfig = await getSEOConfig();
   const baseUrl = seoConfig.global.baseUrl;
   const global = seoConfig.global;
+
+  const getCompInfo = (key: keyof typeof COMPANY_INFO) => (COMPANY_INFO[key] as any)[locale] || (COMPANY_INFO[key] as any)['en'];
+  const companyName = getCompInfo('name');
 
   return {
     metadataBase: new URL(baseUrl),
@@ -36,9 +44,9 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     description: global.defaultDescription,
     keywords: global.defaultKeywords,
-    authors: [{ name: COMPANY_INFO.name }],
-    creator: COMPANY_INFO.name,
-    publisher: COMPANY_INFO.name,
+    authors: [{ name: companyName }],
+    creator: companyName,
+    publisher: companyName,
     formatDetection: {
       email: false,
       address: false,
@@ -46,7 +54,7 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     openGraph: {
       type: "website",
-      locale: "en_US",
+      locale: locale === 'en' ? 'en_US' : locale,
       url: baseUrl,
       siteName: global.siteName,
       title: global.defaultTitle,
@@ -130,7 +138,7 @@ export default async function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen relative`}
       >
         <NextIntlClientProvider messages={messages}>
-          <OrganizationSchema />
+          <OrganizationSchema locale={locale} />
           <Header />
           <main className="flex-grow pt-[116px] md:pt-[132px]">
             {children}

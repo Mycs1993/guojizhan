@@ -20,4 +20,5 @@ export interface ArticleSummary {
     coverImage?: string;
     publishedAt: string;
     status: 'draft' | 'published';
+    tags?: string[];
 }

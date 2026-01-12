@@ -1,85 +1,78 @@
-import { MetadataRoute } from "next";
-import { PRODUCT_CATEGORIES } from "@/data/products";
-import { routing } from "@/i18n/routing";
-import { NEWS_ITEMS } from "@/data/news";
-import { promises as fs } from "node:fs";
-import path from "node:path";
+import { MetadataRoute } from 'next';
+import { NEWS_ITEMS_LOCALIZED } from '@/data/news';
+import { PROJECTS } from '@/data/projects';
+import { PRODUCT_CATEGORIES } from '@/data/products';
 
-const baseUrl = "https://gljyw.top";
+const BASE_URL = 'https://www.hnlggl.com'; // User's domain
 
-async function readLocalNewsJson(): Promise<Array<{ id: number | string; date?: string }> | null> {
-  try {
-    const filePath = path.join(process.cwd(), "public", "news.json");
-    const raw = await fs.readFile(filePath, "utf8");
-    const data = JSON.parse(raw);
-    const rawItems = Array.isArray(data)
-      ? data
-      : Array.isArray(data?.items)
-        ? data.items
-        : [];
-
-    return rawItems
-      .map((n: any) => ({ id: n.id, date: n.date }))
-      .filter((n: any) => n.id !== undefined && n.id !== null);
-  } catch {
-    return null;
-  }
+// Helper to generate SEO-friendly slugs (matches src/lib/news.ts)
+function slugify(text: string) {
+  return text.toLowerCase()
+    .replace(/[^\w\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .trim();
 }
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const locales = routing.locales;
+export default function sitemap(): MetadataRoute.Sitemap {
+  const products = PRODUCT_CATEGORIES;
+  const projects = PROJECTS;
+  const news = NEWS_ITEMS_LOCALIZED;
+  const locales = ['en', 'zh', 'ru', 'es', 'fr', 'ar']; // Supported locales
 
-  // 1. Static pages
-  const staticRoutes = [
-    "", // Homepage
-    "/products",
-    "/about",
-    "/contact",
-    "/news",
-  ];
+  const sitemapEntries: MetadataRoute.Sitemap = [];
 
-  const staticPages: MetadataRoute.Sitemap = [];
+  // 1. Static Routes
+  const staticRoutes = ['', '/about', '/contact', '/products', '/solutions', '/projects', '/news'];
 
-  for (const locale of locales) {
-    for (const route of staticRoutes) {
-      staticPages.push({
-        url: `${baseUrl}/${locale}${route}`,
+  locales.forEach((locale) => {
+    staticRoutes.forEach((route) => {
+      sitemapEntries.push({
+        url: `${BASE_URL}/${locale}${route}`,
         lastModified: new Date(),
-        changeFrequency: route === "" ? "weekly" : "monthly", // Homepage updates more often
-        priority: route === "" ? 1.0 : 0.8,
+        changeFrequency: 'weekly',
+        priority: route === '' ? 1.0 : 0.8,
       });
-    }
-  }
+    });
+  });
 
-  // 2. Dynamic product pages
-  const productPages: MetadataRoute.Sitemap = [];
-  for (const locale of locales) {
-    for (const product of PRODUCT_CATEGORIES) {
-      productPages.push({
-        url: `${baseUrl}/${locale}/products/${product.id}`,
+  // 2. Product Detail Routes
+  products.forEach((product) => {
+    locales.forEach((locale) => {
+      sitemapEntries.push({
+        url: `${BASE_URL}/${locale}/products/${product.id}`,
         lastModified: new Date(),
-        changeFrequency: "monthly",
+        changeFrequency: 'weekly',
         priority: 0.9,
       });
-    }
-  }
+    });
+  });
 
-  // 3. News pages
-  const localNews = await readLocalNewsJson();
-  const newsSource = localNews ?? NEWS_ITEMS;
-  const newsPages: MetadataRoute.Sitemap = [];
-
-  for (const locale of locales) {
-    for (const news of newsSource) {
-      newsPages.push({
-        url: `${baseUrl}/${locale}/news/${news.id}`,
-        lastModified: news.date ? new Date(news.date) : new Date(),
-        changeFrequency: "weekly",
+  // 3. Project Detail Routes
+  projects.forEach((project) => {
+    locales.forEach((locale) => {
+      sitemapEntries.push({
+        url: `${BASE_URL}/${locale}/projects/${project.id}`,
+        lastModified: new Date(),
+        changeFrequency: 'weekly',
         priority: 0.7,
       });
-    }
-  }
+    });
+  });
 
-  return [...staticPages, ...productPages, ...newsPages];
+  // 4. News Detail Routes
+  news.forEach((item) => {
+    // Generate slug from English title if not present
+    const slug = item.slug || slugify(item.title.en);
+    locales.forEach((locale) => {
+      sitemapEntries.push({
+        url: `${BASE_URL}/${locale}/news/${slug}`,
+        lastModified: new Date(item.date),
+        changeFrequency: 'monthly',
+        priority: 0.6,
+      });
+    });
+  });
+
+  return sitemapEntries;
 }
-

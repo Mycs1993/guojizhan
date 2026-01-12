@@ -1,6 +1,7 @@
 import { Hero } from "@/components/home/Hero";
 import { Stats } from "@/components/home/Stats";
 import { ProductCategories } from "@/components/home/ProductCategories";
+import { GlobalReach } from "@/components/home/GlobalReach";
 import { AboutSnippet } from "@/components/home/AboutSnippet";
 
 import { Metadata } from "next";
@@ -29,7 +30,7 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       <Hero />
-      <Stats />
+      <GlobalReach />
       <ProductCategories />
       <AboutSnippet />
     </div>

@@ -1,17 +1,25 @@
 import { COMPANY_INFO } from "@/data/company";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 
 export function Stats() {
   const t = useTranslations('HomePage.Stats');
 
   // Mapping keys to values from COMPANY_INFO manually or by structure
   // Here we reconstruct the stats array dynamically to use translations
+  /*
   const stats = [
     { label: t('experience'), value: "40+" },
     { label: t('factoryArea'), value: "60,000 m²" },
     { label: t('production'), value: "5,000 Ton" },
     { label: t('employees'), value: "200+" },
   ];
+  */
+
+  const locale = useLocale();
+  const stats = COMPANY_INFO.stats.map(stat => ({
+    label: (stat.label as any)[locale] || (stat.label as any)['en'],
+    value: stat.value
+  }));
 
   return (
     <section className="py-8 bg-blue-600 text-white">

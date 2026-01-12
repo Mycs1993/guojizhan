@@ -3,8 +3,14 @@
 import { useState } from "react";
 import { Phone, Mail, MapPin, Send } from "lucide-react";
 import { COMPANY_INFO } from "@/data/company";
+import { useLocale } from "next-intl";
+
+import { useTranslations } from "next-intl";
 
 export function ContactForm() {
+  const locale = useLocale();
+  const t = useTranslations('ContactPage');
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -64,16 +70,16 @@ export function ContactForm() {
         {/* Contact Info Side */}
         <div className="lg:col-span-1 space-y-6">
           <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-100">
-            <h3 className="text-xl font-bold text-slate-900 mb-6">Contact Information</h3>
+            <h3 className="text-xl font-bold text-slate-900 mb-6">{t('contactInfo')}</h3>
             <div className="space-y-6">
               <div className="flex items-start gap-4">
                 <div className="bg-blue-50 p-3 rounded-lg text-blue-600">
                   <Phone size={20} />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-slate-900">Phone / WhatsApp</h4>
+                  <h4 className="font-semibold text-slate-900">{t('phoneWhatsapp')}</h4>
                   <p className="text-slate-600 mt-1">{COMPANY_INFO.phone}</p>
-                  <p className="text-slate-500 text-sm mt-1">{COMPANY_INFO.contactPerson}</p>
+                  <p className="text-slate-500 text-sm mt-1">{(COMPANY_INFO.contactPerson as any)[locale]}</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -81,7 +87,7 @@ export function ContactForm() {
                   <Mail size={20} />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-slate-900">Email</h4>
+                  <h4 className="font-semibold text-slate-900">{t('email')}</h4>
                   <p className="text-slate-600 mt-1">{COMPANY_INFO.email}</p>
                 </div>
               </div>
@@ -90,8 +96,8 @@ export function ContactForm() {
                   <MapPin size={20} />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-slate-900">Factory Address</h4>
-                  <p className="text-slate-600 mt-1 leading-relaxed">{COMPANY_INFO.location}</p>
+                  <h4 className="font-semibold text-slate-900">{t('factoryAddress')}</h4>
+                  <p className="text-slate-600 mt-1 leading-relaxed">{(COMPANY_INFO.location as any)[locale]}</p>
                 </div>
               </div>
             </div>
@@ -114,8 +120,8 @@ export function ContactForm() {
         <div className="lg:col-span-2">
           <div className="bg-white p-8 md:p-10 rounded-xl shadow-sm border border-slate-100">
             <div className="mb-8">
-              <h2 className="text-2xl font-bold text-slate-900 mb-2">Send us a Message</h2>
-              <p className="text-slate-500">Fill out the form below and we will get back to you within 24 hours.</p>
+              <h2 className="text-2xl font-bold text-slate-900 mb-2">{t('sendMessage')}</h2>
+              <p className="text-slate-500">{t('fillForm')}</p>
             </div>
 
             {isSubmitted ? (
@@ -123,61 +129,61 @@ export function ContactForm() {
                 <div className="inline-flex bg-green-100 text-green-600 p-4 rounded-full mb-4">
                   <CheckCircle size={32} />
                 </div>
-                <h3 className="text-xl font-bold text-green-800 mb-2">Message Sent!</h3>
-                <p className="text-green-700">Thank you for contacting us. Our team will review your inquiry and respond shortly.</p>
+                <h3 className="text-xl font-bold text-green-800 mb-2">{t('messageSent')}</h3>
+                <p className="text-green-700">{t('thankYouContact')}</p>
                 <button onClick={() => setIsSubmitted(false)} className="mt-6 text-green-700 font-medium hover:underline">
-                  Send another message
+                  {t('sendAnother')}
                 </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 {error && (
                   <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg text-sm mb-4">
-                    <p className="font-semibold">Failed to send:</p>
+                    <p className="font-semibold">{t('failedToSend')}</p>
                     <p>{error}</p>
                     <button
                       type="button"
                       onClick={handleSubmit}
                       className="mt-2 text-sm font-medium underline hover:text-red-800"
                     >
-                      Try Again
+                      {t('tryAgain')}
                     </button>
                   </div>
                 )}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label htmlFor="name" className="text-sm font-medium text-slate-700">Full Name</label>
+                    <label htmlFor="name" className="text-sm font-medium text-slate-700">{t('fullName')}</label>
                     <input type="text" id="name" name="name" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all" placeholder="John Doe" value={formData.name} onChange={handleChange} />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="email" className="text-sm font-medium text-slate-700">Email Address</label>
+                    <label htmlFor="email" className="text-sm font-medium text-slate-700">{t('emailAddress')}</label>
                     <input type="email" id="email" name="email" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all" placeholder="john@company.com" value={formData.email} onChange={handleChange} />
                   </div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label htmlFor="phone" className="text-sm font-medium text-slate-700">Phone Number</label>
+                    <label htmlFor="phone" className="text-sm font-medium text-slate-700">{t('phoneNumber')}</label>
                     <input type="tel" id="phone" name="phone" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all" placeholder="+1 (555) 000-0000" value={formData.phone} onChange={handleChange} />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="subject" className="text-sm font-medium text-slate-700">Interest Product</label>
+                    <label htmlFor="subject" className="text-sm font-medium text-slate-700">{t('interestProduct')}</label>
                     <select id="subject" name="subject" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all" value={formData.subject} onChange={handleChange}>
-                      <option value="">Select a product...</option>
-                      <option value="Oil/Gas Boiler">Oil/Gas Boiler</option>
-                      <option value="Biomass Boiler">Biomass Boiler</option>
-                      <option value="Coal Boiler">Coal Boiler</option>
-                      <option value="Thermal Oil Heater">Thermal Oil Heater</option>
-                      <option value="Pressure Vessel">Pressure Vessel</option>
-                      <option value="Other">Other Inquiry</option>
+                      <option value="">{t('selectProduct')}</option>
+                      <option value="Oil/Gas Boiler">{t('products.oilGas')}</option>
+                      <option value="Biomass Boiler">{t('products.biomass')}</option>
+                      <option value="Coal Boiler">{t('products.coal')}</option>
+                      <option value="Thermal Oil Heater">{t('products.thermalOil')}</option>
+                      <option value="Pressure Vessel">{t('products.pressureVessel')}</option>
+                      <option value="Other">{t('otherInquiry')}</option>
                     </select>
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm font-medium text-slate-700">Message</label>
-                  <textarea id="message" name="message" required rows={5} className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all resize-none" placeholder="Please describe your requirements (capacity, fuel type, application)..." value={formData.message} onChange={handleChange} />
+                  <label htmlFor="message" className="text-sm font-medium text-slate-700">{t('message')}</label>
+                  <textarea id="message" name="message" required rows={5} className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all resize-none" placeholder={t('messagePlaceholder')} value={formData.message} onChange={handleChange} />
                 </div>
                 <button type="submit" disabled={isSubmitting} className="w-full md:w-auto px-8 py-4 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2">
-                  {isSubmitting ? <>Processing...</> : <><Send size={18} /> Send Message</>}
+                  {isSubmitting ? <>{t('processing')}</> : <><Send size={18} /> {t('sendMessageBtn')}</>}
                 </button>
               </form>
             )}

@@ -27,18 +27,22 @@ export interface NewsItem {
  * 鐢熸垚浜у搧椤甸潰鐨?Metadata
  * Requirements: 1.2, 2.2
  */
-export function generateProductMetadata(product: Product, locale: 'en' | 'zh' = 'en'): Metadata {
-  const name = product.name[locale];
-  const descriptionText = product.description[locale];
+export function generateProductMetadata(product: Product, locale: 'en' | 'zh' | string = 'en'): Metadata {
+  const name = product.name[locale as keyof typeof product.name] || product.name['en'];
+  const descriptionText = product.description[locale as keyof typeof product.description] || product.description['en'];
+
+  // Helper for localized company info
+  const getCompInfo = (key: keyof typeof COMPANY_INFO) => (COMPANY_INFO[key] as any)[locale] || (COMPANY_INFO[key] as any)['en'];
 
   const capacityRange = product.specs.length > 0
     ? `${product.specs[0].capacity} - ${product.specs[product.specs.length - 1].capacity}`
     : "";
 
   // Features are also localized
-  const keyFeatures = product.features.slice(0, 3).map(f => f[locale]).join(", ");
+  const keyFeatures = product.features.slice(0, 3).map(f => f[locale as any] || f['en']).join(", ");
 
   const metaDescription = `${name} - ${keyFeatures}. Capacity: ${capacityRange}. ${descriptionText}`;
+  const shortName = getCompInfo('shortName');
 
   return {
     title: name,
@@ -51,7 +55,7 @@ export function generateProductMetadata(product: Product, locale: 'en' | 'zh' = 
       "China manufacturer",
     ],
     openGraph: {
-      title: `${name} | ${COMPANY_INFO.shortName}`,
+      title: `${name} | ${shortName}`,
       description: descriptionText,
       url: `${BASE_URL}/products/${product.id}`,
       images: [
@@ -66,7 +70,7 @@ export function generateProductMetadata(product: Product, locale: 'en' | 'zh' = 
     },
     twitter: {
       card: "summary_large_image",
-      title: `${name} | ${COMPANY_INFO.shortName}`,
+      title: `${name} | ${shortName}`,
       description: descriptionText,
       images: [product.image.startsWith("http") ? product.image : `${BASE_URL}${product.image}`],
     },
@@ -80,36 +84,48 @@ export function generateProductMetadata(product: Product, locale: 'en' | 'zh' = 
  * 鐢熸垚鏂伴椈鏂囩珷椤甸潰鐨?Metadata
  * Requirements: 2.5
  */
-export function generateNewsMetadata(news: NewsItem): Metadata {
+export function generateNewsMetadata(news: NewsItem & { slug?: string, keywords?: string[] }, locale: string = 'en'): Metadata {
+  // Helper for localized company info
+  const getCompInfo = (key: keyof typeof COMPANY_INFO) => (COMPANY_INFO[key] as any)[locale] || (COMPANY_INFO[key] as any)['en'];
+  const shortName = getCompInfo('shortName');
+
+  const url = `${BASE_URL}/${locale}/news/${news.slug || news.id}`;
+  const images = news.image
+    ? [news.image.startsWith("http") ? news.image : `${BASE_URL}${news.image}`]
+    : [`${BASE_URL}/og-image.jpg`];
+
   return {
-    title: news.title,
+    title: `${news.title} - News | ${shortName}`,
     description: news.excerpt.slice(0, 160),
+    keywords: news.keywords,
+    alternates: {
+      canonical: url,
+      languages: {
+        'en': `${BASE_URL}/en/news/${news.slug || news.id}`,
+        'zh': `${BASE_URL}/zh/news/${news.slug || news.id}`,
+      }
+    },
     openGraph: {
-      title: `${news.title} | ${COMPANY_INFO.shortName}`,
+      title: `${news.title} | ${shortName}`,
       description: news.excerpt,
-      url: `${BASE_URL}/news/${news.id}`,
+      url: url,
       type: "article",
       publishedTime: news.date,
-      images: news.image
-        ? [
-          {
-            url: news.image.startsWith("http") ? news.image : `${BASE_URL}${news.image}`,
-            width: 1200,
-            height: 630,
-            alt: news.title,
-          },
-        ]
-        : [],
+      authors: [shortName],
+      images: images.map(img => ({
+        url: img,
+        width: 1200,
+        height: 630,
+        alt: news.title
+      })),
+      siteName: shortName,
     },
     twitter: {
       card: "summary_large_image",
-      title: `${news.title} | ${COMPANY_INFO.shortName}`,
+      title: `${news.title} | ${shortName}`,
       description: news.excerpt,
-      images: news.image ? [news.image.startsWith("http") ? news.image : `${BASE_URL}${news.image}`] : [],
-    },
-    alternates: {
-      canonical: `${BASE_URL}/news/${news.id}`,
-    },
+      images: images,
+    }
   };
 }
 
@@ -165,30 +181,39 @@ export function generateBreadcrumbSchema(items: BreadcrumbItem[]): object {
 /**
  * 鐢熸垚 Article Schema JSON-LD
  */
-export function generateArticleSchema(news: NewsItem): object {
+/**
+ * Generate Article Schema JSON-LD
+ */
+export function generateNewsArticleJsonLd(news: NewsItem & { slug?: string }, locale: string = 'en'): object {
+  const getCompInfo = (key: keyof typeof COMPANY_INFO) => (COMPANY_INFO[key] as any)[locale] || (COMPANY_INFO[key] as any)['en'];
+  const companyName = getCompInfo('name');
+  const url = `${BASE_URL}/${locale}/news/${news.slug || news.id}`;
+  const images = news.image ? [news.image.startsWith("http") ? news.image : `${BASE_URL}${news.image}`] : [];
+
   return {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "NewsArticle",
     headline: news.title,
     description: news.excerpt,
     datePublished: news.date,
-    dateModified: news.date,
-    author: {
+    dateModified: news.date, // Ideally this should be updated date if available
+    author: [{
       "@type": "Organization",
-      name: COMPANY_INFO.name,
-    },
+      name: companyName,
+      url: BASE_URL
+    }],
     publisher: {
       "@type": "Organization",
-      name: COMPANY_INFO.name,
+      name: companyName,
       logo: {
         "@type": "ImageObject",
         url: `${BASE_URL}/logo.png`,
       },
     },
-    image: news.image ? (news.image.startsWith("http") ? news.image : `${BASE_URL}${news.image}`) : undefined,
+    image: images,
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `${BASE_URL}/news/${news.id}`,
+      "@id": url,
     },
   };
 }

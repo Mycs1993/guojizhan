@@ -26,6 +26,39 @@ export class ArticleService {
         return this.getArticleById(summary.id);
     }
 
+    async getArticlesByTag(tag: string): Promise<ArticleSummary[]> {
+        const articles = await this.getAllArticles(false); // Only published
+        const normalizedTag = tag.toLowerCase().trim();
+
+        return articles.filter(a => {
+            if (!a.tags || a.tags.length === 0) return false;
+            return a.tags.some(t => t.toLowerCase() === normalizedTag);
+        });
+    }
+
+    async getAllTags(): Promise<Array<{ name: string; count: number }>> {
+        const articles = await this.getAllArticles(false);
+        const tagMap = new Map<string, number>();
+
+        articles.forEach(a => {
+            if (a.tags) {
+                a.tags.forEach(t => {
+                    // Use lowercase for counting but keep original case?
+                    // Let's normalize to Capital Case for display if we can, 
+                    // or just use the first occurrence's casing.
+                    const key = t.trim();
+                    if (!key) return;
+                    tagMap.set(key, (tagMap.get(key) || 0) + 1);
+                });
+            }
+        });
+
+        // Convert to array and sort by count desc
+        return Array.from(tagMap.entries())
+            .map(([name, count]) => ({ name, count }))
+            .sort((a, b) => b.count - a.count);
+    }
+
     async saveArticle(article: Partial<Article>): Promise<Article> {
         const articles = await this.getAllArticles(true);
 
@@ -60,6 +93,7 @@ export class ArticleService {
             coverImage: fullArticle.coverImage,
             publishedAt: fullArticle.publishedAt,
             status: fullArticle.status,
+            tags: fullArticle.tags, // Optimize: Include tags in index for fast filtering
         };
 
         if (existingIndex >= 0) {
@@ -88,6 +122,11 @@ export class ArticleService {
             .replace(/[^\w\s-]/g, '')
             .replace(/[\s_-]+/g, '-')
             .replace(/^-+|-+$/g, '');
+    }
+    async uploadImage(file: File): Promise<string> {
+        const ext = file.name.split('.').pop() || 'jpg';
+        const filename = `${Date.now()}-${uuidv4().substring(0, 8)}.${ext}`;
+        return this.storage.upload(filename, file);
     }
 }
 

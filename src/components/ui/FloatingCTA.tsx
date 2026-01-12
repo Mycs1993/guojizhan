@@ -4,6 +4,7 @@ import { MessageSquare, Phone, Mail } from "lucide-react";
 import { Link } from "@/i18n/routing";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
+import { COMPANY_INFO } from "@/data/company";
 
 export function FloatingCTA() {
   const t = useTranslations('FloatingCTA');
@@ -12,9 +13,9 @@ export function FloatingCTA() {
   return (
     <div className="fixed right-0 top-[60%] -translate-y-1/2 z-50 flex flex-col gap-2 p-2">
       {/* WhatsApp / Chat */}
-      <a 
-        href="https://wa.me/8618739408082" 
-        target="_blank" 
+      <a
+        href={`https://wa.me/${COMPANY_INFO.phone.replace(/[^0-9]/g, '')}`}
+        target="_blank"
         rel="noopener noreferrer"
         className="flex items-center justify-end group"
       >
@@ -27,8 +28,8 @@ export function FloatingCTA() {
       </a>
 
       {/* Phone */}
-      <a 
-        href="tel:+8618739408082" 
+      <a
+        href={`tel:${COMPANY_INFO.phone}`}
         className="flex items-center justify-end group"
       >
         <span className="bg-blue-600 text-white text-sm font-medium px-3 py-2 rounded-l-md opacity-0 group-hover:opacity-100 -mr-4 group-hover:mr-2 transition-all duration-300 shadow-md whitespace-nowrap">
@@ -40,8 +41,8 @@ export function FloatingCTA() {
       </a>
 
       {/* Email / Quote */}
-      <Link 
-        href="/contact" 
+      <Link
+        href="/contact"
         className="flex items-center justify-end group"
       >
         <span className="bg-orange-600 text-white text-sm font-medium px-3 py-2 rounded-l-md opacity-0 group-hover:opacity-100 -mr-4 group-hover:mr-2 transition-all duration-300 shadow-md whitespace-nowrap">
